@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Ritesh Verma | ThatVetGuy Collective</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           TOKENS (Matching your Gold/Navy Theme)
+           ========================================= */
+        :root {
+            --ink:       #0a0f1e;
+            --ink-mid:   #1c2440;
+            --ink-soft:  #3d4f72;
+            --slate:     #64748b;
+            --mist:      #f0f4fa;
+            --white:     #ffffff;
+            --gold:      #c9a84c;
+            --gold-dim:  rgba(201,168,76,0.18);
+            --gold-line: rgba(201,168,76,0.35);
+
+            --radius-sm: 6px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --radius-pill: 100px;
+
+            --shadow-card: 0 2px 16px rgba(10,15,30,0.07), 0 1px 3px rgba(10,15,30,0.04);
+            --shadow-lift: 0 20px 48px rgba(10,15,30,0.25), 0 4px 12px rgba(10,15,30,0.15);
+
+            --nav-h: 68px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ink);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* =========================================
+           NAV
+           ========================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-h);
+            background: rgba(10,15,30,0.94);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.35rem;
+            color: var(--white);
+        }
+        .logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.65);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+        /* =========================================
+           PROFILE HERO
+           ========================================= */
+        .profile-hero {
+            padding: 100px 0 80px;
+            position: relative;
+            background: var(--ink);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 48px;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.8; }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 64px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img-wrapper {
+            background: var(--ink-mid);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            position: relative;
+        }
+        .profile-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 32px; right: 32px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+        }
+        .profile-img-wrapper img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--gold-line);
+        }
+
+        .profile-content h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+        .profile-bio {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .social-btns {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            background: rgba(201,168,76,0.05);
+            color: var(--gold);
+        }
+
+        /* Focus Areas */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .focus-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 24px;
+            border-radius: var(--radius-md);
+        }
+        .focus-card h4 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .focus-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           PORTFOLIO SECTION (WITH IMAGE PREVIEWS)
+           ========================================= */
+        .portfolio-section {
+            padding: 96px 0;
+            background: #07090f;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .case-study {
+            background: var(--ink-mid);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+            border-color: rgba(201,168,76,0.3);
+        }
+        
+        /* New Image Preview Styles */
+        .preview-area {
+            height: 240px;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center; 
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .case-study:hover .preview-img {
+            transform: scale(1.05);
+        }
+        .preview-area::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 36, 64, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .case-content {
+            padding: 40px 36px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .case-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+        .case-content h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+        .case-content p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 28px;
+        }
+        .view-project {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .view-project::after {
+            content: '→';
+            transition: transform 0.25s;
+        }
+        .case-study:hover .view-project::after { transform: translateX(5px); }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 960px) {
+            .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+            .profile-img-wrapper { max-width: 350px; margin: 0 auto; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 680px) {
+            .nav-links { display: none; }
+            .profile-hero { padding: 60px 0; }
+            .profile-content h1 { font-size: 2.2rem; }
+            .focus-grid { grid-template-columns: 1fr; }
+            .case-content { padding: 30px 24px; }
+            .preview-area { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap nav-inner">
+            <a href="index.html" class="logo">ThatVet<span>Guy</span>.net</a>
+            <div class="nav-links">
+                <a href="experts.html" class="active">Know the Experts</a>
+                <a href="index.html#services">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="profile-hero">
+        <div class="wrap">
+            <a href="experts.html" class="back-link">← Back to Directory</a>
+            
+            <div class="profile-grid">
+                <div class="profile-img-wrapper">
+                    <img src="ritesh.png" alt="Dr. Ritesh Verma" onerror="this.style.display='none'">
+                </div>
+
+                <div class="profile-content">
+                    <h1>Dr. Ritesh Verma</h1>
+                    <div class="profile-title">Managing Director &amp; Lead Veterinary Pathologist</div>
+                    
+                    <p class="profile-bio">
+                        As the managing director and head of the ThatVetGuy collective, Dr. Ritesh Verma oversees all clinical operations. Holding an MVSc with a deep focus on pathology, his peer-reviewed research spans avian toxicity, protozoan diagnostics, and feline pathobiology. He utilizes his extensive laboratory experience to engineer high-impact corporate diagnostics and authoritative educational B2B frameworks.
+                    </p>
+
+                    <div class="social-btns">
+                        <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" class="btn-outline">
+                            LinkedIn Profile
+                        </a>
+                        <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" class="btn-outline">
+                            YouTube Channel
+                        </a>
+                    </div>
+
+                    <div class="focus-grid">
+                        <div class="focus-card">
+                            <h4>Clinical &amp; Avian Pathology</h4>
+                            <p>Expert translation of laboratory diagnostics and pathological data into accessible corporate formats.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>Strategic Operations</h4>
+                            <p>Directing the collective's clinical outputs to ensure rigorous compliance with industry standards.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>Public Health Advocacy</h4>
+                            <p>Translating complex epidemiological concepts into editorial journalism for disease awareness.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>B2B Advisory</h4>
+                            <p>Consulting with pharmaceutical and nutrition brands on medical oversight and product validation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="wrap">
+            <div class="section-header">
+                <span class="section-label">Dr. Verma's Portfolio</span>
+                <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; font-weight: 400; margin-bottom: 12px;">Published Research &amp; Editorials</h2>
+                <p style="color: rgba(255,255,255,0.5);">Peer-reviewed clinical research, diagnostic reporting, and public health communications.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                
+                <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="parvo-preview.jpg" alt="Feline Parvo Research" class="preview-img" style="object-fit: contain; background: #fff;">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Published Research</span>
+                        <h3>Clinico-Histo-Ultra Pathobiology of Parvoviral Enteritis</h3>
+                        <p>A comprehensive pathological evaluation of feline parvovirus in the Indore region, featuring detailed clinical and ultrastructural analysis.</p>
+                        <span class="view-project">Read on ResearchGate</span>
+                    </div>
+                </a>
+
+                <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="ziram-preview.jpg" alt="Ziram Toxicity Abstract" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">AAHP Symposium 2026</span>
+                        <h3>Pathology of Subacute Ziram Toxicity in Poultry</h3>
+                        <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
+                        <span class="view-project">Preview PDF Document</span>
+                    </div>
+                </a>
+
+                <a href="Caecal_Coccidiosis_Case_Report.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="coccidiosis-preview.jpg" alt="Caecal Coccidiosis Report" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Clinical Case Report</span>
+                        <h3>Caecal Coccidiosis in Indigenous Sonalika Poultry</h3>
+                        <p>A detailed clinical and histopathological report evaluating the severe pathological impact and mucosal damage caused by Eimeria tenella.</p>
+                        <span class="view-project">Preview PDF Document</span>
+                    </div>
+                </a>
+
+                <a href="rabies-editorial.jpg" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="rabies-editorial.jpg" alt="Rabies Editorial" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Public Health Editorial</span>
+                        <h3>World Rabies Day: Vaccination &amp; Awareness</h3>
+                        <p>A published newspaper editorial translating critical epidemiological data and vaccination protocols into accessible public health journalism.</p>
+                        <span class="view-project">View Editorial Clipping</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience & Work | ThatVetGuy Collective</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           TOKENS
+           ========================================= */
+        :root {
+            --ink:       #0a0f1e;
+            --ink-mid:   #1c2440;
+            --ink-soft:  #3d4f72;
+            --slate:     #64748b;
+            --mist:      #f0f4fa;
+            --white:     #ffffff;
+            --gold:      #c9a84c;
+            --gold-dim:  rgba(201,168,76,0.18);
+            --gold-line: rgba(201,168,76,0.35);
+
+            --radius-sm: 6px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+
+            --shadow-card: 0 2px 16px rgba(10,15,30,0.07), 0 1px 3px rgba(10,15,30,0.04);
+            --shadow-lift: 0 20px 48px rgba(10,15,30,0.12), 0 4px 12px rgba(10,15,30,0.06);
+
+            --nav-h: 68px;
+        }
+
+        /* =========================================
+           RESET
+           ========================================= */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--mist);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        /* =========================================
+           NAV (Dark Theme)
+           ========================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-h);
+            background: rgba(10,15,30,0.94);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.35rem;
+            color: var(--white);
+            letter-spacing: 0.01em;
+        }
+        .logo span { color: var(--gold); }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.65);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--white); }
+        .nav-cta {
+            background: var(--gold) !important;
+            color: var(--ink) !important;
+            padding: 9px 22px !important;
+            border-radius: var(--radius-sm) !important;
+            font-weight: 700 !important;
+            font-size: 0.85rem !important;
+            transition: opacity 0.2s !important;
+        }
+        .nav-cta:hover { opacity: 0.88 !important; }
+
+        /* Mobile nav toggle */
+        .nav-burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+        }
+        .nav-burger span {
+            display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s;
+        }
+        .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .nav-burger.open span:nth-child(2) { opacity: 0; }
+        .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: var(--nav-h); left: 0; right: 0;
+            background: rgba(10,15,30,0.97);
+            backdrop-filter: blur(20px);
+            padding: 28px; z-index: 999; flex-direction: column; gap: 4px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .mobile-menu.open { display: flex; }
+        .mobile-menu a {
+            font-size: 1rem; font-weight: 500; color: rgba(255,255,255,0.75); padding: 14px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .mobile-menu a:hover { color: var(--white); }
+        .mobile-cta-link {
+            background: var(--gold); color: var(--ink) !important; padding: 14px 20px !important;
+            border-radius: var(--radius-sm); font-weight: 700 !important; text-align: center; border: none !important; margin-top: 8px;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .work-hero {
+            background: var(--ink);
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .work-hero::before {
+            content: '';
+            position: absolute;
+            top: -20%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .work-hero .wrap { position: relative; z-index: 1; }
+        .work-hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            color: var(--white);
+            margin-bottom: 18px;
+            line-height: 1.1;
+        }
+        .work-hero p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.55);
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        /* =========================================
+           PORTFOLIO GRID
+           ========================================= */
+        .portfolio-section {
+            padding: 96px 0;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .case-study {
+            background: var(--white);
+            border: 1px solid #e4eaf4;
+            border-radius: var(--radius-md);
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-card);
+            transition: box-shadow 0.3s, transform 0.3s, border-color 0.3s;
+            overflow: hidden;
+        }
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+            border-color: var(--gold);
+        }
+        
+        /* Previews */
+        .preview-area {
+            height: 220px;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid #e4eaf4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .preview-img {
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: top center;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .case-study:hover .preview-img { transform: scale(1.05); }
+        
+        .preview-area::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 15, 30, 0.6) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Generic Document Icon Fallback */
+        .doc-icon {
+            width: 60px; height: 70px;
+            background: var(--white);
+            border-radius: 4px; position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .doc-icon::before {
+            content: ''; position: absolute; top: 15px; left: 10px; right: 10px; height: 3px;
+            background: #cbd5e1; box-shadow: 0 10px 0 #cbd5e1, 0 20px 0 #cbd5e1, 0 30px 0 #cbd5e1;
+        }
+
+        /* Content */
+        .case-content {
+            padding: 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .case-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .case-category::before {
+            content: ''; display: inline-block; width: 20px; height: 1px; background: var(--gold);
+        }
+        .case-study h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.3;
+            margin-bottom: 12px;
+        }
+        .case-study p {
+            color: var(--slate);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            flex-grow: 1;
+            margin-bottom: 24px;
+        }
+        .expert-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            background: rgba(10, 15, 30, 0.04);
+            border-radius: var(--radius-sm);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--ink-soft);
+            border: 1px solid rgba(10, 15, 30, 0.08);
+            transition: background 0.2s;
+        }
+        .case-study:hover .expert-tag {
+            background: var(--gold-dim);
+            color: var(--ink);
+            border-color: var(--gold-line);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #07090f;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer p { font-size: 0.85rem; color: rgba(255,255,255,0.3); }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 960px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 680px) {
+            .nav-links { display: none; }
+            .nav-burger { display: flex; }
+            .work-hero { padding: 80px 0 60px; }
+            .work-hero h1 { font-size: 2.2rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .case-study { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap nav-inner">
+            <a href="index.html" class="logo">ThatVet<span>Guy</span>.net</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="experts.html">Know the Experts</a>
+                <a href="work.html" class="active">Experience & Work</a>
+                <a href="mailto:contact@thatvetguy.net" class="nav-cta">Contact Us</a>
+            </div>
+            <button class="nav-burger" id="burger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="experts.html">Know the Experts</a>
+        <a href="work.html" style="color: var(--white);">Experience & Work</a>
+        <a href="mailto:contact@thatvetguy.net" class="mobile-cta-link">Contact Us →</a>
+    </div>
+
+    <header class="work-hero">
+        <div class="wrap">
+            <h1>Experience &amp; Portfolio</h1>
+            <p>A curated directory of clinical research, specialized field manuals, B2B brand strategy, and educational assets engineered by our experts.</p>
+        </div>
+    </header>
+
+    <section class="portfolio-section">
+        <div class="wrap">
+            <div class="portfolio-grid">
+
+                <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="parvo-preview.jpg" alt="Feline Parvo Research" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Published Research</span>
+                        <h3>Pathobiology of Parvoviral Enteritis</h3>
+                        <p>A comprehensive clinico-histopathological evaluation of feline parvovirus in the Indore region, featuring detailed ultrastructural analysis.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">Dr. Ritesh Verma</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/newsletters/animal-origin-foods-journal-7428394753953644544" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="newsletter-preview.jpg" alt="Animal Origin Foods Journal" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Industry Newsletter</span>
+                        <h3>The Animal Origin Foods Journal</h3>
+                        <p>An industry-minded B2B publication boasting over 4,200 active subscribers, focused on the safety and technology of livestock products.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">Dr. Shivam Singh Thakur</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="securetrack.html" class="case-study">
+                    <div class="preview-area" style="background: #eef2f6;">
+                        <img src="securetrack-preview.jpg" alt="Securetrack Content Writing" class="preview-img" style="object-fit: contain; padding: 30px;" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Content Writing</span>
+                        <h3>Securetrack: B2B Content Strategy</h3>
+                        <p>Delivering professional ghostwriting services for Securetrack, a Riyadh-based company, encompassing the development of weekly newsletters and long-form content.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">ThatVetGuy Collective</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://thetruthfultail.com/" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="truthfultail-preview.jpg" alt="The Truthful Tail" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Brand Validation</span>
+                        <h3>Clinical Endorsement: The Truthful Tail</h3>
+                        <p>Professional brand collaboration and clinical validation for premium dog supplements, analyzing formulation efficacy and palatability.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">Dr. Shivam Singh Thakur</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="rabies-preview.jpg" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="rabies-preview.jpg" alt="World Rabies Day Editorial" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Newspaper Editorial</span>
+                        <h3>World Rabies Day Editorial</h3>
+                        <p>A featured newspaper editorial published for World Rabies Day, exploring critical public health strategies, veterinary interventions, and community awareness.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">Dr. Ritesh Verma</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="ziram-preview.jpg" alt="Ziram Toxicity Abstract" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">AAHP Symposium</span>
+                        <h3>Subacute Ziram Toxicity in Poultry</h3>
+                        <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">Dr. Ritesh Verma</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="veterinary_pregnancy_diagnosis_carousel_v2.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="bovine-preview.jpg" alt="Bovine Diagnostics" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Educational Asset</span>
+                        <h3>Bovine Pregnancy Diagnostics Guide</h3>
+                        <p>A detailed medical illustration and visual guide on transrectal palpation, mapping tactile precision and herd management viability.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">ThatVetGuy Collective</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="VCI_to_Global_Practice_Roadmap.pdf" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="strategy-preview.jpg" alt="Strategy Deck" class="preview-img" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Strategic Planning</span>
+                        <h3>Global Licensing Roadmaps</h3>
+                        <p>A structural flow-chart breakdown of international licensing pathways (NAVLE, RCVS, AVBC) for B2B veterinary talent acquisition.</p>
+                        <div style="margin-top: auto;">
+                            <span class="expert-tag">ThatVetGuy Collective</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrap">
+            <p>&copy; 2026 ThatVetGuy.net Freelance Team. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const burger = document.getElementById('burger');
+        const mobileMenu = document.getElementById('mobileMenu');
+        burger.addEventListener('click', () => {
+            const open = mobileMenu.classList.toggle('open');
+            burger.classList.toggle('open', open);
+            document.body.style.overflow = open ? 'hidden' : '';
+        });
+    </script>
+</body>
+</html>

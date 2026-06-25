@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Shivam Singh Thakur | ThatVetGuy Collective</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           TOKENS (Matching your Gold/Navy Theme)
+           ========================================= */
+        :root {
+            --ink:       #0a0f1e;
+            --ink-mid:   #1c2440;
+            --ink-soft:  #3d4f72;
+            --slate:     #64748b;
+            --mist:      #f0f4fa;
+            --white:     #ffffff;
+            --gold:      #c9a84c;
+            --gold-dim:  rgba(201,168,76,0.18);
+            --gold-line: rgba(201,168,76,0.35);
+
+            --radius-sm: 6px;
+            --radius-md: 14px;
+            --radius-lg: 22px;
+            --radius-pill: 100px;
+
+            --shadow-card: 0 2px 16px rgba(10,15,30,0.07), 0 1px 3px rgba(10,15,30,0.04);
+            --shadow-lift: 0 20px 48px rgba(10,15,30,0.25), 0 4px 12px rgba(10,15,30,0.15);
+
+            --nav-h: 68px;
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ink);
+            color: var(--white);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        a { text-decoration: none; color: inherit; }
+        img { display: block; max-width: 100%; }
+
+        .wrap {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+        .section-label::before {
+            content: '';
+            display: inline-block;
+            width: 28px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        /* =========================================
+           NAV
+           ========================================= */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            height: var(--nav-h);
+            background: rgba(10,15,30,0.94);
+            backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+        .logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.35rem;
+            color: var(--white);
+        }
+        .logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 32px; align-items: center; }
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.65);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+        /* =========================================
+           PROFILE HERO
+           ========================================= */
+        .profile-hero {
+            padding: 100px 0 80px;
+            position: relative;
+            background: var(--ink);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .profile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 48px;
+            transition: opacity 0.2s;
+        }
+        .back-link:hover { opacity: 0.8; }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.8fr;
+            gap: 64px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img-wrapper {
+            background: var(--ink-mid);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg);
+            padding: 16px;
+            position: relative;
+        }
+        .profile-img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 32px; right: 32px;
+            height: 2px;
+            background: var(--gold);
+            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+        }
+        .profile-img-wrapper img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--gold-line);
+        }
+
+        .profile-content h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 8px;
+        }
+        .profile-title {
+            font-size: 1.1rem;
+            color: var(--gold);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+        }
+        .profile-bio {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+        
+        .social-btns {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--white);
+            padding: 10px 24px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            border-color: var(--gold);
+            background: rgba(201,168,76,0.05);
+            color: var(--gold);
+        }
+
+        /* Focus Areas */
+        .focus-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .focus-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.06);
+            padding: 24px;
+            border-radius: var(--radius-md);
+        }
+        .focus-card h4 {
+            color: var(--gold);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .focus-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           CERTIFICATIONS SECTION
+           ========================================= */
+        .cert-section {
+            padding: 60px 0;
+            background: var(--ink-mid);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .cert-card {
+            background: var(--ink);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        .cert-icon {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+        .cert-details h4 {
+            font-size: 0.95rem;
+            color: var(--white);
+            margin-bottom: 4px;
+            line-height: 1.4;
+        }
+        .cert-details p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* =========================================
+           PORTFOLIO SECTION
+           ========================================= */
+        .portfolio-section {
+            padding: 96px 0;
+            background: #07090f;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .case-study {
+            background: var(--ink-mid);
+            border: 1px solid rgba(255,255,255,0.07);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .case-study:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lift);
+            border-color: rgba(201,168,76,0.3);
+        }
+        .preview-area {
+            height: 240px;
+            background: var(--ink);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .preview-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .case-study:hover .preview-img {
+            transform: scale(1.05);
+        }
+        .preview-area::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(28, 36, 64, 0.4) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        .case-content {
+            padding: 40px 36px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .case-category {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+        }
+        .case-content h3 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--white);
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+        .case-content p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 28px;
+        }
+        .view-project {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .view-project::after {
+            content: '→';
+            transition: transform 0.25s;
+        }
+        .case-study:hover .view-project::after { transform: translateX(5px); }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+        @media (max-width: 960px) {
+            .profile-grid { grid-template-columns: 1fr; gap: 40px; }
+            .profile-img-wrapper { max-width: 350px; margin: 0 auto; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 680px) {
+            .nav-links { display: none; }
+            .profile-hero { padding: 60px 0; }
+            .profile-content h1 { font-size: 2.2rem; }
+            .focus-grid { grid-template-columns: 1fr; }
+            .case-content { padding: 30px 24px; }
+            .preview-area { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="wrap nav-inner">
+            <a href="index.html" class="logo">ThatVet<span>Guy</span>.net</a>
+            <div class="nav-links">
+                <a href="experts.html" class="active">Know the Experts</a>
+                <a href="work.html">Experience & Work</a>
+                <a href="index.html#services">Services</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="profile-hero">
+        <div class="wrap">
+            <a href="experts.html" class="back-link">← Back to Directory</a>
+            
+            <div class="profile-grid">
+                <div class="profile-img-wrapper">
+                    <img src="shivam.png" alt="Dr. Shivam Singh Thakur" onerror="this.style.display='none'">
+                </div>
+
+                <div class="profile-content">
+                    <h1>Dr. Shivam Singh Thakur</h1>
+                    <div class="profile-title">Lead Content Strategist & Brand Consultant</div>
+                    
+                    <p class="profile-bio">
+                        Bringing over 12,000 professional followers to the collective, Dr. Shivam Singh Thakur bridges the gap between clinical veterinary science and corporate inbound marketing. Pursuing his M.V.Sc. in Livestock Products Technology, he combines his deep understanding of biology, large-animal management, and pathology with certified digital marketing expertise to craft authoritative, highly-converting B2B narratives for global pharmaceutical and nutrition brands.
+                    </p>
+
+                    <div class="social-btns">
+                        <a href="https://www.linkedin.com/in/dr-shivam-singh-thakur" target="_blank" class="btn-outline">
+                            LinkedIn (12k+ Followers)
+                        </a>
+                        <a href="mailto:dr.Shivam@thatvetguy.net" class="btn-outline">
+                            Email Expert
+                        </a>
+                    </div>
+
+                    <div class="focus-grid">
+                        <div class="focus-card">
+                            <h4>Brand Endorsement & Validation</h4>
+                            <p>Providing clinical testimonials, product efficacy breakdowns, and corporate brand advocacy for premium pet care lines.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>B2B Inbound Marketing</h4>
+                            <p>Designing search-engine-friendly, medically accurate content pipelines, utilizing HubSpot-certified digital marketing strategies.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>Educational Curriculum</h4>
+                            <p>Structuring complex biological concepts (physiology, genetics, pathology) into accessible educational frameworks and CE modules.</p>
+                        </div>
+                        <div class="focus-card">
+                            <h4>Livestock (Meat and Milk ) Product Expert</h4>
+                            <p>Authoring specialized technical content regarding animal origin foods, dairy management, and sustainable agrifood solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="cert-section">
+        <div class="wrap">
+            <h3 style="font-family: 'DM Serif Display', serif; font-size: 2rem; margin-bottom: 8px;">Official Certifications & Awards</h3>
+            <p style="color: rgba(255,255,255,0.5); margin-bottom: 24px;">Validating expertise across marketing, global health, and veterinary excellence.</p>
+            
+            <div class="cert-grid">
+                
+                <div class="cert-card">
+                    <div class="cert-icon">📈</div>
+                    <div class="cert-details">
+                        <h4>HubSpot Academy</h4>
+                        <p>Certified in Digital Marketing. Skilled in inbound strategy, SEO, and content optimization.</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <div class="cert-details">
+                        <h4>AIMIL Certificate of Excellence</h4>
+                        <p>Top 10 All-India placement for Clinical Case Study & Thesis Presentation (World Vet Day).</p>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-icon">🌍</div>
+                    <div class="cert-details">
+                        <h4>FAO eLearning Academy</h4>
+                        <p>Dual certifications in "Agrifood Solutions" and "Sustainable Tick Control & Acaricide Resistance".</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio-section">
+        <div class="wrap">
+            <div class="section-header" style="text-align: left; margin-bottom: 40px;">
+                <span class="section-label">Dr. Thakur's Portfolio</span>
+                <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; font-weight: 400; margin-bottom: 12px;">Marketing strategy & Brand Validation</h2>
+                <p style="color: rgba(255,255,255,0.5); max-width: 600px;">Explore Dr. Thakur's industry newsletters, clinical product endorsements, and marketing credentials.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                
+                <a href="https://www.linkedin.com/newsletters/the-future-vet-7421237861208752128" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="newsletter2-preview.jpg" alt="The Future Vet Newsletter" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Industry Newsletter</span>
+                        <h3>The Future Vet</h3>
+                        <p>A weekly perspective on veterinary science, animal health, and the evolving role of vets in a rapidly changing world, reaching over 4,500 active subscribers.</p>
+                        <span class="view-project">Read on LinkedIn</span>
+                    </div>
+                </a>
+
+                <a href="https://www.linkedin.com/newsletters/animal-origin-foods-journal-7428394753953644544" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="newsletter-preview.jpg" alt="Animal Origin Foods Journal" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Industry Newsletter</span>
+                        <h3>The Animal Origin Foods Journal</h3>
+                        <p>An industry-minded publication boasting over 4,200 active subscribers, focused on the science, safety, and technology of livestock products.</p>
+                        <span class="view-project">Read on LinkedIn</span>
+                    </div>
+                </a>
+
+                <a href="https://thetruthfultail.com/" target="_blank" class="case-study">
+                    <div class="preview-area">
+                        <img src="truthfultail-preview.jpg" alt="The Truthful Tail Brand Validation" class="preview-img">
+                    </div>
+                    <div class="case-content">
+                          <h3>Clinical Endorsement: The Truthful Tail</h3>
+                        <p>Professional brand collaboration and clinical validation for premium dog supplements, analyzing formulation efficacy and palatability for B2C markets.</p>
+                        <span class="view-project">View Endorsement</span>
+                    </div>
+                </a>
+
+                <a href="#" class="case-study">
+                    <div class="preview-area">
+                        <img src="aimil-preview.jpg" alt="AIMIL Certificate of Excellence" class="preview-img" style="object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Clinical Case Study</span>
+                        <h3>AIMIL Pharmaceutical Excellence</h3>
+                        <p>Award-winning clinical thesis and case study presentation for AIMIL Animal Health, demonstrating superior medical research and diagnostic analysis.</p>
+                        <span class="view-project">View Credential</span>
+                    </div>
+                </a>
+
+                <a href="#" class="case-study">
+                    <div class="preview-area">
+                        <img src="hubspot-preview.jpg" alt="HubSpot Digital Marketing" class="preview-img" style="object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">B2B Content Strategy</span>
+                        <h3>Inbound Digital Marketing Implementation</h3>
+                        <p>Applying certified marketing methodologies to veterinary brands—optimizing SEO, formulating social media strategy, and amplifying corporate messaging.</p>
+                        <span class="view-project">View Credential</span>
+                    </div>
+                </a>
+
+                <a href="#" class="case-study">
+                    <div class="preview-area" style="background: #eef2f6;">
+                        <img src="fao-tick.jpg" alt="FAO Tick Control Certification" class="preview-img" style="object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Global Certification</span>
+                        <h3>Sustainable Tick Control & Management</h3>
+                        <p>Certified by the FAO eLearning Academy in the strategic management of acaricide resistance for sustainable livestock health.</p>
+                        <span class="view-project">View Credential</span>
+                    </div>
+                </a>
+
+                <a href="#" class="case-study">
+                    <div class="preview-area" style="background: #eef2f6;">
+                        <img src="fao-agrifood.jpg" alt="FAO Agrifood Solutions Certification" class="preview-img" style="object-fit: contain; padding: 20px;">
+                    </div>
+                    <div class="case-content">
+                        <span class="case-category">Global Certification</span>
+                        <h3>Agrifood Solutions & Deforestation</h3>
+                        <p>Official UN FAO certification in analyzing macro-ecological impacts and implementing sustainable agricultural solutions.</p>
+                        <span class="view-project">View Credential</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>       
