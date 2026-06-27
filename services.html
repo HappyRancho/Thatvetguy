@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Experience & Portfolio — The ThatVetGuy Collective. Clinical research, B2B publications, brand endorsements, educational assets, and field expertise by active veterinary professionals." />
-    <title>Experience &amp; Portfolio | The ThatVetGuy Collective</title>
+    <meta name="description" content="Comprehensive B2B veterinary services from The ThatVetGuy Collective — clinical research, medical writing, brand endorsement, education, illustration, and project management by active veterinary professionals." />
+    <title>Our Services | The ThatVetGuy Collective</title>
 
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
     <style>
         /* ============================================================
-           CSS VARIABLES — Premium Dark Theme (identical to index.html)
+           CSS VARIABLES — Night Rounds (identical to index.html)
            ============================================================ */
         :root {
             --bg-main:          #0B0F12;
@@ -65,15 +64,8 @@
         /* ============================================================
            UTILITY
            ============================================================ */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-        .sr-only {
-            position: absolute; width: 1px; height: 1px; padding: 0;
-            margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0;
-        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+
         .section-label {
             font-size: 0.7rem;
             font-weight: 700;
@@ -88,22 +80,22 @@
         .section-label::before {
             content: '';
             display: inline-block;
-            width: 28px;
-            height: 1.5px;
+            width: 28px; height: 1.5px;
             background: var(--accent);
             border-radius: 2px;
         }
+
         .section-header {
             text-align: center;
             margin-bottom: 56px;
         }
         .section-header h2 {
-            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-size: clamp(1.9rem, 3.5vw, 2.7rem);
             margin-bottom: 14px;
             letter-spacing: -0.02em;
         }
         .section-header p {
-            max-width: 660px;
+            max-width: 640px;
             margin: 0 auto;
             font-size: 1.05rem;
             color: var(--text-muted-light);
@@ -124,7 +116,6 @@
             border: 1px solid var(--accent);
             cursor: pointer;
             transition: var(--transition);
-            text-align: center;
             line-height: 1.2;
         }
         .btn-primary:hover {
@@ -147,7 +138,6 @@
             border: 1px solid var(--border);
             cursor: pointer;
             transition: var(--transition);
-            text-align: center;
             line-height: 1.2;
         }
         .btn-secondary:hover {
@@ -156,40 +146,8 @@
             transform: translateY(-2px);
         }
 
-        /* Premium Card */
-        .premium-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .premium-card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 3px;
-            background: var(--accent);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.4s ease;
-        }
-        .premium-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-hover);
-            background: var(--bg-card-hover);
-        }
-        .premium-card:hover::after {
-            transform: scaleX(1);
-        }
-
         /* ============================================================
-           NAVIGATION
+           NAVIGATION (identical to index.html)
            ============================================================ */
         nav {
             position: fixed;
@@ -205,18 +163,8 @@
             align-items: center;
             transition: var(--transition);
         }
-        .nav-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        .nav-logo-wrap {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            flex-shrink: 0;
-        }
+        .nav-wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-logo-wrap { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
         .nav-logo { height: 38px; width: auto; object-fit: contain; }
         .nav-brand-name {
             font-family: var(--font-heading);
@@ -226,11 +174,7 @@
             letter-spacing: 0.3px;
             white-space: nowrap;
         }
-        .nav-links {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-        }
+        .nav-links { display: flex; gap: 6px; align-items: center; }
         .nav-links a {
             font-size: 0.85rem;
             font-weight: 500;
@@ -239,8 +183,7 @@
             border-radius: 4px;
             transition: var(--transition);
         }
-        .nav-links a:hover,
-        .nav-links a.active {
+        .nav-links a:hover, .nav-links a.active {
             color: var(--text-light);
             background: rgba(255,255,255,0.06);
         }
@@ -255,7 +198,7 @@
             background: var(--accent-hover);
             color: #000 !important;
             transform: none;
-            box-shadow: 0 4px 16px rgba(16,185,129,0.3);
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
         }
 
         /* Mobile Burger */
@@ -285,9 +228,8 @@
         .mobile-menu {
             position: fixed;
             top: var(--nav-h); left: 0;
-            width: 100%;
-            height: 0;
-            background: rgba(11,15,18,0.98);
+            width: 100%; height: 0;
+            background: rgba(11, 15, 18, 0.98);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             overflow: hidden;
@@ -299,25 +241,18 @@
             border-bottom: 1px solid var(--border);
             gap: 4px;
         }
-        .mobile-menu.open {
-            height: auto;
-            padding: 32px 24px 40px;
-        }
+        .mobile-menu.open { height: auto; padding: 32px 24px 40px; }
         .mobile-menu a {
             font-size: 1.05rem;
             font-weight: 500;
             color: var(--text-light);
             padding: 12px 20px;
-            width: 100%;
-            max-width: 320px;
+            width: 100%; max-width: 320px;
             text-align: center;
             border-radius: 6px;
             transition: var(--transition);
         }
-        .mobile-menu a:hover {
-            background: rgba(255,255,255,0.06);
-            color: var(--accent);
-        }
+        .mobile-menu a:hover { background: rgba(255,255,255,0.06); color: var(--accent); }
         .mobile-menu a.btn-primary {
             color: #000 !important;
             background: var(--accent);
@@ -325,20 +260,17 @@
             padding: 14px 28px;
             border: none;
         }
-        .mobile-menu a.btn-primary:hover {
-            background: var(--accent-hover);
-            color: #000 !important;
-        }
+        .mobile-menu a.btn-primary:hover { background: var(--accent-hover); color: #000 !important; }
 
         /* ============================================================
            PAGE HERO
            ============================================================ */
         .page-hero {
-            padding: calc(var(--nav-h) + 70px) 0 70px;
+            padding: calc(var(--nav-h) + 80px) 0 80px;
             text-align: center;
-            position: relative;
             border-bottom: 1px solid var(--border);
-            background: radial-gradient(ellipse at 50% 20%, rgba(16,185,129,0.05) 0%, var(--bg-main) 70%);
+            background: radial-gradient(ellipse at 50% 20%, rgba(16, 185, 129, 0.06) 0%, var(--bg-main) 65%);
+            position: relative;
             overflow: hidden;
         }
         .page-hero .container { position: relative; z-index: 1; }
@@ -347,36 +279,33 @@
             font-size: 0.75rem;
             font-weight: 600;
             color: var(--accent);
-            border: 1px solid rgba(16,185,129,0.2);
+            border: 1px solid rgba(16, 185, 129, 0.2);
             padding: 5px 18px;
             border-radius: 50px;
             margin-bottom: 22px;
             text-transform: uppercase;
             letter-spacing: 0.06em;
-            background: rgba(16,185,129,0.06);
+            background: rgba(16, 185, 129, 0.06);
         }
         .page-hero h1 {
-            font-size: clamp(2.3rem, 5vw, 3.8rem);
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            margin-bottom: 18px;
             letter-spacing: -0.03em;
-            margin-bottom: 20px;
         }
-        .page-hero h1 .highlight { color: var(--accent); }
-        .page-hero > .container > p {
+        .page-hero p {
             font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
+            max-width: 660px;
+            margin: 0 auto 36px;
             color: var(--text-muted-light);
-            line-height: 1.8;
         }
-
-        /* Stats bar */
         .hero-stats {
             display: flex;
             justify-content: center;
             gap: 48px 64px;
-            padding-top: 38px;
+            padding-top: 36px;
             border-top: 1px solid rgba(255,255,255,0.05);
             flex-wrap: wrap;
+            margin-top: 20px;
         }
         .hero-stat-item { text-align: center; }
         .hero-stat-num {
@@ -398,149 +327,210 @@
         /* ============================================================
            SECTIONS
            ============================================================ */
-        section {
-            padding: 90px 0;
-            border-bottom: 1px solid var(--border);
-        }
-        section:last-of-type { border-bottom: none; }
+        section { padding: 90px 0; border-bottom: 1px solid var(--border); }
 
         /* ============================================================
-           FILTER TABS
+           SERVICES GRID — main 6
            ============================================================ */
-        .filter-bar {
-            display: flex;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 48px;
-        }
-        .filter-btn {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            padding: 7px 20px;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-            background: transparent;
-            cursor: pointer;
-            transition: var(--transition);
-            letter-spacing: 0.03em;
-        }
-        .filter-btn:hover {
-            color: var(--text-light);
-            border-color: var(--border-hover);
-            background: rgba(255,255,255,0.04);
-        }
-        .filter-btn.active {
-            color: #000;
-            background: var(--accent);
-            border-color: var(--accent);
-        }
-
-        /* ============================================================
-           WORK / PORTFOLIO GRID
-           ============================================================ */
-        .portfolio-grid {
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
             gap: 28px;
         }
 
-        /* Work Card (same as index.html pattern) */
-        .work-card {
-            padding: 0;
-            overflow: hidden;
-            height: 100%;
-            text-decoration: none;
-        }
-        .work-img-wrap {
-            height: 210px;
-            overflow: hidden;
-            background: var(--bg-main);
+        .service-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 32px;
+            transition: var(--transition);
             position: relative;
-        }
-        .work-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center;
-            transition: transform 0.6s ease;
-        }
-        .work-card:hover .work-img { transform: scale(1.05); }
-
-        /* Gradient overlay on image */
-        .work-img-wrap::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(11,15,18,0.55) 0%, transparent 60%);
-            pointer-events: none;
-        }
-
-        /* Category label floating on image */
-        .work-category {
-            position: absolute;
-            bottom: 14px;
-            left: 16px;
-            z-index: 2;
-            font-size: 0.65rem;
-            font-weight: 700;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-        }
-        .work-category::before {
-            content: '';
-            display: inline-block;
-            width: 18px;
-            height: 1.5px;
-            background: var(--accent);
-            border-radius: 2px;
-        }
-
-        /* Fallback doc icon when image fails */
-        .doc-fallback {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--bg-elevated);
-        }
-        .doc-fallback svg {
-            opacity: 0.25;
-        }
-
-        .work-content {
-            padding: 28px 28px 30px;
-            flex-grow: 1;
+            overflow: hidden;
             display: flex;
             flex-direction: column;
         }
-        .work-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        .work-content p {
-            font-size: 0.9rem;
-            color: var(--text-muted-light);
-            margin-bottom: 18px;
-            flex-grow: 1;
-            line-height: 1.65;
-        }
-        .work-tag {
-            font-size: 0.7rem;
-            font-weight: 600;
-            color: #000;
+        .service-card::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
             background: var(--accent);
-            padding: 4px 12px;
-            border-radius: 4px;
-            display: inline-block;
-            align-self: flex-start;
-            letter-spacing: 0.02em;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .service-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: var(--bg-card-hover);
+        }
+        .service-card:hover::after { transform: scaleX(1); }
+
+        .service-icon-wrap {
+            width: 52px; height: 52px;
+            background: var(--accent-dim);
+            border: 1px solid rgba(16,185,129,0.18);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            transition: var(--transition);
+            flex-shrink: 0;
+        }
+        .service-card:hover .service-icon-wrap {
+            background: rgba(16,185,129,0.2);
+            border-color: rgba(16,185,129,0.35);
+        }
+        .service-icon-wrap svg { width: 24px; height: 24px; }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted-light);
+            line-height: 1.75;
+            flex-grow: 1;
+        }
+
+        /* deliverables list inside card */
+        .service-deliverables {
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+        }
+        .deliverable-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--border);
+            padding: 4px 11px;
+            border-radius: 50px;
+            letter-spacing: 0.03em;
+        }
+
+        /* ============================================================
+           FLAGSHIP CARD — full-width Clinical Connections
+           ============================================================ */
+        .flagship-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 52px 48px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        .flagship-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent), rgba(16,185,129,0.3));
+        }
+        .flagship-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-hover);
+        }
+        .flagship-content h2 {
+            font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+            margin-bottom: 16px;
+            color: var(--text-light);
+        }
+        .flagship-content h2 span { color: var(--accent); }
+        .flagship-content p {
+            font-size: 1rem;
+            color: var(--text-muted-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .flagship-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .flagship-stat {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 22px;
+            background: rgba(16,185,129,0.05);
+            border: 1px solid rgba(16,185,129,0.14);
+            border-radius: 8px;
+        }
+        .flagship-stat-icon {
+            width: 40px; height: 40px;
+            flex-shrink: 0;
+            background: var(--accent-dim);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flagship-stat-icon svg { width: 20px; height: 20px; }
+        .flagship-stat-text strong {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+        .flagship-stat-text span {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        /* ============================================================
+           PROCESS SECTION
+           ============================================================ */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+        }
+        .process-step {
+            background: var(--bg-card);
+            padding: 36px 28px;
+            transition: var(--transition);
+            position: relative;
+        }
+        .process-step:hover { background: var(--bg-card-hover); }
+        .step-num {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--accent-dim);
+            line-height: 1;
+            margin-bottom: 14px;
+            /* outline number effect */
+            -webkit-text-stroke: 1px rgba(16,185,129,0.25);
+            color: transparent;
+        }
+        .process-step h4 {
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            color: var(--text-light);
+        }
+        .process-step p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.65;
         }
 
         /* ============================================================
@@ -548,19 +538,24 @@
            ============================================================ */
         .cta-banner {
             text-align: center;
+            padding: 90px 0;
             background: radial-gradient(ellipse at 50% 30%, rgba(16,185,129,0.06) 0%, var(--bg-main) 70%);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
         }
         .cta-banner h2 {
             font-size: clamp(2rem, 3.6vw, 2.8rem);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .cta-banner p {
             max-width: 500px;
-            margin: 0 auto 28px;
+            margin: 0 auto 32px;
             font-size: 1.05rem;
             color: var(--text-muted-light);
+        }
+        .cta-actions {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
         /* ============================================================
@@ -575,74 +570,59 @@
         footer p { font-size: 0.8rem; color: var(--text-muted); }
 
         /* ============================================================
+           REVEAL ANIMATION
+           ============================================================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============================================================
+           ACCESSIBILITY
+           ============================================================ */
+        .skip-link {
+            position: absolute; top: -100%; left: 16px;
+            padding: 12px 24px;
+            background: var(--accent); color: #000;
+            font-weight: 600; border-radius: 4px;
+            z-index: 9999; transition: top 0.2s;
+        }
+        .skip-link:focus { top: 12px; }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        /* ============================================================
            RESPONSIVE
            ============================================================ */
         @media (max-width: 992px) {
-            .nav-links a:not(.btn-primary) {
-                padding: 6px 10px;
-                font-size: 0.8rem;
-            }
+            .nav-links a:not(.btn-primary) { padding: 6px 10px; font-size: 0.8rem; }
+            .flagship-card { grid-template-columns: 1fr; gap: 32px; }
         }
         @media (max-width: 768px) {
             .nav-links { display: none; }
             .nav-burger { display: flex; }
             .nav-brand-name { font-size: 1.05rem; }
             .nav-logo { height: 32px; }
-
             section { padding: 56px 0; }
             .section-header { margin-bottom: 36px; }
-            .section-header h2 { font-size: 1.8rem; }
-
-            .page-hero { padding: calc(var(--nav-h) + 40px) 0 48px; }
-            .page-hero h1 { font-size: 2rem; }
-
-            .hero-stats { gap: 24px 36px; padding-top: 28px; }
+            .page-hero { padding: calc(var(--nav-h) + 48px) 0 56px; }
+            .services-grid { grid-template-columns: 1fr; gap: 20px; }
+            .service-card { padding: 28px 22px; }
+            .flagship-card { padding: 36px 24px; }
+            .process-grid { grid-template-columns: 1fr 1fr; }
+            .hero-stats { gap: 20px 36px; padding-top: 24px; }
             .hero-stat-num { font-size: 1.6rem; }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .work-img-wrap { height: 180px; }
-            .work-content { padding: 20px 20px 24px; }
-
-            .cta-banner h2 { font-size: 1.8rem; }
-
-            .mobile-menu a { font-size: 0.95rem; padding: 10px 16px; }
+            .cta-banner { padding: 56px 0; }
         }
-        @media (max-width: 420px) {
+        @media (max-width: 520px) {
             .container { padding: 0 16px; }
-            .page-hero h1 { font-size: 1.7rem; }
-            .hero-stats { gap: 16px 24px; }
-            .hero-stat-num { font-size: 1.3rem; }
-        }
-
-        /* ============================================================
-           ACCESSIBILITY
-           ============================================================ */
-        .skip-link {
-            position: absolute;
-            top: -100%; left: 16px;
-            padding: 12px 24px;
-            background: var(--accent);
-            color: #000;
-            font-weight: 600;
-            border-radius: 4px;
-            z-index: 9999;
-            transition: top 0.2s;
-        }
-        .skip-link:focus { top: 12px; }
-        :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-        .btn-primary:focus-visible,
-        .btn-secondary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-        /* Hidden filter items */
-        .work-card[data-hidden="true"] {
-            display: none;
+            .process-grid { grid-template-columns: 1fr; }
+            .cta-actions .btn-primary,
+            .cta-actions .btn-secondary { width: 100%; justify-content: center; }
         }
     </style>
 </head>
-
 <body>
 
     <!-- ===== SKIP LINK ===== -->
@@ -651,38 +631,31 @@
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-wrapper">
-
             <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
-                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" />
+                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
                 <span class="nav-brand-name">ThatVetGuy.net</span>
             </a>
-
-            <!-- Desktop Links -->
             <div class="nav-links">
-                <a href="services.html">Services</a>
-                <a href="experts.html">Experts</a>
+                <a href="services.html" class="active">Services</a>
+                <a href="experts.html">Team</a>
                 <a href="index.html#partner">Partner</a>
-                <a href="work.html" class="active">Experience</a>
+                <a href="index.html#work">Experience</a>
                 <a href="media.html">Media</a>
                 <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
                 <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a>
             </div>
-
-            <!-- Mobile Burger -->
             <button class="nav-burger" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- ===== MOBILE MENU ===== -->
     <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
-        <a href="services.html">Services</a>
-        <a href="experts.html">Experts</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="experts.html">Team</a>
         <a href="index.html#partner">Partner</a>
-        <a href="work.html">Experience</a>
+        <a href="index.html#work">Experience</a>
         <a href="media.html">Media</a>
         <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
         <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
@@ -693,223 +666,256 @@
 
         <!-- ===== PAGE HERO ===== -->
         <header class="page-hero">
-            <div class="container">
-                <span class="hero-eyebrow">Portfolio &amp; Clinical Credentials</span>
-                <h1>Experience &amp; <span class="highlight">Portfolio</span></h1>
-                <p>
-                    A curated directory of clinical research, B2B publications, brand endorsements, educational assets,
-                    and field expertise — engineered by our team of active veterinary professionals.
-                </p>
+            <div class="container reveal">
+                <span class="hero-eyebrow">B2B Veterinary Capabilities</span>
+                <h1>What We Deliver</h1>
+                <p>From clinical research and palatability testing to influencer campaigns and CE curriculum — every service is designed and executed by active veterinary professionals, not generalist marketers.</p>
 
                 <div class="hero-stats">
                     <div class="hero-stat-item">
-                        <div class="hero-stat-num">8+</div>
-                        <div class="hero-stat-label">Published Works</div>
-                    </div>
-                    <div class="hero-stat-item">
-                        <div class="hero-stat-num">4.2k+</div>
-                        <div class="hero-stat-label">Industry Subscribers</div>
-                    </div>
-                    <div class="hero-stat-item">
-                        <div class="hero-stat-num">2,000+</div>
-                        <div class="hero-stat-label">Surgical Procedures</div>
+                        <div class="hero-stat-num">7</div>
+                        <div class="hero-stat-label">Core Services</div>
                     </div>
                     <div class="hero-stat-item">
                         <div class="hero-stat-num">100%</div>
-                        <div class="hero-stat-label">Clinically Verified</div>
+                        <div class="hero-stat-label">Clinically Authored</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">B2B</div>
+                        <div class="hero-stat-label">Pharma &amp; Brands</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">6+</div>
+                        <div class="hero-stat-label">Specialists On Deck</div>
                     </div>
                 </div>
             </div>
         </header>
 
-        <!-- ===== PORTFOLIO ===== -->
-        <section id="portfolio" aria-labelledby="portfolio-heading">
+        <!-- ===== CORE SERVICES ===== -->
+        <section id="services" aria-labelledby="services-heading">
             <div class="container">
-
-                <div class="section-header">
-                    <span class="section-label">Full Portfolio</span>
-                    <h2 id="portfolio-heading">Clinical Work &amp; Collaborations</h2>
-                    <p>From peer-reviewed research to brand validation and educational assets — every piece is grounded in real veterinary practice.</p>
+                <div class="section-header reveal">
+                    <span class="section-label">Core Capabilities</span>
+                    <h2 id="services-heading">Our Service Portfolio</h2>
+                    <p>Every engagement is staffed by the right specialist from the Collective — not a one-size generalist, but the exact clinical expert your project needs.</p>
                 </div>
 
-                <!-- Filter Tabs -->
-                <div class="filter-bar" role="tablist" aria-label="Filter portfolio by category">
-                    <button class="filter-btn active" data-filter="all">All Work</button>
-                    <button class="filter-btn" data-filter="research">Research</button>
-                    <button class="filter-btn" data-filter="brand">Brand &amp; Content</button>
-                    <button class="filter-btn" data-filter="education">Educational</button>
-                    <button class="filter-btn" data-filter="clinical">Clinical</button>
-                </div>
+                <div class="services-grid">
 
-                <!-- Portfolio Grid -->
-                <div class="portfolio-grid" id="portfolioGrid">
+                    <!-- 1. Corporate Research -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                                <line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>
+                            </svg>
+                        </div>
+                        <h3>Corporate Research &amp; Sample Testing</h3>
+                        <p>Ethical, real-world clinical evaluations for corporate clients. We specialise in dog food and supplement palatability testing using our 4-branch Indore Kennel infrastructure — delivering actionable, clinical-grade data from a controlled boarding environment.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">Palatability Trials</span>
+                            <span class="deliverable-tag">Feed Evaluation</span>
+                            <span class="deliverable-tag">Clinical Data Reports</span>
+                            <span class="deliverable-tag">Supplement Testing</span>
+                        </div>
+                    </div>
 
-                    <!-- 1. Parvoviral Enteritis Research -->
-                    <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="research">
-                        <div class="work-img-wrap">
-                            <img src="parvo-preview.jpg" alt="Feline Parvovirus Research preview" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Published Research</span>
+                    <!-- 2. Medical Writing -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 20h9"/>
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                            </svg>
                         </div>
-                        <div class="work-content">
-                            <h3>Pathobiology of Parvoviral Enteritis</h3>
-                            <p>A comprehensive clinico-histopathological evaluation of feline parvovirus in the Indore region, featuring detailed ultrastructural analysis. Published on ResearchGate.</p>
-                            <span class="work-tag">Dr. Ritesh Verma</span>
+                        <h3>Article &amp; Technical Research Writing</h3>
+                        <p>High-quality, medically accurate content creation across the full spectrum. Every piece is authored and fact-checked by an active veterinary professional — from consumer blog posts to rigorous technical briefs and SOPs.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">Research Articles</span>
+                            <span class="deliverable-tag">SOP Design</span>
+                            <span class="deliverable-tag">Ghostwriting</span>
+                            <span class="deliverable-tag">Product Copy</span>
+                            <span class="deliverable-tag">Industry Reports</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- 2. Animal Origin Foods Journal -->
-                    <a href="https://www.linkedin.com/newsletters/animal-origin-foods-journal-7428394753953644544"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="brand">
-                        <div class="work-img-wrap">
-                            <img src="newsletter-preview.jpg" alt="Animal Origin Foods Journal preview" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Industry Newsletter</span>
+                    <!-- 3. Social & Brand -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="23 7 16 12 23 17 23 7"/>
+                                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
+                            </svg>
                         </div>
-                        <div class="work-content">
-                            <h3>The Animal Origin Foods Journal</h3>
-                            <p>An industry-minded B2B publication boasting over 4,200 active subscribers, focused on the safety and technology of livestock products. Read on LinkedIn.</p>
-                            <span class="work-tag">Dr. Shivam Singh Thakur</span>
+                        <h3>Social Media &amp; Brand Endorsement</h3>
+                        <p>Authentic brand endorsements from practicing veterinarians — not paid actors. We organise professional ad shoots, manage targeted social media promotion, and translate dense clinical concepts into highly shareable digital assets.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">Influencer Campaigns</span>
+                            <span class="deliverable-tag">Ad Shoots</span>
+                            <span class="deliverable-tag">Social Strategy</span>
+                            <span class="deliverable-tag">Clinical Carousels</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- 3. Securetrack B2B Content -->
-                    <a href="securetrack.html"
-                       class="premium-card work-card"
-                       data-category="brand">
-                        <div class="work-img-wrap">
-                            <img src="securetrack-preview.jpg" alt="Securetrack content strategy preview" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Content Writing</span>
+                    <!-- 4. Project Management -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                                <line x1="8" y1="14" x2="8" y2="14"/><line x1="12" y1="14" x2="12" y2="14"/><line x1="16" y1="14" x2="16" y2="14"/>
+                            </svg>
                         </div>
-                        <div class="work-content">
-                            <h3>Securetrack: B2B Content Strategy</h3>
-                            <p>Professional ghostwriting services for Securetrack, a Riyadh-based company — encompassing weekly newsletters and long-form industry content.</p>
-                            <span class="work-tag">ThatVetGuy Collective</span>
+                        <h3>B2B Project Management</h3>
+                        <p>Seamless, end-to-end oversight for complex veterinary campaigns. We handle timeline execution, formulation feedback, AI data annotation for vet-tech platforms, and high-level brand consultancy — all delivered by field experts who understand the industry from the ground up.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">Campaign Oversight</span>
+                            <span class="deliverable-tag">Formulation Feedback</span>
+                            <span class="deliverable-tag">AI Annotation</span>
+                            <span class="deliverable-tag">Brand Consultancy</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- 4. The Truthful Tail -->
-                    <a href="https://thetruthfultail.com/"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="brand">
-                        <div class="work-img-wrap">
-                            <img src="truthfultail-preview.jpg" alt="The Truthful Tail brand endorsement preview" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Brand Validation</span>
+                    <!-- 5. Education & CE -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
                         </div>
-                        <div class="work-content">
-                            <h3>Clinical Endorsement: The Truthful Tail</h3>
-                            <p>Professional brand collaboration and clinical validation for premium dog supplements — analyzing formulation efficacy and palatability. Visit the brand.</p>
-                            <span class="work-tag">Dr. Shivam Singh Thakur</span>
+                        <h3>Veterinary Educational Content</h3>
+                        <p>We design accredited clinical training materials, advanced CE (Continuing Education) modules, and practical educational pipelines for veterinary students, practicing clinicians, and pharma field sales teams — built by professionals who teach what they practice.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">CE Modules</span>
+                            <span class="deliverable-tag">Training Materials</span>
+                            <span class="deliverable-tag">Curriculum Design</span>
+                            <span class="deliverable-tag">Sales Team Decks</span>
                         </div>
-                    </a>
+                    </div>
 
-                    <!-- 5. World Rabies Day Editorial -->
-                    <a href="rabies-preview.jpg"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="brand">
-                        <div class="work-img-wrap">
-                            <img src="rabies-preview.jpg" alt="World Rabies Day newspaper editorial" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Newspaper Editorial</span>
+                    <!-- 6. Illustration & Data -->
+                    <div class="service-card reveal">
+                        <div class="service-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="2" y1="12" x2="22" y2="12"/>
+                                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            </svg>
                         </div>
-                        <div class="work-content">
-                            <h3>World Rabies Day Editorial</h3>
-                            <p>A featured newspaper editorial exploring critical public health strategies, veterinary interventions, and community awareness around World Rabies Day.</p>
-                            <span class="work-tag">Dr. Ritesh Verma</span>
+                        <h3>Veterinary Data &amp; Illustration</h3>
+                        <p>Visualising veterinary science precisely and beautifully. We produce medical illustrations, clinical infographics, visual data representations, and professional carousels — breaking down surgical methodologies and anatomical data for B2B presentations and marketing materials.</p>
+                        <div class="service-deliverables">
+                            <span class="deliverable-tag">Medical Illustration</span>
+                            <span class="deliverable-tag">Clinical Infographics</span>
+                            <span class="deliverable-tag">Data Visualisation</span>
+                            <span class="deliverable-tag">Anatomical Diagrams</span>
                         </div>
-                    </a>
-
-                    <!-- 6. Ziram Toxicity Abstract -->
-                    <a href="Ziram_Toxicity_Abstract.pdf"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="research">
-                        <div class="work-img-wrap">
-                            <img src="ziram-preview.jpg" alt="Ziram Toxicity AAHP Symposium abstract" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">AAHP Symposium</span>
-                        </div>
-                        <div class="work-content">
-                            <h3>Subacute Ziram Toxicity in Poultry</h3>
-                            <p>An experimental study documenting pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
-                            <span class="work-tag">Dr. Ritesh Verma</span>
-                        </div>
-                    </a>
-
-                    <!-- 7. Bovine Pregnancy Diagnostics -->
-                    <a href="veterinary_pregnancy_diagnosis_carousel_v2.pdf"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="education">
-                        <div class="work-img-wrap">
-                            <img src="bovine-preview.jpg" alt="Bovine Pregnancy Diagnostics visual guide" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Educational Asset</span>
-                        </div>
-                        <div class="work-content">
-                            <h3>Bovine Pregnancy Diagnostics Guide</h3>
-                            <p>A detailed medical illustration and visual guide on transrectal palpation — mapping tactile precision and herd management viability for field practitioners.</p>
-                            <span class="work-tag">ThatVetGuy Collective</span>
-                        </div>
-                    </a>
-
-                    <!-- 8. Global Licensing Roadmaps -->
-                    <a href="VCI_to_Global_Practice_Roadmap.pdf"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="education">
-                        <div class="work-img-wrap">
-                            <img src="strategy-preview.jpg" alt="Global Licensing Roadmap strategy deck" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Strategic Planning</span>
-                        </div>
-                        <div class="work-content">
-                            <h3>Global Licensing Roadmaps</h3>
-                            <p>A structural flow-chart breakdown of international licensing pathways (NAVLE, RCVS, AVBC) for B2B veterinary talent acquisition and workforce planning.</p>
-                            <span class="work-tag">ThatVetGuy Collective</span>
-                        </div>
-                    </a>
-
-                    <!-- 9. High-Volume Surgical Care -->
-                    <a href="abc-surgery-certificate.pdf"
-                       target="_blank" rel="noopener noreferrer"
-                       class="premium-card work-card"
-                       data-category="clinical">
-                        <div class="work-img-wrap">
-                            <img src="abc-surgery-certificate.jpg" alt="Animal Birth Control Surgery Certificate" class="work-img" loading="lazy"
-                                 onerror="this.parentElement.innerHTML='<div class=\'doc-fallback\'><svg width=\'48\' height=\'56\' viewBox=\'0 0 48 56\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'><rect width=\'48\' height=\'56\' rx=\'4\' fill=\'#F8FAFC\'/><rect x=\'10\' y=\'16\' width=\'28\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'25\' width=\'20\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/><rect x=\'10\' y=\'34\' width=\'24\' height=\'3\' rx=\'1.5\' fill=\'#94A3B8\'/></svg></div>'" />
-                            <span class="work-category">Clinical Leadership</span>
-                        </div>
-                        <div class="work-content">
-                            <h3>High-Volume Surgical Care</h3>
-                            <p>Extensive clinical leadership in Animal Birth Control (ABC) initiatives, successfully performing over 2,000 small animal spay procedures. View the clinical certificate.</p>
-                            <span class="work-tag">Dr. Deepesh Chaware</span>
-                        </div>
-                    </a>
+                    </div>
 
                 </div>
-                <!-- /portfolio-grid -->
+            </div>
+        </section>
 
+        <!-- ===== FLAGSHIP — Clinical Connections ===== -->
+        <section id="connections" aria-labelledby="connections-heading">
+            <div class="container">
+                <div class="flagship-card reveal">
+                    <div class="flagship-content">
+                        <span class="section-label">Flagship Differentiator</span>
+                        <h2 id="connections-heading">On-the-Ground <span>Clinical Connections</span></h2>
+                        <p>The most critical gap in the industry is the distance between corporate brands and actual clinical practice. We bridge that gap directly — connecting your brand with our vast network of active veterinary experts, interns, and grassroots health services so your product resonates on the clinic floor.</p>
+                        <a href="mailto:contact@thatvetguy.net" class="btn-primary">Discuss your project &rarr;</a>
+                    </div>
+                    <div class="flagship-stats">
+                        <div class="flagship-stat">
+                            <div class="flagship-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="flagship-stat-text">
+                                <strong>Active Clinician Network</strong>
+                                <span>Direct access to practicing vets across mixed, small-animal, large-animal &amp; wildlife specialisations</span>
+                            </div>
+                        </div>
+                        <div class="flagship-stat">
+                            <div class="flagship-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                                    <polyline points="9 22 9 12 15 12 15 22"/>
+                                </svg>
+                            </div>
+                            <div class="flagship-stat-text">
+                                <strong>Indore Kennel Infrastructure</strong>
+                                <span>4-branch physical facility enabling real-world product trials, sample testing &amp; endorsement shoots</span>
+                            </div>
+                        </div>
+                        <div class="flagship-stat">
+                            <div class="flagship-stat-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                                </svg>
+                            </div>
+                            <div class="flagship-stat-text">
+                                <strong>Grassroots Market Reach</strong>
+                                <span>Embedded in regional veterinary communities — your message lands where buying decisions actually happen</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HOW WE WORK ===== -->
+        <section id="process" aria-labelledby="process-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">How It Works</span>
+                    <h2 id="process-heading">Our Engagement Process</h2>
+                    <p>A streamlined four-step flow designed to get you from brief to deliverable without the agency overhead.</p>
+                </div>
+
+                <div class="process-grid reveal">
+                    <div class="process-step">
+                        <div class="step-num">01</div>
+                        <h4>Discovery Brief</h4>
+                        <p>You share your project scope, target audience, and commercial goals. We ask the right clinical questions most agencies miss.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">02</div>
+                        <h4>Specialist Matching</h4>
+                        <p>We assign the right expert from the Collective — a pathologist for research, a clinician for content, a wildlife specialist for field data.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">03</div>
+                        <h4>Creation &amp; Review</h4>
+                        <p>Deliverables are authored, peer-reviewed within the team, and refined against your brief before any handover.</p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-num">04</div>
+                        <h4>Delivery &amp; Support</h4>
+                        <p>Final assets delivered on agreed timelines. We remain available for feedback rounds and long-term retainer partnerships.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <!-- ===== CTA BANNER ===== -->
         <section class="cta-banner" aria-labelledby="cta-heading">
             <div class="container">
-                <h2 id="cta-heading">Ready to collaborate?</h2>
-                <p>Connect with our team to discuss clinical content, brand partnerships, or research projects.</p>
-                <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding:16px 40px; font-size:1.05rem;">
-                    Connect with the Team &rarr;
-                </a>
+                <span class="section-label" style="justify-content: center; margin-bottom: 18px;">Start a Project</span>
+                <h2 id="cta-heading">Ready to elevate your brand?</h2>
+                <p>Email us directly to discuss scope, deliverables, and timelines with active veterinary professionals.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding: 16px 40px; font-size: 1.05rem;">Connect with the Team &rarr;</a>
+                    <a href="experts.html" class="btn-secondary" style="padding: 16px 36px; font-size: 1.05rem;">Meet the Collective</a>
+                </div>
             </div>
         </section>
 
@@ -924,11 +930,11 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        /* ---- Mobile Menu ---- */
+        // Mobile menu toggle
         (function() {
             const burger = document.getElementById('mobileToggle');
-            const menu   = document.getElementById('mobileMenu');
-            const links  = menu.querySelectorAll('a');
+            const menu  = document.getElementById('mobileMenu');
+            const links = menu.querySelectorAll('a');
 
             function toggleMenu(open) {
                 const isOpen = open !== undefined ? open : !menu.classList.contains('open');
@@ -937,23 +943,15 @@
                 burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
             }
 
-            burger.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMenu();
-            });
-            links.forEach(function(link) {
-                link.addEventListener('click', function() { toggleMenu(false); });
-            });
+            burger.addEventListener('click', function(e) { e.stopPropagation(); toggleMenu(); });
+            links.forEach(function(link) { link.addEventListener('click', function() { toggleMenu(false); }); });
             document.addEventListener('click', function(e) {
                 if (menu.classList.contains('open')) {
                     if (!menu.contains(e.target) && !burger.contains(e.target)) toggleMenu(false);
                 }
             });
             document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && menu.classList.contains('open')) {
-                    toggleMenu(false);
-                    burger.focus();
-                }
+                if (e.key === 'Escape' && menu.classList.contains('open')) { toggleMenu(false); burger.focus(); }
             });
             let resizeTimer;
             window.addEventListener('resize', function() {
@@ -964,32 +962,29 @@
             });
         })();
 
-        /* ---- Portfolio Filter ---- */
-        (function() {
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const cards      = document.querySelectorAll('.work-card');
-
-            filterBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    const filter = btn.getAttribute('data-filter');
-
-                    // Update active state
-                    filterBtns.forEach(function(b) { b.classList.remove('active'); });
-                    btn.classList.add('active');
-
-                    // Show / hide cards
-                    cards.forEach(function(card) {
-                        const cat = card.getAttribute('data-category');
-                        if (filter === 'all' || cat === filter) {
-                            card.removeAttribute('data-hidden');
-                            card.style.display = '';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(function(entries, obs) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
             });
-        })();
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+        // Nav scroll tint
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(11,15,18,0.97)';
+                navbar.style.boxShadow  = '0 4px 20px rgba(0,0,0,0.4)';
+            } else {
+                navbar.style.background = 'rgba(11,15,18,0.88)';
+                navbar.style.boxShadow  = 'none';
+            }
+        });
     </script>
 
 </body>
