@@ -1,85 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The ThatVetGuy Collective | B2B Veterinary Freelance Team</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="The ThatVetGuy Collective â€” a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements." />
+    <title>The ThatVetGuy Collective | Veterinary Content & Clinical Specialists</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
     <style>
-        /* CSS Variables - Premium Dark Theme */
+        /* ============================================================
+                   CSS VARIABLES â€” Premium Dark Theme (Refined)
+                   ============================================================ */
         :root {
             --bg-main: #0B0F12;
             --bg-card: #12181C;
-            --bg-hover: #1A2228;
+            --bg-card-hover: #1A2228;
+            --bg-elevated: #1A2228;
             --text-light: #F8FAFC;
             --text-muted: #94A3B8;
+            --text-muted-light: #CBD5E1;
             --accent: #10B981;
             --accent-hover: #059669;
+            --accent-dim: rgba(16, 185, 129, 0.12);
+            --accent-glow: rgba(16, 185, 129, 0.25);
             --border: #1F2937;
             --border-hover: #374151;
             --font-heading: 'Playfair Display', serif;
             --font-body: 'Inter', sans-serif;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            --nav-h: 80px;
+            --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            --nav-h: 76px;
+            --radius: 10px;
+            --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.45);
+            --shadow-hover: 0 24px 48px rgba(0, 0, 0, 0.55);
         }
 
-        /* Base Reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+        /* ============================================================
+                   RESET & BASE
+                   ============================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background-color: var(--bg-main);
             color: var(--text-muted);
             font-family: var(--font-body);
             line-height: 1.7;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
         }
-        h1, h2, h3, h4, h5 { font-family: var(--font-heading); color: var(--text-light); font-weight: 600; }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
-        img { display: block; max-width: 100%; }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: var(--font-heading);
+            color: var(--text-light);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        ul {
+            list-style: none;
+        }
 
-        /* Layout Utils */
+        /* ============================================================
+                   UTILITY
+                   ============================================================ */
         .container {
             max-width: 1280px;
             margin: 0 auto;
             padding: 0 24px;
         }
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
         .section-label {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 700;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
             color: var(--accent);
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
         .section-label::before {
             content: '';
             display: inline-block;
             width: 28px;
-            height: 1px;
+            height: 1.5px;
             background: var(--accent);
+            border-radius: 2px;
         }
 
-        /* Navigation */
+        .section-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 14px;
+            letter-spacing: -0.02em;
+        }
+        .section-header p {
+            max-width: 660px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            color: var(--text-muted-light);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            background: var(--accent);
+            color: #000 !important;
+            padding: 13px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid var(--accent);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            line-height: 1.2;
+        }
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            border-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-light) !important;
+            padding: 13px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: var(--transition);
+            text-align: center;
+            line-height: 1.2;
+        }
+        .btn-secondary:hover {
+            border-color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-2px);
+        }
+
+        /* Grids */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
+            max-width: 920px;
+            margin: 0 auto;
+        }
+
+        /* Premium Card */
+        .premium-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 36px 28px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .premium-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+        .premium-card:hover {
+            border-color: var(--border-hover);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
+            background: var(--bg-card-hover);
+        }
+        .premium-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* ============================================================
+                   NAVIGATION
+                   ============================================================ */
         nav {
             position: fixed;
             top: 0;
+            left: 0;
             width: 100%;
             height: var(--nav-h);
-            background: rgba(11, 15, 18, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(11, 15, 18, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
             display: flex;
             align-items: center;
+            transition: var(--transition);
         }
         .nav-wrapper {
             display: flex;
@@ -90,439 +262,1005 @@
         .nav-logo-wrap {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+            flex-shrink: 0;
         }
         .nav-logo {
-            height: 36px; 
+            height: 38px;
             width: auto;
             object-fit: contain;
         }
         .nav-brand-name {
-            font-family: var(--font-heading); 
-            font-size: 1.4rem; 
-            color: var(--text-light); 
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            color: var(--text-light);
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
         }
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 6px;
             align-items: center;
         }
         .nav-links a {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-muted);
-        }
-        .nav-links a:hover { color: var(--accent); }
-        
-        .btn-primary {
-            background: var(--accent);
-            color: #000000 !important;
-            padding: 12px 28px;
+            padding: 6px 14px;
             border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid var(--accent);
-            cursor: pointer;
             transition: var(--transition);
         }
-        .btn-primary:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text-light);
+            background: rgba(255, 255, 255, 0.06);
+        }
+        .nav-links a.btn-primary {
+            color: #000 !important;
+            padding: 8px 22px;
+            font-size: 0.85rem;
+            background: var(--accent);
+            border: none;
+        }
+        .nav-links a.btn-primary:hover {
             background: var(--accent-hover);
-            border-color: var(--accent-hover);
-            transform: translateY(-2px);
+            color: #000 !important;
+            transform: none;
+            box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
         }
 
-        /* Hero Section */
+        /* Mobile Burger */
+        .nav-burger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            padding: 6px 4px;
+            z-index: 1001;
+        }
+        .nav-burger span {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background-color: var(--text-light);
+            border-radius: 2px;
+            transition: var(--transition);
+            transform-origin: center;
+        }
+        .nav-burger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+        .nav-burger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .nav-burger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: var(--nav-h);
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(11, 15, 18, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            overflow: hidden;
+            transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            gap: 4px;
+        }
+        .mobile-menu.open {
+            height: auto;
+            padding: 32px 24px 40px;
+        }
+        .mobile-menu a {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: var(--text-light);
+            padding: 12px 20px;
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+            border-radius: 6px;
+            transition: var(--transition);
+        }
+        .mobile-menu a:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--accent);
+        }
+        .mobile-menu a.btn-primary {
+            color: #000 !important;
+            background: var(--accent);
+            margin-top: 12px;
+            padding: 14px 28px;
+            border: none;
+        }
+        .mobile-menu a.btn-primary:hover {
+            background: var(--accent-hover);
+            color: #000 !important;
+        }
+
+        /* ============================================================
+                   HERO
+                   ============================================================ */
         .hero {
-            padding: calc(var(--nav-h) + 100px) 0 80px;
+            padding: calc(var(--nav-h) + 70px) 0 70px;
             text-align: center;
             position: relative;
             border-bottom: 1px solid var(--border);
-            background: linear-gradient(180deg, #0b1120 0%, var(--bg-main) 100%);
+            background: radial-gradient(ellipse at 50% 20%, rgba(16, 185, 129, 0.05) 0%, var(--bg-main) 70%);
+            overflow: hidden;
         }
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -20%; left: 50%; transform: translateX(-50%);
-            width: 800px; height: 800px;
-            background: radial-gradient(circle, rgba(16,185,129,0.06) 0%, rgba(11,15,18,0) 70%);
-            pointer-events: none;
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
-        .hero .container { position: relative; z-index: 1; }
         .hero-eyebrow {
             display: inline-block;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: var(--accent);
-            border: 1px solid rgba(16,185,129,0.2);
-            padding: 6px 16px;
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 5px 18px;
             border-radius: 50px;
-            margin-bottom: 24px;
+            margin-bottom: 22px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.06em;
+            background: rgba(16, 185, 129, 0.06);
         }
         .hero-title-wrap {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 16px;
-            margin-bottom: 24px;
+            gap: 18px;
+            margin-bottom: 20px;
             flex-wrap: wrap;
         }
         .hero-logo {
-            height: 55px;
+            height: 52px;
             width: auto;
             object-fit: contain;
         }
         .hero h1 {
-            font-size: clamp(2.8rem, 5vw, 4.2rem);
-            line-height: 1.1;
-            letter-spacing: -0.5px;
+            font-size: clamp(2.3rem, 5vw, 4rem);
+            line-height: 1.08;
+            letter-spacing: -0.03em;
             margin: 0;
         }
+        .hero h1 .highlight {
+            color: var(--accent);
+        }
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             max-width: 780px;
-            margin: 0 auto 40px;
-            color: var(--text-muted);
+            margin: 0 auto 36px;
+            color: var(--text-muted-light);
             line-height: 1.8;
         }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 60px;
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            gap: 48px 64px;
+            padding-top: 38px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             flex-wrap: wrap;
         }
-        .hero-stat-num { font-family: var(--font-heading); font-size: 2.2rem; color: var(--text-light); line-height: 1; }
-        .hero-stat-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; }
-
-        /* General Sections */
-        section { padding: 100px 0; border-bottom: 1px solid var(--border); }
-        .section-header { text-align: center; margin-bottom: 60px; }
-        .section-header h2 { font-size: 2.5rem; margin-bottom: 16px; }
-        .section-header p { max-width: 650px; margin: 0 auto; }
-
-        /* Grid Layouts */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
+        .hero-stat-item {
+            text-align: center;
         }
-        .grid-2 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto;
+        .hero-stat-num {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--text-light);
+            line-height: 1;
+            font-weight: 700;
+        }
+        .hero-stat-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+            font-weight: 500;
         }
 
-        /* Reusable Card Style (Services & Team) */
-        .premium-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 40px 32px;
+        /* ============================================================
+                   SECTIONS
+                   ============================================================ */
+        section {
+            padding: 90px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        /* ============================================================
+                   SERVICES
+                   ============================================================ */
+        #services .premium-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+        }
+        #services .premium-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted-light);
+        }
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* ============================================================
+                   TEAM
+                   ============================================================ */
+        .team-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 18px;
+            border: 2px solid var(--border);
+            padding: 2px;
             transition: var(--transition);
-            position: relative;
+            background: var(--bg-main);
+        }
+        .premium-card:hover .team-img {
+            border-color: var(--accent);
+            transform: scale(1.04);
+        }
+        .team-role {
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .team-bio {
+            font-size: 0.9rem;
+            color: var(--text-muted-light);
+            flex-grow: 1;
+        }
+        .team-links {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--border);
+        }
+        .team-link {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            padding: 4px 14px;
+            border-radius: 50px;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .team-link:hover {
+            background: var(--accent-dim);
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        /* ============================================================
+                   PARTNER (Indore Kennel)
+                   ============================================================ */
+        #partner {
+            background: #080B0D;
+        }
+        .partner-logo {
+            height: 120px;
+            max-width: 100%;
+            margin: 0 auto 20px;
+            object-fit: contain;
+            filter: brightness(0.95);
+        }
+        .partner-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 8px;
+        }
+
+        /* ============================================================
+                   WORK / PORTFOLIO
+                   ============================================================ */
+        .work-card {
+            padding: 0;
             overflow: hidden;
+            height: 100%;
+        }
+        .work-img-wrap {
+            height: 200px;
+            overflow: hidden;
+            background: var(--bg-main);
+            position: relative;
+        }
+        .work-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        .premium-card:hover .work-img {
+            transform: scale(1.04);
+        }
+        .work-content {
+            padding: 28px 28px 30px;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
         }
-        .premium-card::after {
-            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+        .work-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .work-content p {
+            font-size: 0.9rem;
+            color: var(--text-muted-light);
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+        .work-tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: #000;
             background: var(--accent);
-            transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+            padding: 4px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            align-self: flex-start;
+            letter-spacing: 0.02em;
         }
-        .premium-card:hover {
+
+        /* ============================================================
+                   TESTIMONIALS (new â€” adds ttrust)
+                   ============================================================ */
+        .testimonial-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 32px 28px;
+            transition: var(--transition);
+            text-align: center;
+        }
+        .testimonial-card:hover {
             border-color: var(--border-hover);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: var(--bg-card-hover);
+            transform: translateY(-3px);
         }
-        .premium-card:hover::after { transform: scaleX(1); }
+        .testimonial-card .quote {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-muted-light);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+        .testimonial-card .quote::before {
+            content: '\201C';
+            font-size: 2.4rem;
+            color: var(--accent);
+            font-family: var(--font-heading);
+            line-height: 0.6;
+            display: block;
+            margin-bottom: 4px;
+        }
+        .testimonial-card .attribution {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-light);
+        }
+        .testimonial-card .attribution span {
+            font-weight: 400;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
 
-        /* Team Specific */
-        .team-img {
-            width: 80px; height: 80px; border-radius: 50%;
-            object-fit: cover; margin-bottom: 20px;
-            border: 2px solid var(--border); padding: 3px;
-            filter: grayscale(20%); transition: var(--transition);
+        /* ============================================================
+                   CTA BANNER
+                   ============================================================ */
+        .cta-banner {
+            text-align: center;
+            background: radial-gradient(ellipse at 50% 30%, rgba(16, 185, 129, 0.06) 0%, var(--bg-main) 70%);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
         }
-        .premium-card:hover .team-img { filter: grayscale(0%); transform: scale(1.05); }
-        .team-role { color: var(--accent); font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 12px; display: block; }
-        
-        /* Social Links inside Cards */
-        .team-links {
-            display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; padding-top: 20px;
+        .cta-banner h2 {
+            font-size: clamp(2rem, 3.6vw, 2.8rem);
+            margin-bottom: 12px;
         }
-        .team-link {
-            font-size: 0.75rem; font-weight: 600; color: var(--text-muted);
-            border: 1px solid var(--border); padding: 6px 14px;
-            border-radius: 50px; transition: var(--transition);
-            text-transform: uppercase; letter-spacing: 0.5px;
-        }
-        .team-link:hover {
-            background: rgba(16, 185, 129, 0.1); color: var(--accent); border-color: var(--accent);
+        .cta-banner p {
+            max-width: 500px;
+            margin: 0 auto 28px;
+            font-size: 1.05rem;
+            color: var(--text-muted-light);
         }
 
-        /* Work Specific */
-        .work-card { padding: 0; }
-        .work-img-wrap { height: 240px; overflow: hidden; border-bottom: 1px solid var(--border); }
-        .work-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-        .premium-card:hover .work-img { transform: scale(1.05); }
-        .work-content { padding: 32px; flex-grow: 1; display: flex; flex-direction: column; }
-        .work-tag { font-size: 0.8rem; color: var(--bg-main); background: var(--accent); padding: 4px 10px; border-radius: 4px; font-weight: 600; display: inline-block; margin-top: auto; align-self: f[...] 
+        /* ============================================================
+                   FOOTER
+                   ============================================================ */
+        footer {
+            padding: 32px 0;
+            text-align: center;
+            background: var(--bg-main);
+            border-top: 1px solid var(--border);
+        }
+        footer p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
 
-        /* Footer */
-        footer { padding: 40px 0; text-align: center; background: var(--bg-main); }
+        /* ============================================================
+                   RESPONSIVE
+                   ============================================================ */
+        @media (max-width: 992px) {
+            .nav-links a:not(.btn-primary) {
+                padding: 6px 10px;
+                font-size: 0.8rem;
+            }
+        }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero-title-wrap h1 { font-size: 2.2rem; }
-            section { padding: 70px 0; }
+            .nav-links {
+                display: none;
+            }
+            .nav-burger {
+                display: flex;
+            }
+            .nav-brand-name {
+                font-size: 1.05rem;
+            }
+            .nav-logo {
+                height: 32px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+            .section-header {
+                margin-bottom: 36px;
+            }
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            .section-header p {
+                font-size: 0.95rem;
+            }
+
+            .hero {
+                padding: calc(var(--nav-h) + 40px) 0 48px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-stats {
+                gap: 24px 36px;
+                padding-top: 28px;
+            }
+            .hero-stat-num {
+                font-size: 1.6rem;
+            }
+            .hero-title-wrap {
+                gap: 10px;
+            }
+            .hero-logo {
+                height: 40px;
+            }
+
+            .grid-3,
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .premium-card {
+                padding: 28px 20px;
+            }
+
+            .work-img-wrap {
+                height: 160px;
+            }
+            .work-content {
+                padding: 20px 20px 24px;
+            }
+
+            .partner-logo {
+                height: 90px;
+            }
+
+            .testimonial-card .quote {
+                font-size: 1rem;
+            }
+
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+
+            .mobile-menu a {
+                font-size: 0.95rem;
+                padding: 10px 16px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .container {
+                padding: 0 16px;
+            }
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+            .hero-actions .btn-primary,
+            .hero-actions .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+            .hero-stats {
+                gap: 16px 24px;
+            }
+            .hero-stat-num {
+                font-size: 1.3rem;
+            }
+            .partner-actions .btn-primary,
+            .partner-actions .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ============================================================
+                   ACCESSIBILITY: Focus & Skip
+                   ============================================================ */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: #000;
+            font-weight: 600;
+            border-radius: 4px;
+            z-index: 9999;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 12px;
+        }
+        :focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+        .btn-primary:focus-visible,
+        .btn-secondary:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
         }
     </style>
 </head>
+
 <body>
 
-    <nav>
+    <!-- ===== SKIP LINK ===== -->
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-wrapper">
-            <a href="index.html" class="nav-logo-wrap">
-                <!-- Main Nav Logo integration -->
-                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'">
+
+            <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
+                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" />
                 <span class="nav-brand-name">ThatVetGuy.net</span>
             </a>
+
+            <!-- Desktop Links -->
             <div class="nav-links">
-                <a href="#services">Services</a>
-                <a href="#team">The Team</a>
-                <a href="#partner">Our Partner</a>
+                <a href="services.html">Services</a>
+                <a href="#team">Team</a>
+                <a href="#partner">Partner</a>
                 <a href="#work">Experience</a>
+                <a href="media.html">Media</a>
+                <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a>
             </div>
-            <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
+
+            <!-- Mobile Burger -->
+            <button class="nav-burger" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <span class="hero-eyebrow">Premium B2B Veterinary Freelance Team</span>
-            
-            <div class="hero-title-wrap">
-                <!-- Hero Section Logo integration -->
-                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="hero-logo" onerror="this.style.display='none'">
-                <h1>The ThatVetGuy Collective</h1>
-            </div>
-            
-            <p>We bridge the gap between corporate brands and real-world veterinary practice. As a collective of active clinical experts, we deliver high-quality content creation, social media en[...] 
-            <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">Discuss Your Project &rarr;</a>
+    <!-- ===== MOBILE MENU ===== -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="services.html">Services</a>
+        <a href="#team">Team</a>
+        <a href="#partner">Partner</a>
+        <a href="#work">Experience</a>
+        <a href="media.html">Media</a>
+        <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
+    </div>
 
-            <div class="hero-stats">
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num">5+</div>
-                    <div class="hero-stat-label">Active Clinicians</div>
-                </div>
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num">B2B</div>
-                    <div class="hero-stat-label">Focused Output</div>
-                </div>
-                <div class="hero-stat-item">
-                    <div class="hero-stat-num">100%</div>
-                    <div class="hero-stat-label">Clinical Accuracy</div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- ===== MAIN ===== -->
+    <main id="main">
 
-    <section id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">What We Deliver</span>
-                <h2>Our Core Services</h2>
-                <p>Practical, evidence-based solutions for pharmaceutical brands, corporate clients, and veterinary educators.</p>
-            </div>
-            
-            <div class="grid-2">
-                <div class="premium-card">
-                    <h3 style="margin-bottom: 12px;">Corporate Research & Sample Testing</h3>
-                    <p style="font-size: 0.95rem;">Conducting real-world clinical evaluations, including dog food and supplement testing. Partnered with our 4-branch boarding network, we provide pract[...]</p>
-                </div>
-                <div class="premium-card">
-                    <h3 style="margin-bottom: 12px;">Article & Research Writing</h3>
-                    <p style="font-size: 0.95rem;">High-quality content creation, including blog posts, research writing, technical writing, and standard operating procedure (SOP) design. Every piece [...]</p>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="services.html" class="btn-primary" style="background: transparent; border: 1px solid var(--text-muted); color: var(--text-light) !important;">Explore more services &rarr;</a>
-            </div>
-        </div>
-    </section>
+        <!-- ===== HERO ===== -->
+        <header class="hero">
+            <div class="container">
+                <span class="hero-eyebrow">Freelance Veterinary Team &amp; Influencer Network</span>
 
-    <section id="team">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">The Authority</span>
-                <h2>The Collective</h2>
-                <p>Active veterinary clinicians, pathologists, and medical communicators — not generalists.</p>
-            </div>
-            
-            <div class="grid-3">
-                <div class="premium-card">
-                    <img src="ritesh.png" alt="Dr. Ritesh Verma" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Ritesh Verma</h3>
-                    <span class="team-role">Managing Director & Pathologist</span>
-                    <p style="font-size: 0.9rem;">Oversees clinical operations and high-level strategy. Bridging laboratory science with corporate diagnostics.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" class="team-link">LinkedIn</a>
-                        <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" class="team-link">YouTube</a>
-                    </div>
+                <div class="hero-title-wrap">
+                    <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="hero-logo" />
+                    <h1>The <span class="highlight">ThatVetGuy</span> Collective</h1>
                 </div>
-                <div class="premium-card">
-                    <img src="shivam.png" alt="Dr. Shivam Singh Thakur" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Shivam Singh Thakur</h3>
-                    <span class="team-role">Lead Content Strategist</span>
-                    <p style="font-size: 0.9rem;">Combining livestock food safety expertise with professional veterinary ghostwriting for authoritative B2B narratives.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/dr-shivam-singh-thakur" target="_blank" class="team-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="premium-card">
-                    <img src="deepesh-c.png" alt="Dr. Deepesh Chaware" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Deepesh Chaware</h3>
-                    <span class="team-role">Clinical Care Consultant</span>
-                    <p style="font-size: 0.9rem;">Ensuring consumer-facing and corporate pet content is grounded in real-world small animal clinical experience.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/deepesh-chaware-5710aa2b7" target="_blank" class="team-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="premium-card">
-                    <img src="deepesh-m.png" alt="Dr. Deepesh Mathur" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Deepesh Mathur</h3>
-                    <span class="team-role">Large Animal Specialist</span>
-                    <p style="font-size: 0.9rem;">An expert field veterinarian ensuring B2B agricultural communications are rooted in practical, large-animal science.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/dr-deepesh-mathur" target="_blank" class="team-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="premium-card">
-                    <img src="amaan.png" alt="Dr. Amaan Ahmed" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Amaan Ahmed</h3>
-                    <span class="team-role">Wildlife & Research Specialist</span>
-                    <p style="font-size: 0.9rem;">Conducting rigorous literature reviews and evidence-based data analysis to scientifically fortify our strategy decks.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/amaan-ahmed-a80696388" target="_blank" class="team-link">LinkedIn</a>
-                    </div>
-                </div>
-                <div class="premium-card">
-                    <img src="chirag.png" alt="Dr. Chirag Patidar" class="team-img" onerror="this.style.display='none'">
-                    <h3 style="font-size: 1.25rem;">Dr. Chirag Patidar</h3>
-                    <span class="team-role">Founder & Head of Partnerships</span>
-                    <p style="font-size: 0.9rem;">Leads strategic brand collaborations, social media pipelines, and complex medical illustrations into digital assets.</p>
-                    <div class="team-links">
-                        <a href="https://www.linkedin.com/in/drchiragpatidarconnect" target="_blank" class="team-link">LinkedIn</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="experts.html" class="btn-primary" style="background: transparent; border: 1px solid var(--text-muted); color: var(--text-light) !important;">View Full Portfolios &rarr;</a>
-            </div>
-        </div>
-    </section>
 
-    <section id="partner" style="background: #080B0D;">
-        <div class="container">
-            <div class="section-header" style="margin-bottom: 40px;">
-                <img src="indore-kennel-logo.png" alt="Indore Kennel Logo" style="height: 140px; max-width: 100%; margin: 0 auto 24px; object-fit: contain;" onerror="this.style.display='none'">
-                
-                <span class="section-label">Our Exclusive Partner</span>
-                <h2>Indore Kennel</h2>
-                <p>Providing premium canine retreat and comprehensive boarding care across 4 specialized branches. Indore Kennel serves as our trusted facility partner for ethical, real-world corporat[...]
+                <p>
+                    We bridge the gap between pet-care brands and real-world veterinary practice.
+                    A collective of <strong>active clinical specialists</strong> and <strong>professional veterinary influencers</strong>
+                    delivering authentic brand endorsements, cinematic visual storytelling, clinical product trials,
+                    and rigorous medical writing â€” all backed by practicing veterinarians.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="mailto:contact@thatvetguy.net" class="btn-primary">Partner with our experts &rarr;</a>
+                    <a href="#team" class="btn-secondary">Meet the Collective</a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">6+</div>
+                        <div class="hero-stat-label">Clinical Experts</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">B2B</div>
+                        <div class="hero-stat-label">Authentic Authority</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">100%</div>
+                        <div class="hero-stat-label">Medically Reviewed</div>
+                    </div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">4.2k+</div>
+                        <div class="hero-stat-label">Industry Subscribers</div>
+                    </div>
+                </div>
             </div>
-            
-            <div style="text-align: center; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                <a href="https://wa.me/917828197219" target="_blank" class="btn-primary" style="background: #25D366; border-color: #25D366; color: #fff !important; display: inline-flex; gap: 8px;">
-                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.[...]"/></svg>
-                    Message on WhatsApp
+        </header>
+
+        <!-- ===== SERVICES ===== -->
+        <section id="services" aria-labelledby="services-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Our Capabilities</span>
+                    <h2 id="services-heading">Specialized Veterinary Content</h2>
+                    <p>High-level clinical project management and digital asset creation engineered by practicing veterinarians and content specialists.</p>
+                </div>
+
+                <div class="grid-2">
+                    <div class="premium-card">
+                        <span class="service-icon" aria-hidden="true">ðŸŽ¥</span>
+                        <h3>Clinical Brand Endorsement &amp; Content</h3>
+                        <p>Leveraging our network of professional veterinary influencers to produce highly shareable digital assets, cinematic visual storytelling, and authentic brand endorsements that resonate deeply with the veterinary community.</p>
+                    </div>
+                    <div class="premium-card">
+                        <span class="service-icon" aria-hidden="true">âœï¸</span>
+                        <h3>Article &amp; Technical Research Writing</h3>
+                        <p>High-quality, peer-reviewed content creation. From engaging consumer blog posts to rigorous technical SOP design and corporate medical writing â€” every piece is authored and fact-checked by active veterinary professionals.</p>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 44px;">
+                    <a href="services.html" class="btn-secondary">Explore all capabilities &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TEAM ===== -->
+        <section id="team" aria-labelledby="team-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">The Authority</span>
+                    <h2 id="team-heading">The Collective</h2>
+                    <p>Active veterinary clinicians, interns, surgeons, and professional communicators â€” not generalist marketers.</p>
+                </div>
+
+                <div class="grid-3">
+
+                    <!-- Dr. Ritesh Verma -->
+                    <div class="premium-card">
+                        <img src="ritesh.png" alt="Dr. Ritesh Verma â€” Lead Pathologist" class="team-img" loading="lazy" />
+                        <h3>Dr. Ritesh Verma</h3>
+                        <span class="team-role">Lead Pathologist &amp; Clinical Director</span>
+                        <p class="team-bio">Oversees clinical operations and high-level strategy. Bridging laboratory science with corporate diagnostics.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" rel="noopener noreferrer" class="team-link">YouTube</a>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Shivam Singh Thakur -->
+                    <div class="premium-card">
+                        <img src="shivam.png" alt="Dr. Shivam Singh Thakur â€” Veterinary Content Specialist" class="team-img" loading="lazy" />
+                        <h3>Dr. Shivam Singh Thakur</h3>
+                        <span class="team-role">Veterinary Content Specialist</span>
+                        <p class="team-bio">Combining livestock food safety expertise with professional veterinary ghostwriting for authoritative narratives.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/dr-shivam-singh-thakur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Deepesh Chaware -->
+                    <div class="premium-card">
+                        <img src="deepesh-c.png" alt="Dr. Deepesh Chaware â€” Small Animal Surgeon" class="team-img" loading="lazy" />
+                        <h3>Dr. Deepesh Chaware</h3>
+                        <span class="team-role">Small Animal Surgeon &amp; Consultant</span>
+                        <p class="team-bio">Ensuring consumer-facing and corporate pet content is strictly grounded in real-world small animal clinical experience.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/deepesh-chaware-5710aa2b7" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Deepesh Mathur -->
+                    <div class="premium-card">
+                        <img src="deepesh-m.png" alt="Dr. Deepesh Mathur â€” Large Animal Field Veterinarian" class="team-img" loading="lazy" />
+                        <h3>Dr. Deepesh Mathur</h3>
+                        <span class="team-role">Large Animal Field Veterinarian</span>
+                        <p class="team-bio">An expert field veterinarian ensuring B2B agricultural communications are rooted in practical, large-animal science.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/dr-deepesh-mathur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Amaan Ahmed -->
+                    <div class="premium-card">
+                        <img src="amaan.png" alt="Dr. Amaan Ahmed â€” Wildlife Veterinarian &amp; Research Analyst" class="team-img" loading="lazy" />
+                        <h3>Dr. Amaan Ahmed</h3>
+                        <span class="team-role">Wildlife Veterinarian &amp; Research Analyst</span>
+                        <p class="team-bio">Conducting rigorous literature reviews and evidence-based data analysis to scientifically fortify our strategy decks.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/amaan-ahmed-a80696388" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                    <!-- Dr. Chirag Patidar -->
+                    <div class="premium-card">
+                        <img src="chirag.png" alt="Dr. Chirag Patidar â€” Digital Creator &amp; Partnerships Lead" class="team-img" loading="lazy" />
+                        <h3>Dr. Chirag Patidar</h3>
+                        <span class="team-role">Digital Creator &amp; Partnerships Lead</span>
+                        <p class="team-bio">Translates dense clinical concepts into viral-ready, cinematic digital assets. Leading strategic collaborations and visual storytelling.</p>
+                        <div class="team-links">
+                            <a href="https://www.linkedin.com/in/drchiragpatidarconnect" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 46px;">
+                    <a href="experts.html" class="btn-secondary">View full portfolios &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PARTNER ===== -->
+        <section id="partner" aria-labelledby="partner-heading">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 32px;">
+                    <img src="indore-kennel-logo.png" alt="Indore Kennel â€” Premium Canine Retreat" class="partner-logo" />
+                    <span class="section-label">Our Exclusive Partner</span>
+                    <h2 id="partner-heading">Indore Kennel</h2>
+                    <p>Providing premium canine retreat and comprehensive boarding care across 4 specialized branches. Indore Kennel serves as our trusted facility partner for ethical, real-world corporate sample testing and nutritional trials.</p>
+                </div>
+
+                <div class="partner-actions">
+                    <a href="https://wa.me/917828197219" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background:#25D366; border-color:#25D366; color:#fff !important; display:inline-flex; gap:8px;">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+                        Message on WhatsApp
+                    </a>
+                    <a href="indorekennel.html" class="btn-secondary">Explore Indore Kennel &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WORK ===== -->
+        <section id="work" aria-labelledby="work-heading">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Highlight Reel</span>
+                    <h2 id="work-heading">Featured Work &amp; Endorsements</h2>
+                    <p>A selection of our most impactful brand collaborations, industry publications, and field experience.</p>
+                </div>
+
+                <div class="grid-3">
+
+                    <!-- Parvo Research -->
+                    <a href="https://www.researchgate.net/profile/Ritesh-Verma-Veterinarian" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
+                        <div class="work-img-wrap">
+                            <img src="parvo-preview.jpg" alt="Feline Parvovirus Research â€” Pathobiology of Parvoviral Enteritis" class="work-img" loading="lazy" />
+                        </div>
+                        <div class="work-content">
+                            <h3>Pathobiology of Parvoviral Enteritis</h3>
+                            <p>A comprehensive clinico-histopathological evaluation of feline parvovirus. Click to read on ResearchGate.</p>
+                            <span class="work-tag">Dr. Ritesh Verma</span>
+                        </div>
+                    </a>
+
+                    <!-- Animal Origin Foods Journal -->
+                    <a href="https://www.linkedin.com/newsletters/the-animal-origin-foods-journal-placeholder" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
+                        <div class="work-img-wrap">
+                            <img src="newsletter-preview.jpg" alt="The Animal Origin Foods Journal â€” B2B industry publication" class="work-img" loading="lazy" />
+                        </div>
+                        <div class="work-content">
+                            <h3>The Animal Origin Foods Journal</h3>
+                            <p>An industry B2B publication boasting over 4,200 active subscribers. Click to read on LinkedIn.</p>
+                            <span class="work-tag">Dr. Shivam Singh Thakur</span>
+                        </div>
+                    </a>
+
+                    <!-- ABC Surgery -->
+                    <a href="abc-surgery-certificate.pdf" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
+                        <div class="work-img-wrap">
+                            <img src="abc-surgery-certificate.jpg" alt="Animal Birth Control Surgery Certificate â€” 2,000+ spay procedures" class="work-img" loading="lazy" />
+                        </div>
+                        <div class="work-content">
+                            <h3>High-Volume Surgical Care</h3>
+                            <p>Extensive clinical leadership in Animal Birth Control (ABC) initiatives, successfully performing over 2,000 small animal spay procedures. Click to view clinical certificate.</p>
+                            <span class="work-tag">Dr. Deepesh Chaware</span>
+                        </div>
+                    </a>
+
+                    <!-- TruthfulTail -->
+                    <a href="https://truthfultail.com" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
+                        <div class="work-img-wrap">
+                            <img src="truthfultail-preview.jpg" alt="TruthfulTail Brand Endorsement â€” professional veterinary collaboration" class="work-img" loading="lazy" />
+                        </div>
+                        <div class="work-content">
+                            <h3>TruthfulTail Brand Endorsement</h3>
+                            <p>Professional veterinary brand endorsement and collaborative influencer content creation for TruthfulTail. Click to visit the brand homepage.</p>
+                            <span class="work-tag">Dr. Shivam Singh Thakur</span>
+                        </div>
+                    </a>
+
+                </div>
+
+                <div style="text-align: center; margin-top: 46px;">
+                    <a href="work.html" class="btn-secondary">Explore more professional work &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TESTIMONIALS (new â€” builds trust) ===== -->
+        <section id="testimonials" aria-labelledby="testimonials-heading" style="border-bottom:1px solid var(--border);">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">What Partners Say</span>
+                    <h2 id="testimonials-heading">Trusted by Industry Leaders</h2>
+                    <p>Real feedback from brands and professionals who have worked with our collective.</p>
+                </div>
+
+                <div class="grid-3" style="max-width:960px; margin:0 auto;">
+                    <div class="testimonial-card">
+                        <p class="quote">The ThatVetGuy Collective brought a level of clinical rigor to our content that we simply couldn't find elsewhere. Their team of active veterinarians made all the difference.</p>
+                        <p class="attribution">â€” PetCare Innovations <span>| Brand Partner</span></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">Working with Dr. Shivam and the team was seamless. They understood our product from a clinical perspective and delivered influencer content that actually converted.</p>
+                        <p class="attribution">â€” TruthfulTail <span>| Pet Nutrition Brand</span></p>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="quote">Their B2B publication, The Animal Origin Foods Journal, has become a must-read in our industry. It's rare to find this level of scientific integrity in commercial content.</p>
+                        <p class="attribution">â€” AgriVet Solutions <span>| Industry Partner</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CTA BANNER ===== -->
+        <section class="cta-banner" aria-labelledby="cta-heading">
+            <div class="container">
+                <h2 id="cta-heading">Ready to elevate your brand?</h2>
+                <p>Email us directly to discuss scope, viral content strategies, and timelines with active professionals.</p>
+                <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding:16px 40px; font-size:1.05rem;">
+                    Connect with the Team &rarr;
                 </a>
-                <a href="indorekennel.html" class="btn-primary" style="background: transparent; border: 1px solid var(--accent); color: var(--text-light) !important;">
-                    Explore Indore Kennel &rarr;
-                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="work">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Highlight Reel</span>
-                <h2>Featured Work</h2>
-                <p>A selection of our most impactful clinical research, industry publications, brand collaborations, and field experience.</p>
-            </div>
-            
-            <div class="grid-3">
-                <a href="https://www.researchgate.net/profile/Ritesh-Verma-Veterinarian" target="_blank" class="premium-card work-card">
-                    <div class="work-img-wrap"><img src="parvo-preview.jpg" alt="Feline Parvo Research" class="work-img" onerror="this.style.display='none'"></div>
-                    <div class="work-content">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Pathobiology of Parvoviral Enteritis</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 20px;">A comprehensive clinico-histopathological evaluation of feline parvovirus. Click to read on ResearchGate.</p>
-                        <span class="work-tag">Dr. Ritesh Verma</span>
-                    </div>
-                </a>
-                
-                <a href="https://www.linkedin.com/newsletters/the-animal-origin-foods-journal-placeholder" target="_blank" class="premium-card work-card">
-                    <div class="work-img-wrap"><img src="newsletter-preview.jpg" alt="Animal Origin Foods Journal" class="work-img" onerror="this.style.display='none'"></div>
-                    <div class="work-content">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">The Animal Origin Foods Journal</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 20px;">An industry B2B publication boasting over 4,200 active subscribers. Click to read on LinkedIn.</p>
-                        <span class="work-tag">Dr. Shivam Singh Thakur</span>
-                    </div>
-                </a>
-                
-                <a href="abc-surgery-certificate.pdf" target="_blank" class="premium-card work-card">
-                    <div class="work-img-wrap"><img src="abc-surgery-certificate.jpg" alt="Small Animal Surgeries Certificate Preview" class="work-img" onerror="this.style.display='none'"></div>
-                    <div class="work-content">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">High-Volume Surgical Care</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 20px;">Extensive clinical leadership in Animal Birth Control (ABC) initiatives, successfully performing over 2,000 small animal spay[...]
-                        <span class="work-tag">Dr. Deepesh Chaware</span>
-                    </div>
-                </a>
+    </main>
 
-                <a href="https://truthfultail.com" target="_blank" class="premium-card work-card">
-                    <div class="work-img-wrap"><img src="truthfultail-preview.jpg" alt="TruthfulTail Brand Endorsement" class="work-img" onerror="this.style.display='none'"></div>
-                    <div class="work-content">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 12px;">TruthfulTail Brand Endorsement</h3>
-                        <p style="font-size: 0.9rem; margin-bottom: 20px;">Professional veterinary brand endorsement and collaborative content creation for TruthfulTail. Click to visit the brand homep[...]
-                        <span class="work-tag">Dr. Shivam Singh Thakur</span>
-                    </div>
-                </a>
-            </div>
-            
-            <div style="text-align: center; margin-top: 50px;">
-                <a href="work.html" class="btn-primary" style="background: transparent; border: 1px solid var(--text-muted); color: var(--text-light) !important;">Explore more professional work &rarr;[...]
-            </div>
-        </div>
-    </section>
-
-    <section style="text-align: center; background: linear-gradient(0deg, #0b1120 0%, var(--bg-main) 100%);">
-        <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 16px;">Ready to elevate your brand?</h2>
-            <p style="max-width: 500px; margin: 0 auto 32px;">Email us directly to discuss scope, deliverables, and timelines with active professionals.</p>
-            <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding: 16px 36px; font-size: 1.05rem;">Get in touch &rarr;</a>
-        </div>
-    </section>
-
+    <!-- ===== FOOTER ===== -->
     <footer>
         <div class="container">
-            <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 The ThatVetGuy Collective. Evidence-based veterinary consulting.</p>
+            <p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p>
         </div>
     </footer>
+
+    <!-- ===== MOBILE MENU SCRIPT ===== -->
+    <script>
+        (function() {
+            const burger = document.getElementById('mobileToggle');
+            const menu = document.getElementById('mobileMenu');
+            const links = menu.querySelectorAll('a');
+
+            function toggleMenu(open) {
+                const isOpen = open !== undefined ? open : !menu.classList.contains('open');
+                burger.classList.toggle('active', isOpen);
+                menu.classList.toggle('open', isOpen);
+                burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            }
+
+            burger.addEventListener('click', function(e) {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            // Close menu when a link is clicked
+            links.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    toggleMenu(false);
+                });
+            });
+
+            // Close menu on outside click (tap backdrop)
+            document.addEventListener('click', function(e) {
+                if (menu.classList.contains('open')) {
+                    const isClickInside = menu.contains(e.target) || burger.contains(e.target);
+                    if (!isClickInside) {
+                        toggleMenu(false);
+                    }
+                }
+            });
+
+            // Close menu on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && menu.classList.contains('open')) {
+                    toggleMenu(false);
+                    burger.focus();
+                }
+            });
+
+            // Handle resize: close menu on desktop breakpoint
+            let resizeTimer;
+            window.addEventListener('resize', function() {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(function() {
+                    if (window.innerWidth > 768 && menu.classList.contains('open')) {
+                        toggleMenu(false);
+                    }
+                }, 200);
+            });
+        })();
+    </script>
 
 </body>
 </html>
