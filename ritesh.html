@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Ritesh Verma | ThatVetGuy Collective</title>
+    <meta name="description" content="Dr. Ritesh Verma, Managing Director & Lead Veterinary Pathologist at ThatVetGuy Collective. Explore his published research and clinical pathology portfolio.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,6 +105,16 @@
             transition: color 0.2s;
         }
         .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .nav-cta {
+            border: 1px solid var(--gold-line);
+            padding: 8px 18px;
+            border-radius: var(--radius-sm);
+            color: var(--gold) !important;
+            font-weight: 600;
+        }
+        .nav-cta:hover {
+            background: var(--gold-dim);
+        }
 
         /* =========================================
            PROFILE HERO
@@ -165,6 +176,8 @@
             width: 100%;
             border-radius: var(--radius-md);
             border: 2px solid var(--gold-line);
+            aspect-ratio: 1/1.1;
+            object-fit: cover;
         }
 
         .profile-content h1 {
@@ -192,6 +205,7 @@
             display: flex;
             gap: 16px;
             margin-bottom: 48px;
+            flex-wrap: wrap;
         }
         .btn-outline {
             display: inline-flex;
@@ -222,6 +236,10 @@
             border: 1px solid rgba(255,255,255,0.06);
             padding: 24px;
             border-radius: var(--radius-md);
+            transition: border-color 0.3s;
+        }
+        .focus-card:hover {
+            border-color: var(--gold-line);
         }
         .focus-card h4 {
             color: var(--gold);
@@ -235,17 +253,29 @@
         }
 
         /* =========================================
-           PORTFOLIO SECTION (WITH IMAGE PREVIEWS)
+           PORTFOLIO SECTION
            ========================================= */
         .portfolio-section {
             padding: 96px 0;
             background: #07090f;
         }
+        .section-header {
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: rgba(255,255,255,0.5);
+            max-width: 600px;
+        }
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 32px;
-            margin-top: 48px;
         }
         .case-study {
             background: var(--ink-mid);
@@ -262,7 +292,6 @@
             border-color: rgba(201,168,76,0.3);
         }
         
-        /* New Image Preview Styles */
         .preview-area {
             height: 240px;
             background: var(--ink);
@@ -332,145 +361,293 @@
         .case-study:hover .view-project::after { transform: translateX(5px); }
 
         /* =========================================
+           CTA SECTION
+           ========================================= */
+        .cta-section {
+            padding: 80px 0;
+            background: var(--ink);
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .cta-box {
+            background: var(--ink-mid);
+            border: 1px solid var(--gold-line);
+            border-radius: var(--radius-lg);
+            padding: 56px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-box::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta-box h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.2rem;
+            margin-bottom: 16px;
+            position: relative;
+        }
+        .cta-box p {
+            color: rgba(255,255,255,0.6);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            position: relative;
+        }
+        .btn-gold {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--ink);
+            padding: 14px 32px;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.2s;
+            position: relative;
+        }
+        .btn-gold:hover {
+            background: var(--white);
+            transform: translateY(-2px);
+        }
+
+        /* =========================================
+           FOOTER
+           ========================================= */
+        footer {
+            background: #07090f;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 64px 0 24px;
+        }
+        .footer-inner {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+        .footer-col p {
+            color: var(--slate);
+            font-size: 0.9rem;
+            margin-top: 12px;
+            max-width: 320px;
+        }
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .footer-col a {
+            display: block;
+            color: var(--slate);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            transition: color 0.2s;
+        }
+        .footer-col a:hover { color: var(--gold); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding-top: 24px;
+            text-align: center;
+        }
+        .footer-bottom p {
+            color: var(--ink-soft);
+            font-size: 0.8rem;
+        }
+
+        /* =========================================
            RESPONSIVE
            ========================================= */
         @media (max-width: 960px) {
             .profile-grid { grid-template-columns: 1fr; gap: 40px; }
             .profile-img-wrapper { max-width: 350px; margin: 0 auto; }
             .portfolio-grid { grid-template-columns: 1fr; }
+            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
         }
         @media (max-width: 680px) {
-            .nav-links { display: none; }
+            .nav-links a:not(.nav-cta) { display: none; }
             .profile-hero { padding: 60px 0; }
             .profile-content h1 { font-size: 2.2rem; }
             .focus-grid { grid-template-columns: 1fr; }
             .case-content { padding: 30px 24px; }
             .preview-area { height: 180px; }
+            .cta-box { padding: 40px 24px; }
+            .cta-box h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="wrap nav-inner">
-            <a href="index.html" class="logo">ThatVet<span>Guy</span>.net</a>
+            <a href="index.html" class="logo">ThatVet<span>Guy</span></a>
             <div class="nav-links">
-                <a href="experts.html" class="active">Know the Experts</a>
+                <a href="index.html">Home</a>
                 <a href="index.html#services">Services</a>
+                <a href="experts.html" class="active">Experts</a>
+                <a href="index.html#contact" class="nav-cta">Contact</a>
             </div>
         </div>
     </nav>
 
-    <header class="profile-hero">
-        <div class="wrap">
-            <a href="experts.html" class="back-link">← Back to Directory</a>
-            
-            <div class="profile-grid">
-                <div class="profile-img-wrapper">
-                    <img src="ritesh.png" alt="Dr. Ritesh Verma" onerror="this.style.display='none'">
-                </div>
-
-                <div class="profile-content">
-                    <h1>Dr. Ritesh Verma</h1>
-                    <div class="profile-title">Managing Director &amp; Lead Veterinary Pathologist</div>
-                    
-                    <p class="profile-bio">
-                        As the managing director and head of the ThatVetGuy collective, Dr. Ritesh Verma oversees all clinical operations. Holding an MVSc with a deep focus on pathology, his peer-reviewed research spans avian toxicity, protozoan diagnostics, and feline pathobiology. He utilizes his extensive laboratory experience to engineer high-impact corporate diagnostics and authoritative educational B2B frameworks.
-                    </p>
-
-                    <div class="social-btns">
-                        <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" class="btn-outline">
-                            LinkedIn Profile
-                        </a>
-                        <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" class="btn-outline">
-                            YouTube Channel
-                        </a>
-                    </div>
-
-                    <div class="focus-grid">
-                        <div class="focus-card">
-                            <h4>Clinical &amp; Avian Pathology</h4>
-                            <p>Expert translation of laboratory diagnostics and pathological data into accessible corporate formats.</p>
-                        </div>
-                        <div class="focus-card">
-                            <h4>Strategic Operations</h4>
-                            <p>Directing the collective's clinical outputs to ensure rigorous compliance with industry standards.</p>
-                        </div>
-                        <div class="focus-card">
-                            <h4>Public Health Advocacy</h4>
-                            <p>Translating complex epidemiological concepts into editorial journalism for disease awareness.</p>
-                        </div>
-                        <div class="focus-card">
-                            <h4>B2B Advisory</h4>
-                            <p>Consulting with pharmaceutical and nutrition brands on medical oversight and product validation.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <section class="portfolio-section">
-        <div class="wrap">
-            <div class="section-header">
-                <span class="section-label">Dr. Verma's Portfolio</span>
-                <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-size: 2.4rem; font-weight: 400; margin-bottom: 12px;">Published Research &amp; Editorials</h2>
-                <p style="color: rgba(255,255,255,0.5);">Peer-reviewed clinical research, diagnostic reporting, and public health communications.</p>
-            </div>
-
-            <div class="portfolio-grid">
+    <main>
+        <!-- PROFILE HERO -->
+        <header class="profile-hero">
+            <div class="wrap">
+                <a href="experts.html" class="back-link">← Back to Directory</a>
                 
-                <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf" target="_blank" class="case-study">
-                    <div class="preview-area">
-                        <img src="parvo-preview.jpg" alt="Feline Parvo Research" class="preview-img" style="object-fit: contain; background: #fff;">
+                <div class="profile-grid">
+                    <div class="profile-img-wrapper">
+                        <img src="ritesh.png" alt="Dr. Ritesh Verma" onerror="this.style.display='none'">
                     </div>
-                    <div class="case-content">
-                        <span class="case-category">Published Research</span>
-                        <h3>Clinico-Histo-Ultra Pathobiology of Parvoviral Enteritis</h3>
-                        <p>A comprehensive pathological evaluation of feline parvovirus in the Indore region, featuring detailed clinical and ultrastructural analysis.</p>
-                        <span class="view-project">Read on ResearchGate</span>
-                    </div>
-                </a>
 
-                <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" class="case-study">
-                    <div class="preview-area">
-                        <img src="ziram-preview.jpg" alt="Ziram Toxicity Abstract" class="preview-img">
-                    </div>
-                    <div class="case-content">
-                        <span class="case-category">AAHP Symposium 2026</span>
-                        <h3>Pathology of Subacute Ziram Toxicity in Poultry</h3>
-                        <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
-                        <span class="view-project">Preview PDF Document</span>
-                    </div>
-                </a>
+                    <div class="profile-content">
+                        <h1>Dr. Ritesh Verma</h1>
+                        <div class="profile-title">Managing Director &amp; Lead Veterinary Pathologist</div>
+                        
+                        <p class="profile-bio">
+                            As the managing director and head of the ThatVetGuy collective, Dr. Ritesh Verma oversees all clinical operations. Holding an MVSc with a deep focus on pathology, his peer-reviewed research spans avian toxicity, protozoan diagnostics, and feline pathobiology. He utilizes his extensive laboratory experience to engineer high-impact corporate diagnostics and authoritative educational B2B frameworks.
+                        </p>
 
-                <a href="Caecal_Coccidiosis_Case_Report.pdf" target="_blank" class="case-study">
-                    <div class="preview-area">
-                        <img src="coccidiosis-preview.jpg" alt="Caecal Coccidiosis Report" class="preview-img">
-                    </div>
-                    <div class="case-content">
-                        <span class="case-category">Clinical Case Report</span>
-                        <h3>Caecal Coccidiosis in Indigenous Sonalika Poultry</h3>
-                        <p>A detailed clinical and histopathological report evaluating the severe pathological impact and mucosal damage caused by Eimeria tenella.</p>
-                        <span class="view-project">Preview PDF Document</span>
-                    </div>
-                </a>
+                        <div class="social-btns">
+                            <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" class="btn-outline">
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" class="btn-outline">
+                                YouTube Channel
+                            </a>
+                        </div>
 
-                <a href="rabies-editorial.jpg" target="_blank" class="case-study">
-                    <div class="preview-area">
-                        <img src="rabies-editorial.jpg" alt="Rabies Editorial" class="preview-img">
+                        <div class="focus-grid">
+                            <div class="focus-card">
+                                <h4>Clinical &amp; Avian Pathology</h4>
+                                <p>Expert translation of laboratory diagnostics and pathological data into accessible corporate formats.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Strategic Operations</h4>
+                                <p>Directing the collective's clinical outputs to ensure rigorous compliance with industry standards.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Public Health Advocacy</h4>
+                                <p>Translating complex epidemiological concepts into editorial journalism for disease awareness.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>B2B Advisory</h4>
+                                <p>Consulting with pharmaceutical and nutrition brands on medical oversight and product validation.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="case-content">
-                        <span class="case-category">Public Health Editorial</span>
-                        <h3>World Rabies Day: Vaccination &amp; Awareness</h3>
-                        <p>A published newspaper editorial translating critical epidemiological data and vaccination protocols into accessible public health journalism.</p>
-                        <span class="view-project">View Editorial Clipping</span>
-                    </div>
-                </a>
+                </div>
+            </div>
+        </header>
 
+        <!-- PORTFOLIO SECTION -->
+        <section class="portfolio-section">
+            <div class="wrap">
+                <div class="section-header">
+                    <span class="section-label">Dr. Verma's Portfolio</span>
+                    <h2>Published Research &amp; Editorials</h2>
+                    <p>Peer-reviewed clinical research, diagnostic reporting, and public health communications.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    
+                    <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf" target="_blank" class="case-study">
+                        <div class="preview-area">
+                            <img src="parvo-preview.jpg" alt="Feline Parvo Research" class="preview-img" style="object-fit: contain; background: #fff;">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-category">Published Research</span>
+                            <h3>Clinico-Histo-Ultra Pathobiology of Parvoviral Enteritis</h3>
+                            <p>A comprehensive pathological evaluation of feline parvovirus in the Indore region, featuring detailed clinical and ultrastructural analysis.</p>
+                            <span class="view-project">Read on ResearchGate</span>
+                        </div>
+                    </a>
+
+                    <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" class="case-study">
+                        <div class="preview-area">
+                            <img src="ziram-preview.jpg" alt="Ziram Toxicity Abstract" class="preview-img">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-category">AAHP Symposium 2026</span>
+                            <h3>Pathology of Subacute Ziram Toxicity in Poultry</h3>
+                            <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
+                            <span class="view-project">Preview PDF Document</span>
+                        </div>
+                    </a>
+
+                    <a href="Caecal_Coccidiosis_Case_Report.pdf" target="_blank" class="case-study">
+                        <div class="preview-area">
+                            <img src="coccidiosis-preview.jpg" alt="Caecal Coccidiosis Report" class="preview-img">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-category">Clinical Case Report</span>
+                            <h3>Caecal Coccidiosis in Indigenous Sonalika Poultry</h3>
+                            <p>A detailed clinical and histopathological report evaluating the severe pathological impact and mucosal damage caused by Eimeria tenella.</p>
+                            <span class="view-project">Preview PDF Document</span>
+                        </div>
+                    </a>
+
+                    <a href="rabies-editorial.jpg" target="_blank" class="case-study">
+                        <div class="preview-area">
+                            <img src="rabies-editorial.jpg" alt="Rabies Editorial" class="preview-img">
+                        </div>
+                        <div class="case-content">
+                            <span class="case-category">Public Health Editorial</span>
+                            <h3>World Rabies Day: Vaccination &amp; Awareness</h3>
+                            <p>A published newspaper editorial translating critical epidemiological data and vaccination protocols into accessible public health journalism.</p>
+                            <span class="view-project">View Editorial Clipping</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA SECTION -->
+        <section class="cta-section">
+            <div class="wrap">
+                <div class="cta-box">
+                    <h2>Collaborate with Dr. Verma</h2>
+                    <p>Leverage clinical precision and strategic oversight for your next veterinary project, research paper, or corporate diagnostic framework.</p>
+                    <a href="index.html#contact" class="btn-gold">Get in Touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="wrap">
+            <div class="footer-inner">
+                <div class="footer-col">
+                    <a href="index.html" class="logo">ThatVet<span>Guy</span></a>
+                    <p>Bridging clinical veterinary excellence with corporate strategy and high-impact educational frameworks.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Navigate</h5>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="experts.html">Know the Experts</a>
+                </div>
+                <div class="footer-col">
+                    <h5>Connect</h5>
+                    <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank">LinkedIn</a>
+                    <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank">YouTube</a>
+                    <a href="mailto:info@thatvetguy.net">Email Us</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ThatVetGuy Collective. All rights reserved.</p>
             </div>
         </div>
-    </section>
+    </footer>
 
 </body>
 </html>
