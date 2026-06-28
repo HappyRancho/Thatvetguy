@@ -1,608 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Ritesh Verma | ThatVetGuy Collective</title>
-    <meta name="description" content="Dr. Ritesh Verma, Managing Director & Lead Veterinary Pathologist at ThatVetGuy Collective. Explore his published research and clinical pathology portfolio.">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dr. Ritesh Verma — Managing Director & Lead Veterinary Pathologist at The ThatVetGuy Collective. MVSc Pathology, peer-reviewed research, avian toxicity, feline pathobiology." />
+    <title>Dr. Ritesh Verma | The ThatVetGuy Collective</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
 
     <style>
-        /* =========================================
-           TOKENS (Matching your Gold/Navy Theme)
-           ========================================= */
         :root {
-            --ink:       #0a0f1e;
-            --ink-mid:   #1c2440;
-            --ink-soft:  #3d4f72;
-            --slate:     #64748b;
-            --mist:      #f0f4fa;
-            --white:     #ffffff;
-            --gold:      #c9a84c;
-            --gold-dim:  rgba(201,168,76,0.18);
-            --gold-line: rgba(201,168,76,0.35);
+            --bg-main:#0B0F12;--bg-card:#12181C;--bg-card-hover:#1A2228;--bg-elevated:#1A2228;
+            --text-light:#F8FAFC;--text-muted:#94A3B8;--text-muted-light:#CBD5E1;
+            --accent:#10B981;--accent-hover:#059669;--accent-dim:rgba(16,185,129,0.12);
+            --border:#1F2937;--border-hover:#374151;
+            --font-heading:'Playfair Display',serif;--font-body:'Inter',sans-serif;
+            --transition:all 0.35s cubic-bezier(0.4,0,0.2,1);--nav-h:76px;
+            --radius:10px;--shadow-hover:0 24px 48px rgba(0,0,0,0.55);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background-color:var(--bg-main);color:var(--text-muted);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        h1,h2,h3,h4,h5{font-family:var(--font-heading);color:var(--text-light);font-weight:600;line-height:1.2}
+        a{text-decoration:none;color:inherit;transition:var(--transition)}
+        img{display:block;max-width:100%;height:auto}
 
-            --radius-sm: 6px;
-            --radius-md: 14px;
-            --radius-lg: 22px;
-            --radius-pill: 100px;
+        .container{max-width:1280px;margin:0 auto;padding:0 24px}
+        .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+        .section-label::before{content:'';display:inline-block;width:28px;height:1.5px;background:var(--accent);border-radius:2px}
 
-            --shadow-card: 0 2px 16px rgba(10,15,30,0.07), 0 1px 3px rgba(10,15,30,0.04);
-            --shadow-lift: 0 20px 48px rgba(10,15,30,0.25), 0 4px 12px rgba(10,15,30,0.15);
+        .btn-primary{background:var(--accent);color:#000!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--accent);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,0.3)}
+        .btn-secondary{background:transparent;color:var(--text-light)!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-secondary:hover{border-color:var(--text-muted);background:rgba(255,255,255,0.04);transform:translateY(-2px)}
 
-            --nav-h: 68px;
-        }
+        /* NAV */
+        nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-h);background:rgba(11,15,18,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;transition:var(--transition)}
+        .nav-wrapper{display:flex;justify-content:space-between;align-items:center;width:100%}
+        .nav-logo-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .nav-logo{height:38px;width:auto;object-fit:contain}
+        .nav-brand-name{font-family:var(--font-heading);font-size:1.25rem;color:var(--text-light);font-weight:700;letter-spacing:0.3px;white-space:nowrap}
+        .nav-links{display:flex;gap:6px;align-items:center}
+        .nav-links a{font-size:0.85rem;font-weight:500;color:var(--text-muted);padding:6px 14px;border-radius:4px;transition:var(--transition)}
+        .nav-links a:hover,.nav-links a.active{color:var(--text-light);background:rgba(255,255,255,0.06)}
+        .nav-links a.btn-primary{color:#000!important;padding:8px 22px;font-size:0.85rem;background:var(--accent);border:none}
+        .nav-links a.btn-primary:hover{background:var(--accent-hover);color:#000!important;transform:none;box-shadow:0 4px 16px rgba(16,185,129,0.3)}
+        .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:none;padding:6px 4px;z-index:1001}
+        .nav-burger span{display:block;width:26px;height:2px;background-color:var(--text-light);border-radius:2px;transition:var(--transition);transform-origin:center}
+        .nav-burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .nav-burger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+        .nav-burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .mobile-menu{position:fixed;top:var(--nav-h);left:0;width:100%;height:0;background:rgba(11,15,18,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;transition:height 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--border);gap:4px}
+        .mobile-menu.open{height:auto;padding:32px 24px 40px}
+        .mobile-menu a{font-size:1.05rem;font-weight:500;color:var(--text-light);padding:12px 20px;width:100%;max-width:320px;text-align:center;border-radius:6px;transition:var(--transition)}
+        .mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+        .mobile-menu a.btn-primary{color:#000!important;background:var(--accent);margin-top:12px;padding:14px 28px;border:none}
 
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--ink);
-            color: var(--white);
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-        a { text-decoration: none; color: inherit; }
-        img { display: block; max-width: 100%; }
+        /* BACK LINK */
+        .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:40px;transition:var(--transition)}
+        .back-link svg{width:16px;height:16px;transition:transform 0.25s}
+        .back-link:hover{opacity:0.75}
+        .back-link:hover svg{transform:translateX(-3px)}
 
-        .wrap {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 0 28px;
-        }
-        .section-label {
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: var(--gold);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 18px;
-        }
-        .section-label::before {
-            content: '';
-            display: inline-block;
-            width: 28px;
-            height: 1px;
-            background: var(--gold);
-        }
+        /* PROFILE HERO */
+        .profile-hero{padding:calc(var(--nav-h) + 64px) 0 72px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 60% 0%,rgba(16,185,129,0.05) 0%,var(--bg-main) 60%);position:relative;overflow:hidden}
+        .profile-hero .container{position:relative;z-index:1}
+        .profile-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
 
-        /* =========================================
-           NAV
-           ========================================= */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            height: var(--nav-h);
-            background: rgba(10,15,30,0.94);
-            backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
-        }
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .logo {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 1.35rem;
-            color: var(--white);
-        }
-        .logo span { color: var(--gold); }
-        .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a {
-            font-size: 0.88rem;
-            font-weight: 500;
-            color: rgba(255,255,255,0.65);
-            transition: color 0.2s;
-        }
-        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
-        .nav-cta {
-            border: 1px solid var(--gold-line);
-            padding: 8px 18px;
-            border-radius: var(--radius-sm);
-            color: var(--gold) !important;
-            font-weight: 600;
-        }
-        .nav-cta:hover {
-            background: var(--gold-dim);
-        }
+        /* Photo col */
+        .profile-photo-col{display:flex;flex-direction:column;gap:20px}
+        .profile-img-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px;position:relative;overflow:hidden}
+        .profile-img-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+        .profile-img-wrapper img{width:100%;border-radius:6px;object-fit:cover;object-position:center top;aspect-ratio:3/4}
+        .img-placeholder{width:100%;aspect-ratio:3/4;border-radius:6px;background:var(--bg-elevated);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text-muted);font-size:0.85rem}
+        .img-placeholder svg{width:40px;height:40px;opacity:0.3}
 
-        /* =========================================
-           PROFILE HERO
-           ========================================= */
-        .profile-hero {
-            padding: 100px 0 80px;
-            position: relative;
-            background: var(--ink);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
-        }
-        .profile-hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 50%;
-            transform: translateX(-50%);
-            width: 800px; height: 600px;
-            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--gold);
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 48px;
-            transition: opacity 0.2s;
-        }
-        .back-link:hover { opacity: 0.8; }
-        
-        .profile-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.8fr;
-            gap: 64px;
-            align-items: start;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .profile-img-wrapper {
-            background: var(--ink-mid);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-lg);
-            padding: 16px;
-            position: relative;
-        }
-        .profile-img-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 32px; right: 32px;
-            height: 2px;
-            background: var(--gold);
-            border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-        }
-        .profile-img-wrapper img {
-            width: 100%;
-            border-radius: var(--radius-md);
-            border: 2px solid var(--gold-line);
-            aspect-ratio: 1/1.1;
-            object-fit: cover;
-        }
+        /* Credential stack */
+        .credential-stack{display:flex;flex-direction:column;gap:10px}
+        .credential-item{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;transition:var(--transition)}
+        .credential-item:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .credential-icon{width:34px;height:34px;background:var(--accent-dim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .credential-icon svg{width:17px;height:17px}
+        .credential-text strong{display:block;font-size:0.78rem;font-weight:700;color:var(--text-light);line-height:1.3}
+        .credential-text span{font-size:0.72rem;color:var(--text-muted)}
 
-        .profile-content h1 {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            line-height: 1.1;
-            margin-bottom: 8px;
-        }
-        .profile-title {
-            font-size: 1.1rem;
-            color: var(--gold);
-            font-weight: 600;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            margin-bottom: 32px;
-        }
-        .profile-bio {
-            font-size: 1.05rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.8;
-            margin-bottom: 40px;
-        }
-        
-        .social-btns {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 48px;
-            flex-wrap: wrap;
-        }
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            border: 1px solid rgba(255,255,255,0.2);
-            color: var(--white);
-            padding: 10px 24px;
-            border-radius: var(--radius-sm);
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-        .btn-outline:hover {
-            border-color: var(--gold);
-            background: rgba(201,168,76,0.05);
-            color: var(--gold);
-        }
+        /* Content col */
+        .profile-content-col{padding-top:4px}
+        .profile-role{font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:10px;display:block}
+        .profile-name{font-size:clamp(2.2rem,4vw,3.4rem);letter-spacing:-0.03em;margin-bottom:6px;color:var(--text-light)}
+        .profile-credentials-inline{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;font-weight:500;display:block}
+        .profile-bio{font-size:1.02rem;color:var(--text-muted-light);line-height:1.85;margin-bottom:32px;max-width:640px}
 
-        /* Focus Areas */
-        .focus-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-        .focus-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.06);
-            padding: 24px;
-            border-radius: var(--radius-md);
-            transition: border-color 0.3s;
-        }
-        .focus-card:hover {
-            border-color: var(--gold-line);
-        }
-        .focus-card h4 {
-            color: var(--gold);
-            font-size: 1rem;
-            margin-bottom: 8px;
-        }
-        .focus-card p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.6;
-        }
+        /* Actions */
+        .profile-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+        .btn-social{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--text-muted-light);background:var(--bg-card);transition:var(--transition)}
+        .btn-social svg{width:16px;height:16px;flex-shrink:0}
+        .btn-social:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
 
-        /* =========================================
-           PORTFOLIO SECTION
-           ========================================= */
-        .portfolio-section {
-            padding: 96px 0;
-            background: #07090f;
-        }
-        .section-header {
-            margin-bottom: 48px;
-        }
-        .section-header h2 {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 2.4rem;
-            font-weight: 400;
-            margin-bottom: 12px;
-        }
-        .section-header p {
-            color: rgba(255,255,255,0.5);
-            max-width: 600px;
-        }
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
-        }
-        .case-study {
-            background: var(--ink-mid);
-            border: 1px solid rgba(255,255,255,0.07);
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .case-study:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lift);
-            border-color: rgba(201,168,76,0.3);
-        }
-        
-        .preview-area {
-            height: 240px;
-            background: var(--ink);
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-        .preview-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: top center; 
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .case-study:hover .preview-img {
-            transform: scale(1.05);
-        }
-        .preview-area::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(28, 36, 64, 0.4) 0%, transparent 100%);
-            pointer-events: none;
-        }
+        .profile-divider{height:1px;background:var(--border);margin-bottom:32px}
 
-        .case-content {
-            padding: 40px 36px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .case-category {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            margin-bottom: 12px;
-        }
-        .case-content h3 {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 1.4rem;
-            font-weight: 400;
-            color: var(--white);
-            line-height: 1.3;
-            margin-bottom: 14px;
-        }
-        .case-content p {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
-            line-height: 1.7;
-            flex-grow: 1;
-            margin-bottom: 28px;
-        }
-        .view-project {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--gold);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .view-project::after {
-            content: '→';
-            transition: transform 0.25s;
-        }
-        .case-study:hover .view-project::after { transform: translateX(5px); }
+        /* Focus grid */
+        .focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .focus-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:var(--transition);position:relative;overflow:hidden}
+        .focus-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
+        .focus-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .focus-card:hover::after{transform:scaleX(1)}
+        .focus-card h4{font-size:0.9rem;color:var(--text-light);margin-bottom:7px;font-family:var(--font-body);font-weight:700}
+        .focus-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
 
-        /* =========================================
-           CTA SECTION
-           ========================================= */
-        .cta-section {
-            padding: 80px 0;
-            background: var(--ink);
-            border-top: 1px solid rgba(255,255,255,0.06);
-        }
-        .cta-box {
-            background: var(--ink-mid);
-            border: 1px solid var(--gold-line);
-            border-radius: var(--radius-lg);
-            padding: 56px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%;
-            width: 200%; height: 200%;
-            background: radial-gradient(circle at center, rgba(201,168,76,0.08) 0%, transparent 60%);
-            pointer-events: none;
-        }
-        .cta-box h2 {
-            font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 2.2rem;
-            margin-bottom: 16px;
-            position: relative;
-        }
-        .cta-box p {
-            color: rgba(255,255,255,0.6);
-            max-width: 500px;
-            margin: 0 auto 32px;
-            position: relative;
-        }
-        .btn-gold {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--gold);
-            color: var(--ink);
-            padding: 14px 32px;
-            border-radius: var(--radius-sm);
-            font-size: 0.95rem;
-            font-weight: 700;
-            transition: all 0.2s;
-            position: relative;
-        }
-        .btn-gold:hover {
-            background: var(--white);
-            transform: translateY(-2px);
-        }
+        /* PORTFOLIO */
+        .portfolio-section{padding:90px 0;border-bottom:1px solid var(--border)}
+        .section-header{margin-bottom:48px}
+        .section-header h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:12px;letter-spacing:-0.02em}
+        .section-header p{font-size:1rem;color:var(--text-muted-light);max-width:580px}
+        .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 
-        /* =========================================
-           FOOTER
-           ========================================= */
-        footer {
-            background: #07090f;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding: 64px 0 24px;
-        }
-        .footer-inner {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 48px;
-        }
-        .footer-col p {
-            color: var(--slate);
-            font-size: 0.9rem;
-            margin-top: 12px;
-            max-width: 320px;
-        }
-        .footer-col h5 {
-            color: var(--white);
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-        }
-        .footer-col a {
-            display: block;
-            color: var(--slate);
-            font-size: 0.9rem;
-            margin-bottom: 10px;
-            transition: color 0.2s;
-        }
-        .footer-col a:hover { color: var(--gold); }
-        .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.06);
-            padding-top: 24px;
-            text-align: center;
-        }
-        .footer-bottom p {
-            color: var(--ink-soft);
-            font-size: 0.8rem;
-        }
+        .work-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:var(--transition);position:relative}
+        .work-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease}
+        .work-card:hover{border-color:var(--border-hover);transform:translateY(-5px);box-shadow:var(--shadow-hover);background:var(--bg-card-hover)}
+        .work-card:hover::after{transform:scaleX(1)}
+        .work-img-wrap{height:220px;overflow:hidden;background:var(--bg-main);position:relative}
+        .work-img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.6s ease}
+        .work-card:hover .work-img{transform:scale(1.04)}
+        .work-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-elevated)}
+        .work-img-placeholder svg{width:36px;height:36px;opacity:0.2}
+        .work-content{padding:28px 28px 30px;flex-grow:1;display:flex;flex-direction:column}
+        .work-category{font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px}
+        .work-content h3{font-size:1.15rem;margin-bottom:10px;color:var(--text-light);line-height:1.35}
+        .work-content p{font-size:0.88rem;color:var(--text-muted-light);line-height:1.7;flex-grow:1;margin-bottom:20px}
+        .work-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:700;color:var(--accent);transition:var(--transition)}
+        .work-link svg{width:14px;height:14px;transition:transform 0.25s}
+        .work-card:hover .work-link svg{transform:translateX(4px)}
 
-        /* =========================================
-           RESPONSIVE
-           ========================================= */
-        @media (max-width: 960px) {
-            .profile-grid { grid-template-columns: 1fr; gap: 40px; }
-            .profile-img-wrapper { max-width: 350px; margin: 0 auto; }
-            .portfolio-grid { grid-template-columns: 1fr; }
-            .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+        /* CTA */
+        .cta-banner{text-align:center;padding:90px 0;background:radial-gradient(ellipse at 50% 30%,rgba(16,185,129,0.06) 0%,var(--bg-main) 70%)}
+        .cta-banner h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:12px}
+        .cta-banner p{max-width:480px;margin:0 auto 28px;font-size:1rem;color:var(--text-muted-light)}
+        .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        /* FOOTER */
+        footer{padding:32px 0;text-align:center;background:var(--bg-main);border-top:1px solid var(--border)}
+        footer p{font-size:0.8rem;color:var(--text-muted)}
+
+        /* REVEAL */
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+
+        /* SKIP */
+        .skip-link{position:absolute;top:-100%;left:16px;padding:12px 24px;background:var(--accent);color:#000;font-weight:600;border-radius:4px;z-index:9999;transition:top 0.2s}
+        .skip-link:focus{top:12px}
+        :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+        /* RESPONSIVE */
+        @media(max-width:992px){
+            .nav-links a:not(.btn-primary){padding:6px 10px;font-size:0.8rem}
+            .profile-grid{grid-template-columns:260px 1fr;gap:40px}
         }
-        @media (max-width: 680px) {
-            .nav-links a:not(.nav-cta) { display: none; }
-            .profile-hero { padding: 60px 0; }
-            .profile-content h1 { font-size: 2.2rem; }
-            .focus-grid { grid-template-columns: 1fr; }
-            .case-content { padding: 30px 24px; }
-            .preview-area { height: 180px; }
-            .cta-box { padding: 40px 24px; }
-            .cta-box h2 { font-size: 1.8rem; }
+        @media(max-width:768px){
+            .nav-links{display:none}.nav-burger{display:flex}
+            .nav-brand-name{font-size:1.05rem}.nav-logo{height:32px}
+            .profile-hero{padding:calc(var(--nav-h)+40px) 0 56px}
+            .profile-grid{grid-template-columns:1fr;gap:36px}
+            .profile-photo-col{max-width:260px}
+            .focus-grid{grid-template-columns:1fr}
+            .portfolio-grid{grid-template-columns:1fr}
+            .portfolio-section{padding:56px 0}
+            .cta-banner{padding:56px 0}
+            .work-img-wrap{height:180px}
+        }
+        @media(max-width:480px){
+            .container{padding:0 16px}
+            .profile-actions{flex-direction:column}
+            .profile-actions .btn-social,.profile-actions .btn-primary{width:100%;justify-content:center}
+            .cta-actions .btn-primary,.cta-actions .btn-secondary{width:100%;justify-content:center}
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="wrap nav-inner">
-            <a href="index.html" class="logo">ThatVet<span>Guy</span></a>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
+                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
+                <span class="nav-brand-name">ThatVetGuy.net</span>
+            </a>
             <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#services">Services</a>
-                <a href="experts.html" class="active">Experts</a>
-                <a href="index.html#contact" class="nav-cta">Contact</a>
+                <a href="services.html">Services</a>
+                <a href="experts.html" class="active">Team</a>
+                <a href="index.html#partner">Partner</a>
+                <a href="index.html#work">Experience</a>
+                <a href="media.html">Media</a>
+                <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a>
             </div>
+            <button class="nav-burger" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <main>
-        <!-- PROFILE HERO -->
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="services.html">Services</a>
+        <a href="experts.html" class="active">Team</a>
+        <a href="index.html#partner">Partner</a>
+        <a href="index.html#work">Experience</a>
+        <a href="media.html">Media</a>
+        <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
+    </div>
+
+    <main id="main">
+
         <header class="profile-hero">
-            <div class="wrap">
-                <a href="experts.html" class="back-link">← Back to Directory</a>
-                
+            <div class="container">
+
+                <a href="experts.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Back to the Collective
+                </a>
+
                 <div class="profile-grid">
-                    <div class="profile-img-wrapper">
-                        <img src="ritesh.png" alt="Dr. Ritesh Verma" onerror="this.style.display='none'">
+
+                    <div class="profile-photo-col reveal">
+                        <div class="profile-img-wrapper">
+                            <img src="ritesh.png" alt="Dr. Ritesh Verma"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                                <span>Dr. Ritesh Verma</span>
+                            </div>
+                        </div>
+
+                        <div class="credential-stack">
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>MVSc &mdash; Veterinary Pathology</strong>
+                                    <span>Postgraduate qualification</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>BVSc &amp; AH</strong>
+                                    <span>Undergraduate veterinary degree</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>Managing Director</strong>
+                                    <span>ThatVetGuy Collective</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="profile-content">
-                        <h1>Dr. Ritesh Verma</h1>
-                        <div class="profile-title">Managing Director &amp; Lead Veterinary Pathologist</div>
-                        
+                    <div class="profile-content-col reveal">
+                        <span class="profile-role">Managing Director &amp; Lead Veterinary Pathologist</span>
+                        <h1 class="profile-name">Dr. Ritesh Verma</h1>
+                        <span class="profile-credentials-inline">MVSc (Pathology) &bull; BVSc &amp; AH &bull; AAHP Symposium Presenter 2026</span>
+
                         <p class="profile-bio">
-                            As the managing director and head of the ThatVetGuy collective, Dr. Ritesh Verma oversees all clinical operations. Holding an MVSc with a deep focus on pathology, his peer-reviewed research spans avian toxicity, protozoan diagnostics, and feline pathobiology. He utilizes his extensive laboratory experience to engineer high-impact corporate diagnostics and authoritative educational B2B frameworks.
+                            As Managing Director of The ThatVetGuy Collective, Dr. Ritesh Verma oversees all clinical operations and strategy. His MVSc focus on veterinary pathology underpins peer-reviewed research spanning avian toxicity, protozoan diagnostics, and feline pathobiology. He channels extensive laboratory experience into high-impact corporate diagnostic frameworks, authoritative B2B educational content, and clinically rigorous brand partnerships that hold up to scientific scrutiny.
                         </p>
 
-                        <div class="social-btns">
-                            <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" class="btn-outline">
+                        <div class="profile-actions">
+                            <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" rel="noopener noreferrer" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
                                 LinkedIn Profile
                             </a>
-                            <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" class="btn-outline">
+                            <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" rel="noopener noreferrer" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
                                 YouTube Channel
+                            </a>
+                            <a href="mailto:dr.ritesh@thatvetguy.net" class="btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Connect Directly
                             </a>
                         </div>
 
+                        <div class="profile-divider"></div>
+
+                        <span class="section-label">Areas of Focus</span>
                         <div class="focus-grid">
                             <div class="focus-card">
                                 <h4>Clinical &amp; Avian Pathology</h4>
-                                <p>Expert translation of laboratory diagnostics and pathological data into accessible corporate formats.</p>
+                                <p>Expert translation of laboratory diagnostics and pathological data into accessible corporate formats and peer-reviewed publications.</p>
                             </div>
                             <div class="focus-card">
                                 <h4>Strategic Operations</h4>
-                                <p>Directing the collective's clinical outputs to ensure rigorous compliance with industry standards.</p>
+                                <p>Directing the Collective&rsquo;s clinical outputs to ensure rigorous compliance with industry standards and scientific integrity.</p>
                             </div>
                             <div class="focus-card">
                                 <h4>Public Health Advocacy</h4>
-                                <p>Translating complex epidemiological concepts into editorial journalism for disease awareness.</p>
+                                <p>Translating complex epidemiological concepts into editorial journalism and accessible disease awareness communications.</p>
                             </div>
                             <div class="focus-card">
                                 <h4>B2B Advisory</h4>
-                                <p>Consulting with pharmaceutical and nutrition brands on medical oversight and product validation.</p>
+                                <p>Consulting with pharmaceutical and nutrition brands on medical oversight, product validation, and clinical trial design.</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </header>
 
-        <!-- PORTFOLIO SECTION -->
-        <section class="portfolio-section">
-            <div class="wrap">
-                <div class="section-header">
-                    <span class="section-label">Dr. Verma's Portfolio</span>
-                    <h2>Published Research &amp; Editorials</h2>
-                    <p>Peer-reviewed clinical research, diagnostic reporting, and public health communications.</p>
+        <section class="portfolio-section" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Dr. Verma&rsquo;s Portfolio</span>
+                    <h2 id="portfolio-heading">Published Research &amp; Editorials</h2>
+                    <p>Peer-reviewed clinical research, diagnostic case reports, and public health communications &mdash; all authored by an active laboratory scientist.</p>
                 </div>
 
                 <div class="portfolio-grid">
-                    
-                    <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf" target="_blank" class="case-study">
-                        <div class="preview-area">
-                            <img src="parvo-preview.jpg" alt="Feline Parvo Research" class="preview-img" style="object-fit: contain; background: #fff;">
+
+                    <a href="https://www.researchgate.net/profile/Mukesh-Shakya/publication/377019163_Clinico-histo-ultra_pathobiology_of_parvoviral_enteritis_of_felines_in_and_around_Indore_Madhya_Pradesh/links/6592577e0bb2c7472b245d6d/Clinico-histo-ultra-pathobiology-of-parvoviral-enteritis-of-felines-in-and-around-Indore-Madhya-Pradesh.pdf"
+                       target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="parvo-preview.jpg" alt="Parvoviral Enteritis Research" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         </div>
-                        <div class="case-content">
-                            <span class="case-category">Published Research</span>
+                        <div class="work-content">
+                            <span class="work-category">Published Research</span>
                             <h3>Clinico-Histo-Ultra Pathobiology of Parvoviral Enteritis</h3>
-                            <p>A comprehensive pathological evaluation of feline parvovirus in the Indore region, featuring detailed clinical and ultrastructural analysis.</p>
-                            <span class="view-project">Read on ResearchGate</span>
+                            <p>A comprehensive pathological evaluation of feline parvovirus in the Indore region, featuring detailed clinical, histopathological, and ultrastructural analysis. Published and indexed on ResearchGate.</p>
+                            <span class="work-link">Read on ResearchGate <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
                     </a>
 
-                    <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" class="case-study">
-                        <div class="preview-area">
-                            <img src="ziram-preview.jpg" alt="Ziram Toxicity Abstract" class="preview-img">
+                    <a href="Ziram_Toxicity_Abstract.pdf" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="ziram-preview.jpg" alt="Ziram Toxicity in Poultry" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         </div>
-                        <div class="case-content">
-                            <span class="case-category">AAHP Symposium 2026</span>
+                        <div class="work-content">
+                            <span class="work-category">AAHP Symposium 2026</span>
                             <h3>Pathology of Subacute Ziram Toxicity in Poultry</h3>
-                            <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens.</p>
-                            <span class="view-project">Preview PDF Document</span>
+                            <p>An experimental study documenting the pathomorphological and haemato-biochemical alterations induced by Ziram fungicide in Kadaknath chickens. Presented at the AAHP National Symposium 2026.</p>
+                            <span class="work-link">Preview PDF Document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
                     </a>
 
-                    <a href="Caecal_Coccidiosis_Case_Report.pdf" target="_blank" class="case-study">
-                        <div class="preview-area">
-                            <img src="coccidiosis-preview.jpg" alt="Caecal Coccidiosis Report" class="preview-img">
+                    <a href="Caecal_Coccidiosis_Case_Report.pdf" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="coccidiosis-preview.jpg" alt="Caecal Coccidiosis Case Report" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         </div>
-                        <div class="case-content">
-                            <span class="case-category">Clinical Case Report</span>
+                        <div class="work-content">
+                            <span class="work-category">Clinical Case Report</span>
                             <h3>Caecal Coccidiosis in Indigenous Sonalika Poultry</h3>
-                            <p>A detailed clinical and histopathological report evaluating the severe pathological impact and mucosal damage caused by Eimeria tenella.</p>
-                            <span class="view-project">Preview PDF Document</span>
+                            <p>A detailed clinical and histopathological case report evaluating the severe pathological impact and mucosal damage caused by <em>Eimeria tenella</em> in indigenous Sonalika breeds.</p>
+                            <span class="work-link">Preview PDF Document <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
                     </a>
 
-                    <a href="rabies-editorial.jpg" target="_blank" class="case-study">
-                        <div class="preview-area">
-                            <img src="rabies-editorial.jpg" alt="Rabies Editorial" class="preview-img">
+                    <a href="rabies-editorial.jpg" target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="rabies-editorial.jpg" alt="World Rabies Day Editorial" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
                         </div>
-                        <div class="case-content">
-                            <span class="case-category">Public Health Editorial</span>
-                            <h3>World Rabies Day: Vaccination &amp; Awareness</h3>
-                            <p>A published newspaper editorial translating critical epidemiological data and vaccination protocols into accessible public health journalism.</p>
-                            <span class="view-project">View Editorial Clipping</span>
+                        <div class="work-content">
+                            <span class="work-category">Public Health Editorial</span>
+                            <h3>World Rabies Day: Vaccination &amp; Public Awareness</h3>
+                            <p>A published newspaper editorial translating critical epidemiological data and vaccination protocols into accessible public health journalism for a mainstream Indian audience.</p>
+                            <span class="work-link">View Editorial Clipping <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
                         </div>
                     </a>
 
@@ -610,44 +384,41 @@
             </div>
         </section>
 
-        <!-- CTA SECTION -->
-        <section class="cta-section">
-            <div class="wrap">
-                <div class="cta-box">
-                    <h2>Collaborate with Dr. Verma</h2>
-                    <p>Leverage clinical precision and strategic oversight for your next veterinary project, research paper, or corporate diagnostic framework.</p>
-                    <a href="index.html#contact" class="btn-gold">Get in Touch</a>
+        <section class="cta-banner" aria-labelledby="cta-heading">
+            <div class="container">
+                <span class="section-label" style="justify-content:center;margin-bottom:18px;">Collaborate</span>
+                <h2 id="cta-heading">Work with Dr. Verma</h2>
+                <p>For clinical content commissions, diagnostic consultancy, or brand advisory &mdash; reach out directly.</p>
+                <div class="cta-actions">
+                    <a href="mailto:dr.ritesh@thatvetguy.net" class="btn-primary" style="padding:15px 36px;font-size:1rem;">Email Dr. Ritesh &rarr;</a>
+                    <a href="experts.html" class="btn-secondary" style="padding:15px 32px;font-size:1rem;">Meet the Full Collective</a>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <!-- FOOTER -->
     <footer>
-        <div class="wrap">
-            <div class="footer-inner">
-                <div class="footer-col">
-                    <a href="index.html" class="logo">ThatVet<span>Guy</span></a>
-                    <p>Bridging clinical veterinary excellence with corporate strategy and high-impact educational frameworks.</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Navigate</h5>
-                    <a href="index.html">Home</a>
-                    <a href="index.html#services">Services</a>
-                    <a href="experts.html">Know the Experts</a>
-                </div>
-                <div class="footer-col">
-                    <h5>Connect</h5>
-                    <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank">LinkedIn</a>
-                    <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank">YouTube</a>
-                    <a href="mailto:info@thatvetguy.net">Email Us</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 ThatVetGuy Collective. All rights reserved.</p>
-            </div>
+        <div class="container">
+            <p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p>
         </div>
     </footer>
+
+    <script>
+        (function(){
+            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
+            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
+            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
+            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
+            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
+            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
+            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
+        })();
+        var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+        els.forEach(function(el){obs.observe(el)});
+        var nav=document.getElementById('navbar');
+        window.addEventListener('scroll',function(){if(window.scrollY>50){nav.style.background='rgba(11,15,18,0.97)';nav.style.boxShadow='0 4px 20px rgba(0,0,0,0.4)'}else{nav.style.background='rgba(11,15,18,0.88)';nav.style.boxShadow='none'}});
+    </script>
 
 </body>
 </html>
