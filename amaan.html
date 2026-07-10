@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dr. Amaan Ahmed — Wildlife & Research Specialist at The ThatVetGuy Collective. BVSc & AH, NDVSU Mhow. Wildlife SOS, WWF, UNICEF volunteer. Clinical writer and animal welfare advocate." />
+    <title>Dr. Amaan Ahmed | The ThatVetGuy Collective</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-main:#0B0F12;--bg-card:#12181C;--bg-card-hover:#1A2228;--bg-elevated:#1A2228;
+            --text-light:#F8FAFC;--text-muted:#94A3B8;--text-muted-light:#CBD5E1;
+            --accent:#10B981;--accent-hover:#059669;--accent-dim:rgba(16,185,129,0.12);
+            --border:#1F2937;--border-hover:#374151;
+            --font-heading:'Playfair Display',serif;--font-body:'Inter',sans-serif;
+            --transition:all 0.35s cubic-bezier(0.4,0,0.2,1);--nav-h:76px;
+            --radius:10px;--shadow-hover:0 24px 48px rgba(0,0,0,0.55);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background-color:var(--bg-main);color:var(--text-muted);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        h1,h2,h3,h4,h5{font-family:var(--font-heading);color:var(--text-light);font-weight:600;line-height:1.2}
+        a{text-decoration:none;color:inherit;transition:var(--transition)}
+        img{display:block;max-width:100%;height:auto}
+
+        .container{max-width:1280px;margin:0 auto;padding:0 24px}
+        .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+        .section-label::before{content:'';display:inline-block;width:28px;height:1.5px;background:var(--accent);border-radius:2px}
+
+        .btn-primary{background:var(--accent);color:#000!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--accent);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,0.3)}
+        .btn-secondary{background:transparent;color:var(--text-light)!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-secondary:hover{border-color:var(--text-muted);background:rgba(255,255,255,0.04);transform:translateY(-2px)}
+
+        /* NAV */
+        nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-h);background:rgba(11,15,18,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;transition:var(--transition)}
+        .nav-wrapper{display:flex;justify-content:space-between;align-items:center;width:100%}
+        .nav-logo-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .nav-logo{height:38px;width:auto;object-fit:contain}
+        .nav-brand-name{font-family:var(--font-heading);font-size:1.25rem;color:var(--text-light);font-weight:700;letter-spacing:0.3px;white-space:nowrap}
+        .nav-links{display:flex;gap:6px;align-items:center}
+        .nav-links a{font-size:0.85rem;font-weight:500;color:var(--text-muted);padding:6px 14px;border-radius:4px;transition:var(--transition)}
+        .nav-links a:hover,.nav-links a.active{color:var(--text-light);background:rgba(255,255,255,0.06)}
+        .nav-links a.btn-primary{color:#000!important;padding:8px 22px;font-size:0.85rem;background:var(--accent);border:none}
+        .nav-links a.btn-primary:hover{background:var(--accent-hover);color:#000!important;transform:none;box-shadow:0 4px 16px rgba(16,185,129,0.3)}
+        .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:none;padding:6px 4px;z-index:1001}
+        .nav-burger span{display:block;width:26px;height:2px;background-color:var(--text-light);border-radius:2px;transition:var(--transition);transform-origin:center}
+        .nav-burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .nav-burger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+        .nav-burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .mobile-menu{position:fixed;top:var(--nav-h);left:0;width:100%;height:0;background:rgba(11,15,18,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;transition:height 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--border);gap:4px}
+        .mobile-menu.open{height:auto;padding:32px 24px 40px}
+        .mobile-menu a{font-size:1.05rem;font-weight:500;color:var(--text-light);padding:12px 20px;width:100%;max-width:320px;text-align:center;border-radius:6px;transition:var(--transition)}
+        .mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+        .mobile-menu a.btn-primary{color:#000!important;background:var(--accent);margin-top:12px;padding:14px 28px;border:none}
+
+        /* BACK LINK */
+        .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:40px;transition:var(--transition)}
+        .back-link svg{width:16px;height:16px;transition:transform 0.25s}
+        .back-link:hover{opacity:0.75}
+        .back-link:hover svg{transform:translateX(-3px)}
+
+        /* PROFILE HERO */
+        .profile-hero{padding:calc(var(--nav-h) + 64px) 0 72px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 60% 0%,rgba(16,185,129,0.05) 0%,var(--bg-main) 60%);position:relative;overflow:hidden}
+        .profile-hero .container{position:relative;z-index:1}
+        .profile-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+
+        /* Photo col */
+        .profile-photo-col{display:flex;flex-direction:column;gap:20px}
+        .profile-img-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px;position:relative;overflow:hidden}
+        .profile-img-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+        .profile-img-wrapper img{width:100%;border-radius:6px;object-fit:cover;object-position:center top;aspect-ratio:3/4}
+        .img-placeholder{width:100%;aspect-ratio:3/4;border-radius:6px;background:var(--bg-elevated);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text-muted);font-size:0.85rem}
+        .img-placeholder svg{width:40px;height:40px;opacity:0.3}
+
+        /* Credential stack */
+        .credential-stack{display:flex;flex-direction:column;gap:10px}
+        .credential-item{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;transition:var(--transition)}
+        .credential-item:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .credential-icon{width:34px;height:34px;background:var(--accent-dim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .credential-icon svg{width:17px;height:17px}
+        .credential-text strong{display:block;font-size:0.78rem;font-weight:700;color:var(--text-light);line-height:1.3}
+        .credential-text span{font-size:0.72rem;color:var(--text-muted)}
+
+        /* Content col */
+        .profile-content-col{padding-top:4px}
+        .profile-role{font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:10px;display:block}
+        .profile-name{font-size:clamp(2.2rem,4vw,3.4rem);letter-spacing:-0.03em;margin-bottom:6px;color:var(--text-light)}
+        .profile-credentials-inline{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;font-weight:500;display:block}
+        .profile-bio{font-size:1.02rem;color:var(--text-muted-light);line-height:1.85;margin-bottom:32px;max-width:640px}
+
+        .profile-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+        .btn-social{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--text-muted-light);background:var(--bg-card);transition:var(--transition)}
+        .btn-social svg{width:16px;height:16px;flex-shrink:0}
+        .btn-social:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+        .profile-divider{height:1px;background:var(--border);margin-bottom:32px}
+
+        .focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .focus-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:var(--transition);position:relative;overflow:hidden}
+        .focus-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
+        .focus-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .focus-card:hover::after{transform:scaleX(1)}
+        .focus-card h4{font-size:0.9rem;color:var(--text-light);margin-bottom:7px;font-family:var(--font-body);font-weight:700}
+        .focus-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+
+        /* INTERNSHIP TIMELINE */
+        .timeline-section{padding:72px 0;border-bottom:1px solid var(--border);background:var(--bg-card)}
+        .section-header{margin-bottom:40px}
+        .section-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:10px;letter-spacing:-0.02em}
+        .section-header p{font-size:1rem;color:var(--text-muted-light);max-width:560px}
+
+        .timeline{display:flex;flex-direction:column;gap:0;position:relative}
+        .timeline::before{content:'';position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:var(--border);border-radius:2px}
+        .tl-item{display:flex;gap:24px;padding-bottom:28px;position:relative}
+        .tl-item:last-child{padding-bottom:0}
+        .tl-dot{
+            width:40px;height:40px;flex-shrink:0;
+            background:var(--accent-dim);border:2px solid var(--accent);
+            border-radius:50%;display:flex;align-items:center;justify-content:center;
+            position:relative;z-index:1;transition:var(--transition)
+        }
+        .tl-dot svg{width:17px;height:17px}
+        .tl-item:hover .tl-dot{background:var(--accent);transform:scale(1.1)}
+        .tl-item:hover .tl-dot svg{color:#000}
+        .tl-body{flex:1;padding-top:8px}
+        .tl-title{font-size:0.92rem;font-weight:700;color:var(--text-light);margin-bottom:3px}
+        .tl-place{font-size:0.78rem;color:var(--accent);font-weight:600;margin-bottom:5px}
+        .tl-desc{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+
+        /* CERTIFICATIONS */
+        .cert-section{padding:72px 0;border-bottom:1px solid var(--border)}
+        .cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+        .cert-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 18px;display:flex;align-items:flex-start;gap:14px;transition:var(--transition);position:relative;overflow:hidden}
+        .cert-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
+        .cert-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .cert-card:hover::after{transform:scaleX(1)}
+        .cert-icon{width:36px;height:36px;background:var(--accent-dim);border:1px solid rgba(16,185,129,0.18);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .cert-icon svg{width:17px;height:17px}
+        .cert-details h4{font-size:0.82rem;font-weight:700;color:var(--text-light);margin-bottom:3px;font-family:var(--font-body)}
+        .cert-details p{font-size:0.76rem;color:var(--text-muted);line-height:1.55}
+
+        /* PORTFOLIO */
+        .portfolio-section{padding:90px 0;border-bottom:1px solid var(--border)}
+        .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+
+        .work-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;transition:var(--transition);position:relative}
+        .work-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease}
+        .work-card:hover{border-color:var(--border-hover);transform:translateY(-5px);box-shadow:var(--shadow-hover);background:var(--bg-card-hover)}
+        .work-card:hover::after{transform:scaleX(1)}
+        .work-img-wrap{height:220px;overflow:hidden;background:var(--bg-elevated);position:relative}
+        .work-img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.6s ease}
+        .work-card:hover .work-img{transform:scale(1.04)}
+        .work-img-placeholder{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:var(--bg-elevated)}
+        .work-img-placeholder svg{width:36px;height:36px;opacity:0.2}
+        .work-content{padding:28px 28px 30px;flex-grow:1;display:flex;flex-direction:column}
+        .work-category{font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:10px}
+        .work-content h3{font-size:1.12rem;margin-bottom:10px;color:var(--text-light);line-height:1.35}
+        .work-content p{font-size:0.88rem;color:var(--text-muted-light);line-height:1.7;flex-grow:1;margin-bottom:20px}
+        .work-meta{font-size:0.75rem;color:var(--text-muted);margin-bottom:14px}
+        .work-link{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:700;color:var(--accent);transition:var(--transition)}
+        .work-link svg{width:14px;height:14px;transition:transform 0.25s}
+        .work-card:hover .work-link svg{transform:translateX(4px)}
+
+        /* CTA */
+        .cta-banner{text-align:center;padding:90px 0;background:radial-gradient(ellipse at 50% 30%,rgba(16,185,129,0.06) 0%,var(--bg-main) 70%)}
+        .cta-banner h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:12px}
+        .cta-banner p{max-width:480px;margin:0 auto 28px;font-size:1rem;color:var(--text-muted-light)}
+        .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        footer{padding:32px 0;text-align:center;background:var(--bg-main);border-top:1px solid var(--border)}
+        footer p{font-size:0.8rem;color:var(--text-muted)}
+
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+
+        .skip-link{position:absolute;top:-100%;left:16px;padding:12px 24px;background:var(--accent);color:#000;font-weight:600;border-radius:4px;z-index:9999;transition:top 0.2s}
+        .skip-link:focus{top:12px}
+        :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+        @media(max-width:992px){
+            .nav-links a:not(.btn-primary){padding:6px 10px;font-size:0.8rem}
+            .profile-grid{grid-template-columns:260px 1fr;gap:40px}
+            .cert-grid{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:768px){
+            .nav-links{display:none}.nav-burger{display:flex}
+            .nav-brand-name{font-size:1.05rem}.nav-logo{height:32px}
+            .profile-hero{padding:calc(var(--nav-h)+40px) 0 56px}
+            .profile-grid{grid-template-columns:1fr;gap:36px}
+            .profile-photo-col{max-width:260px}
+            .focus-grid{grid-template-columns:1fr}
+            .cert-grid{grid-template-columns:1fr}
+            .portfolio-grid{grid-template-columns:1fr}
+            .portfolio-section,.cert-section,.timeline-section{padding:56px 0}
+            .cta-banner{padding:56px 0}
+            .work-img-wrap{height:180px}
+        }
+        @media(max-width:480px){
+            .container{padding:0 16px}
+            .profile-actions{flex-direction:column}
+            .profile-actions .btn-social,.profile-actions .btn-primary{width:100%;justify-content:center}
+            .cta-actions .btn-primary,.cta-actions .btn-secondary{width:100%;justify-content:center}
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
+                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
+                <span class="nav-brand-name">ThatVetGuy.net</span>
+            </a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="experts.html" class="active">Team</a>
+                <a href="index.html#partner">Partner</a>
+                <a href="index.html#work">Experience</a>
+                <a href="media.html">Media</a>
+                <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a>
+            </div>
+            <button class="nav-burger" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="services.html">Services</a>
+        <a href="experts.html" class="active">Team</a>
+        <a href="index.html#partner">Partner</a>
+        <a href="index.html#work">Experience</a>
+        <a href="media.html">Media</a>
+        <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
+    </div>
+
+    <main id="main">
+
+        <header class="profile-hero">
+            <div class="container">
+
+                <a href="experts.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Back to the Collective
+                </a>
+
+                <div class="profile-grid">
+
+                    <!-- LEFT: Photo + Credentials -->
+                    <div class="profile-photo-col reveal">
+                        <div class="profile-img-wrapper">
+                            <img src="amaan.png" alt="Dr. Amaan Ahmed"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                                <span>Dr. Amaan Ahmed</span>
+                            </div>
+                        </div>
+
+                        <div class="credential-stack">
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>BVSc &amp; AH</strong>
+                                    <span>NDVSU, College of Vet Science, Mhow &mdash; 2025</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>MPSVC Reg No: 5191/2026</strong>
+                                    <span>Registered Veterinary Practitioner</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>Wildlife &amp; Research Specialist</strong>
+                                    <span>ThatVetGuy Collective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Content -->
+                    <div class="profile-content-col reveal">
+                        <span class="profile-role">Wildlife &amp; Research Specialist</span>
+                        <h1 class="profile-name">Dr. Amaan Ahmed</h1>
+                        <span class="profile-credentials-inline">BVSc &amp; AH, NDVSU &bull; MPSVC Reg: 5191/2026 &bull; Wildlife SOS &bull; WWF &bull; UNICEF Volunteer</span>
+
+                        <p class="profile-bio">
+                            Dr. Amaan Ahmed brings a rare combination of multi-species clinical expertise, wildlife rehabilitation fieldwork, and animal welfare advocacy to the Collective. A 2025 BVSc graduate of the College of Veterinary Science &amp; A.H., Mhow, his training spans zoo medicine, equine care, avian biosecurity, diagnostic pathology, and high-volume emergency outpatient practice. His voluntary contributions to wildlife research and conservation campaigns &mdash; partnered with WWF, UNICEF, and Chhattisgarh government bodies &mdash; give him a distinctly One Health perspective that informs every piece of content he authors.
+                        </p>
+
+                        <div class="profile-actions">
+                            <a href="https://www.linkedin.com/in/amaan-ahmed-a80696388" target="_blank" rel="noopener noreferrer" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn Profile
+                            </a>
+                            <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+                                Published Articles
+                            </a>
+                            <a href="mailto:contact@thatvetguy.net" class="btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Connect Directly
+                            </a>
+                        </div>
+
+                        <div class="profile-divider"></div>
+
+                        <span class="section-label">Areas of Focus</span>
+                        <div class="focus-grid">
+                            <div class="focus-card">
+                                <h4>Wildlife Medicine &amp; Rehabilitation</h4>
+                                <p>Bear rescue with Wildlife SOS, captive wildlife nutrition at Indore Zoo, and conservation awareness partnered with WWF and UNICEF across Chhattisgarh.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Small &amp; Large Animal Diagnostics</h4>
+                                <p>Multi-species clinical competency across TVCC core rotations: medicine, surgery, gynaecology, and emergency case management at government hospitals.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Clinical Research Writing</h4>
+                                <p>Evidence-based veterinary articles targeting pet owners and industry professionals — authored from active clinical experience, not secondary sources.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>One Health &amp; Animal Welfare</h4>
+                                <p>Contributing environmental impact assessments and disease surveillance insights to NGO campaigns bridging animal, human, and ecosystem health.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+
+
+        <!-- CERTIFICATIONS -->
+        <section class="cert-section" aria-labelledby="cert-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Awards &amp; Certifications</span>
+                    <h2 id="cert-heading">Recognition &amp; Leadership</h2>
+                    <p>National-level awards spanning science, wildlife advocacy, and leadership — reflecting a multidisciplinary commitment beyond clinical practice.</p>
+                </div>
+
+                <div class="cert-grid reveal">
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>NCC B &amp; C Certificates</h4>
+                            <p>3 CG AIR SQN, Raipur &amp; 2 MP R&amp;V SQN, Mhow — Junior &amp; Senior Division.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 3a3 3 0 0 0-3 3l-9.5 9.5a2.121 2.121 0 0 0 3 3L18 9a3 3 0 0 0 0-6z"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>CBSE National Science Exhibition 2018</h4>
+                            <p>Winner &mdash; All India level science innovation competition.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Global Young Scientist Challenge 2018</h4>
+                            <p>Selected participant, Singapore &mdash; international science leadership programme.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Indian Innovators Association 2018</h4>
+                            <p>Winner, Delhi &mdash; national innovation and entrepreneurship recognition.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>AIVSC MP-CG Directorate 2018</h4>
+                            <p>All India Veterinary Students Convention leadership certification.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Wildlife SOS &amp; CCS Volunteer</h4>
+                            <p>Bear Rescue Centre (BRRC) 2018 &amp; ongoing animal welfare advocacy with WWF, UNICEF, and government bodies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO — Published Articles -->
+        <section class="portfolio-section" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Dr. Ahmed&rsquo;s Portfolio</span>
+                    <h2 id="portfolio-heading">Published Clinical Articles</h2>
+                    <p>Evidence-based veterinary writing for pet owners and professionals &mdash; authored from active clinical training and field experience.</p>
+                </div>
+
+                <div class="portfolio-grid">
+
+                    <!-- Article 1 — Chocolate Toxicity -->
+                    <a href="https://blog.thatvetguy.net/2026/06/how-long-after-dog-eats-chocolate-will.html"
+                       target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi0mDkQy6Lk2tlwhZ6-GbfoGjyEpgPNB5l8aTm5CFv5gGglBR3cyfGe2ISlv3dN3phiLDI-ihhq55WA-0kq96eOgvHplk9xISRLa8T0v4qCNrp9OQkue75UjzmIrRmA07GzedueMQld2HUMHcTw4LhANDb1xBYmL0qyF3Rx-rEV0Q4A0lTeGO4BTiNMKfyl/w1200-h630-p-k-no-nu/1000040978.png"
+                                 alt="How Long After a Dog Eats Chocolate Will Symptoms Show"
+                                 class="work-img"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <span class="work-category">Clinical Emergency &bull; Small Animal</span>
+                            <h3>How Long After a Dog Eats Chocolate Will Symptoms Show? A Vet&rsquo;s Emergency Timeline</h3>
+                            <p>A phase-by-phase breakdown of theobromine toxicity in dogs — from the critical 2-hour intervention window through advanced cardiac and neurological signs. Includes a Chocolate Danger Matrix by type and body weight.</p>
+                            <div class="work-meta">By Dr. Amaan Ahmed &bull; Published June 22, 2026 &bull; blog.thatvetguy.net</div>
+                            <span class="work-link">
+                                Read Article
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                    <!-- Article 2 — Household Toxins -->
+                    <a href="https://blog.thatvetguy.net/2026/06/the-ultimate-guide-to-common-household.html"
+                       target="_blank" rel="noopener noreferrer" class="work-card reveal">
+                        <div class="work-img-wrap">
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-Pw1c-Up9LkN0nkAZzE87e106P1wt1nAWL-9dfB3iJMwH5JAh14WKrnfg97_qIaZhy4N0882skm_4vtVFI2Y_I5WekU71jZYjtw4jmcmOX3QVFN1VtuylfDeUl7SZ_mKbESbWxw47jQ80_QmFrUBWw-wmkPo1q1QkJspandclYf9sS20XJE51aZWBtfxJ/w1200-h630-p-k-no-nu/60129.png"
+                                 alt="The Ultimate Guide to Common Household Pet Toxins"
+                                 class="work-img"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="work-img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <span class="work-category">Toxicology &bull; Pet Safety</span>
+                            <h3>The Ultimate Guide to Common Household Pet Toxins: A Vet&rsquo;s Safety Checklist</h3>
+                            <p>A comprehensive clinical reference covering xylitol, grapes, Allium species, human NSAIDs, acetaminophen, and lethal houseplants — with a Household Toxin Danger Matrix and a step-by-step emergency action plan.</p>
+                            <div class="work-meta">By Dr. Amaan Ahmed &bull; Published June 23, 2026 &bull; blog.thatvetguy.net</div>
+                            <span class="work-link">
+                                Read Article
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner" aria-labelledby="cta-heading">
+            <div class="container">
+                <span class="section-label" style="justify-content:center;margin-bottom:18px;">Collaborate</span>
+                <h2 id="cta-heading">Work with Dr. Ahmed</h2>
+                <p>For wildlife research, clinical content commissions, or animal welfare consultancy &mdash; reach out directly.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding:15px 36px;font-size:1rem;">Email Dr. Amaan &rarr;</a>
+                    <a href="experts.html" class="btn-secondary" style="padding:15px 32px;font-size:1rem;">Meet the Full Collective</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
+            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
+            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
+            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
+            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
+            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
+            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
+        })();
+        var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+        els.forEach(function(el){obs.observe(el)});
+        var nav=document.getElementById('navbar');
+        window.addEventListener('scroll',function(){if(window.scrollY>50){nav.style.background='rgba(11,15,18,0.97)';nav.style.boxShadow='0 4px 20px rgba(0,0,0,0.4)'}else{nav.style.background='rgba(11,15,18,0.88)';nav.style.boxShadow='none'}});
+    </script>
+
+</body>
+</html>
