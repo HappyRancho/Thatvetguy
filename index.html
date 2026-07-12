@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The ThatVetGuy Collective — a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements." />
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="The ThatVetGuy Collective — a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements." />
     <title>The ThatVetGuy Collective | Veterinary Content & Clinical Specialists</title>
+
+    <link rel="canonical" href="https://www.thatvetguy.net/" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="The ThatVetGuy Collective | Veterinary Content & Clinical Specialists" />
+    <meta property="og:description" content="The ThatVetGuy Collective — a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements." />
+    <meta property="og:url" content="https://www.thatvetguy.net/" />
+    <meta property="og:image" content="https://www.thatvetguy.net/chirag.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The ThatVetGuy Collective | Veterinary Content & Clinical Specialists" />
+    <meta name="twitter:description" content="The ThatVetGuy Collective — a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements." />
+    <meta name="twitter:image" content="https://www.thatvetguy.net/chirag.png" />
+
 
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -864,7 +878,46 @@
             outline: 2px solid var(--accent);
             outline-offset: 3px;
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The ThatVetGuy Collective",
+      "url": "https://www.thatvetguy.net",
+      "logo": "https://www.thatvetguy.net/chirag.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/chirag-patidar-veterinarian/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "name": "The ThatVetGuy Collective",
+      "url": "https://www.thatvetguy.net",
+      "description": "The ThatVetGuy Collective — a freelance team of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements."
+    }
+  ]
+}
+    </script>
 </head>
 
 <body>
@@ -877,7 +930,7 @@
         <div class="container nav-wrapper">
 
             <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
-                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" />
+                <img loading="eager" fetchpriority="high" decoding="async" src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" />
                 <span class="nav-brand-name">ThatVetGuy.net</span>
             </a>
 
@@ -921,7 +974,7 @@
                 <span class="hero-eyebrow">Freelance Veterinary Team &amp; Influencer Network</span>
 
                 <div class="hero-title-wrap">
-                    <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="hero-logo" />
+                    <img loading="lazy" decoding="async" src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="hero-logo" />
                     <h1>The <span class="highlight">ThatVetGuy</span> Collective</h1>
                 </div>
 
@@ -1086,7 +1139,7 @@
         <section id="partner" aria-labelledby="partner-heading">
             <div class="container">
                 <div class="section-header" style="margin-bottom: 32px;">
-                    <img src="indore-kennel-logo.png" alt="Indore Kennel — Premium Canine Retreat" class="partner-logo" />
+                    <img loading="lazy" decoding="async" src="indore-kennel-logo.png" alt="Indore Kennel — Premium Canine Retreat" class="partner-logo" />
                     <span class="section-label">Our Exclusive Partner</span>
                     <h2 id="partner-heading">Indore Kennel</h2>
                     <p>Providing premium canine retreat and comprehensive boarding care across 4 specialized branches. Indore Kennel serves as our trusted facility partner for ethical, real-world corporate sample testing and nutritional trials.</p>
@@ -1138,7 +1191,7 @@
                     </a>
 
                     <!-- ABC Surgery -->
-                    <a href="abc-surgery-certificate.pdf" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
+                    <a href="abc-surgery-certificate.jpg" target="_blank" rel="noopener noreferrer" class="premium-card work-card">
                         <div class="work-img-wrap">
                             <img src="abc-surgery-certificate.jpg" alt="Animal Birth Control Surgery Certificate — 2,000+ spay procedures" class="work-img" loading="lazy" />
                         </div>

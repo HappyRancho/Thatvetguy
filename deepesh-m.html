@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Deepesh Mathur | ThatVetGuy Collective</title>
+    
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="Dr. Deepesh Mathur — Veterinary specialist at The ThatVetGuy Collective focused on clinical practice, diagnostics, and practical animal health education." />
+<title>Dr. Deepesh Mathur | ThatVetGuy Collective</title>
+
+    <link rel="canonical" href="https://www.thatvetguy.net/deepesh-m.html" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Dr. Deepesh Mathur | ThatVetGuy Collective" />
+    <meta property="og:description" content="Dr. Deepesh Mathur — Veterinary specialist at The ThatVetGuy Collective focused on clinical practice, diagnostics, and practical animal health education." />
+    <meta property="og:url" content="https://www.thatvetguy.net/deepesh-m.html" />
+    <meta property="og:image" content="https://www.thatvetguy.net/deepesh-m.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. Deepesh Mathur | ThatVetGuy Collective" />
+    <meta name="twitter:description" content="Dr. Deepesh Mathur — Veterinary specialist at The ThatVetGuy Collective focused on clinical practice, diagnostics, and practical animal health education." />
+    <meta name="twitter:image" content="https://www.thatvetguy.net/deepesh-m.png" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -378,7 +394,51 @@
             .portfolio-grid { grid-template-columns: 1fr; }
             .case-content { padding: 30px 24px; }
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The ThatVetGuy Collective",
+      "url": "https://www.thatvetguy.net",
+      "logo": "https://www.thatvetguy.net/chirag.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/chirag-patidar-veterinarian/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Deepesh Mathur",
+      "url": "https://www.thatvetguy.net/deepesh-m.html",
+      "image": "https://www.thatvetguy.net/deepesh-m.png",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The ThatVetGuy Collective"
+      },
+      "jobTitle": "Veterinary Specialist"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
@@ -399,7 +459,7 @@
             
             <div class="profile-grid">
                 <div class="profile-img-wrapper">
-                    <img src="deepesh-m.png" alt="Dr. Deepesh Mathur" onerror="this.style.display='none'">
+                    <img loading="eager" fetchpriority="high" decoding="async" src="deepesh-m.png" alt="Dr. Deepesh Mathur" onerror="this.style.display='none'">
                 </div>
 
                 <div class="profile-content">

@@ -3,8 +3,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dr. Shivam Singh Thakur — Lead Content Strategist & Brand Consultant at The ThatVetGuy Collective. MVSc Livestock Products Technology, 12k+ LinkedIn followers, HubSpot certified." />
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="Dr. Shivam Singh Thakur — Lead Content Strategist & Brand Consultant at The ThatVetGuy Collective. MVSc Livestock Products Technology, 12k+ LinkedIn followers, HubSpot certified." />
     <title>Dr. Shivam Singh Thakur | The ThatVetGuy Collective</title>
+
+    <link rel="canonical" href="https://www.thatvetguy.net/Shivam.html" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Dr. Shivam Singh Thakur | The ThatVetGuy Collective" />
+    <meta property="og:description" content="Dr. Shivam Singh Thakur — Lead Content Strategist & Brand Consultant at The ThatVetGuy Collective. MVSc Livestock Products Technology, 12k+ LinkedIn followers, HubSpot certified." />
+    <meta property="og:url" content="https://www.thatvetguy.net/Shivam.html" />
+    <meta property="og:image" content="https://www.thatvetguy.net/shivam.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. Shivam Singh Thakur | The ThatVetGuy Collective" />
+    <meta name="twitter:description" content="Dr. Shivam Singh Thakur — Lead Content Strategist & Brand Consultant at The ThatVetGuy Collective. MVSc Livestock Products Technology, 12k+ LinkedIn followers, HubSpot certified." />
+    <meta name="twitter:image" content="https://www.thatvetguy.net/shivam.png" />
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -188,7 +202,51 @@
             .profile-actions .btn-social,.profile-actions .btn-primary{width:100%;justify-content:center}
             .cta-actions .btn-primary,.cta-actions .btn-secondary{width:100%;justify-content:center}
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The ThatVetGuy Collective",
+      "url": "https://www.thatvetguy.net",
+      "logo": "https://www.thatvetguy.net/chirag.png",
+      "sameAs": [
+        "https://www.linkedin.com/in/chirag-patidar-veterinarian/"
+      ]
+    },
+    {
+      "@type": "Person",
+      "name": "Dr. Shivam Singh Thakur",
+      "url": "https://www.thatvetguy.net/Shivam.html",
+      "image": "https://www.thatvetguy.net/shivam.png",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "The ThatVetGuy Collective"
+      },
+      "jobTitle": "Veterinary Specialist"
+    }
+  ]
+}
+    </script>
 </head>
 <body>
 
@@ -198,7 +256,7 @@
     <nav id="navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-wrapper">
             <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
-                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
+                <img loading="eager" fetchpriority="high" decoding="async" src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
                 <span class="nav-brand-name">ThatVetGuy.net</span>
             </a>
             <div class="nav-links">
@@ -243,7 +301,7 @@
                     <!-- LEFT: Photo + Social proof stats -->
                     <div class="profile-photo-col reveal">
                         <div class="profile-img-wrapper">
-                            <img src="shivam.png" alt="Dr. Shivam Singh Thakur"
+                            <img loading="lazy" decoding="async" src="shivam.png" alt="Dr. Shivam Singh Thakur"
                                  onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="img-placeholder" style="display:none;">
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
@@ -419,7 +477,7 @@
                     <!-- The Future Vet -->
                     <a href="https://www.linkedin.com/newsletters/the-future-vet-7421237861208752128" target="_blank" rel="noopener noreferrer" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="newsletter2-preview.jpg" alt="The Future Vet Newsletter" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="newsletter2-preview.jpg" alt="The Future Vet Newsletter" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -433,7 +491,7 @@
                     <!-- Animal Origin Foods Journal -->
                     <a href="https://www.linkedin.com/newsletters/animal-origin-foods-journal-7428394753953644544" target="_blank" rel="noopener noreferrer" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="newsletter-preview.jpg" alt="Animal Origin Foods Journal" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="newsletter-preview.jpg" alt="Animal Origin Foods Journal" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -447,7 +505,7 @@
                     <!-- Truthful Tail -->
                     <a href="https://thetruthfultail.com/" target="_blank" rel="noopener noreferrer" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="truthfultail-preview.jpg" alt="The Truthful Tail Clinical Endorsement" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="truthfultail-preview.jpg" alt="The Truthful Tail Clinical Endorsement" class="work-img" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -461,7 +519,7 @@
                     <!-- AIMIL -->
                     <a href="#" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="aimil-preview.jpg" alt="AIMIL Certificate of Excellence" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="aimil-preview.jpg" alt="AIMIL Certificate of Excellence" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -475,7 +533,7 @@
                     <!-- HubSpot -->
                     <a href="#" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="hubspot-preview.jpg" alt="HubSpot Digital Marketing Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="hubspot-preview.jpg" alt="HubSpot Digital Marketing Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -489,7 +547,7 @@
                     <!-- FAO Tick -->
                     <a href="#" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="fao-tick.jpg" alt="FAO Tick Control Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="fao-tick.jpg" alt="FAO Tick Control Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                         </div>
                         <div class="work-content">
@@ -503,7 +561,7 @@
                     <!-- FAO Agrifood -->
                     <a href="#" class="work-card reveal">
                         <div class="work-img-wrap">
-                            <img src="fao-agrifood.jpg" alt="FAO Agrifood Solutions Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <img loading="lazy" decoding="async" src="fao-agrifood.jpg" alt="FAO Agrifood Solutions Certification" class="work-img work-img-contain" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
                             <div class="work-img-placeholder" style="display:none;"><svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
                          </div>
                         <div class="work-content">
