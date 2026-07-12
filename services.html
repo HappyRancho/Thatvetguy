@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Comprehensive B2B veterinary services from The ThatVetGuy Collective — clinical research, medical writing, brand endorsement, education, illustration, and project management by active veterinary professionals." />
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="Comprehensive B2B veterinary services from The ThatVetGuy Collective — clinical research, medical writing, brand endorsement, education, illustration, and project management by active veterinary professionals." />
     <title>Our Services | The ThatVetGuy Collective</title>
 
     <link rel="canonical" href="https://www.thatvetguy.net/services.html" />
@@ -634,6 +635,21 @@
             .cta-actions .btn-primary,
             .cta-actions .btn-secondary { width: 100%; justify-content: center; }
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Dr. Deepesh Mathur — Veterinary specialist at The ThatVetGuy Collective focused on clinical practice, diagnostics, and practical animal health education." />
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="Dr. Deepesh Mathur — Veterinary specialist at The ThatVetGuy Collective focused on clinical practice, diagnostics, and practical animal health education." />
 <title>Dr. Deepesh Mathur | ThatVetGuy Collective</title>
 
     <link rel="canonical" href="https://www.thatvetguy.net/deepesh-m.html" />
@@ -393,6 +394,21 @@
             .portfolio-grid { grid-template-columns: 1fr; }
             .case-content { padding: 30px 24px; }
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">

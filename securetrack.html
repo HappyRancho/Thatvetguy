@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta name="description" content="Securetrack case study by The ThatVetGuy Collective showcasing veterinary-driven strategy, execution quality, and measurable outcomes." />
+        <meta name="theme-color" content="#0B0F12" />
+<meta name="description" content="Securetrack case study by The ThatVetGuy Collective showcasing veterinary-driven strategy, execution quality, and measurable outcomes." />
 <title>Securetrack Case Study | ThatVetGuy Collective</title>
 
     <link rel="canonical" href="https://www.thatvetguy.net/securetrack.html" />
@@ -160,6 +161,21 @@
             .hero-image-container { padding: 40px 20px; }
             .nav-links { display: none; }
         }
+    
+        /* Accessibility + motion preferences */
+        :focus-visible {
+            outline: 3px solid var(--accent, #10B981);
+            outline-offset: 3px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
     </style>
 
     <script type="application/ld+json">
