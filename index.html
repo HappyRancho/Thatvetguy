@@ -572,6 +572,8 @@
             flex-direction: column;
             gap: 10px;
             margin-top: 12px;
+            position: relative;
+            z-index: 1;
         }
         .btn-profile {
             display: inline-flex;
@@ -586,6 +588,10 @@
             font-size: 0.9rem;
             font-weight: 600;
             transition: var(--transition);
+            cursor: pointer;
+            pointer-events: auto;
+            position: relative;
+            z-index: 1;
         }
         .btn-profile svg {
             width: 17px;
