@@ -7,35 +7,42 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
            TOKENS (Matching your Dark/Gold Theme)
            ========================================= */
         :root {
-            --ink:       #0a0f1e;
-            --ink-mid:   #1c2440;
-            --ink-soft:  #3d4f72;
-            --slate:     #64748b;
-            --mist:      #f0f4fa;
-            --white:     #ffffff;
-            --gold:      #c9a84c;
-            --gold-dim:  rgba(201,168,76,0.18);
-            --gold-line: rgba(201,168,76,0.35);
-
+            --bg-main: #0B0F12;
+            --bg-card: #12181C;
+            --bg-card-hover: #1A2228;
+            --bg-elevated: #1A2228;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-muted-light: #CBD5E1;
+            --accent: #10B981;
+            --accent-hover: #059669;
+            --accent-dim: rgba(16,185,129,0.12);
+            --accent-line: rgba(16,185,129,0.35);
+            --border: #1F2937;
+            --border-hover: #374151;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
             --radius-sm: 6px;
             --radius-md: 14px;
             --radius-lg: 22px;
-            --nav-h: 68px;
+            --shadow-card: 0 2px 16px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.2);
+            --shadow-lift: 0 20px 48px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.3);
+            --nav-h: 76px;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--ink);
-            color: var(--white);
+            font-family: var(--font-body);
+            background: var(--bg-main);
+            color: var(--text-light);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             line-height: 1.6;
@@ -49,20 +56,20 @@
            NAV
            ========================================= */
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
             z-index: 1000;
             height: var(--nav-h);
-            background: rgba(10,15,30,0.94);
+            background: rgba(11,15,18,0.88);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid var(--border);
         }
         .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 100%; }
-        .logo { font-family: 'DM Serif Display', Georgia, serif; font-size: 1.35rem; color: var(--white); }
-        .logo span { color: var(--gold); }
+        .logo { font-family: var(--font-heading); font-size: 1.35rem; color: var(--text-light); }
+        .logo span { color: var(--accent); }
         .nav-links { display: flex; gap: 32px; align-items: center; }
-        .nav-links a { font-size: 0.88rem; font-weight: 500; color: rgba(255,255,255,0.65); transition: color 0.2s; }
-        .nav-links a:hover { color: var(--gold); }
+        .nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--text-muted); transition: color 0.2s; }
+        .nav-links a:hover { color: var(--accent); }
 
         /* =========================================
            HERO HEADER
@@ -70,36 +77,36 @@
         .case-header {
             padding: 80px 0 60px;
             position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid var(--border);
         }
         .case-header::before {
             content: '';
             position: absolute;
             top: 0; left: 50%; transform: translateX(-50%);
             width: 800px; height: 600px;
-            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at center, rgba(16,185,129,0.08) 0%, transparent 60%);
             pointer-events: none;
         }
         .back-link {
             display: inline-flex; align-items: center; gap: 8px;
-            color: var(--gold); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
+            color: var(--accent); font-size: 0.85rem; font-weight: 600; text-transform: uppercase;
             letter-spacing: 0.1em; margin-bottom: 40px; transition: opacity 0.2s;
         }
         .back-link:hover { opacity: 0.8; }
         
         .header-content { text-align: center; position: relative; z-index: 1; }
         .category-tag {
-            display: inline-block; padding: 6px 16px; background: var(--gold-dim); color: var(--gold);
-            border: 1px solid var(--gold-line); border-radius: var(--radius-sm);
+            display: inline-block; padding: 6px 16px; background: var(--accent-dim); color: var(--accent);
+            border: 1px solid var(--accent-line); border-radius: var(--radius-sm);
             font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
             margin-bottom: 24px;
         }
         .header-content h1 {
-            font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(2.5rem, 5vw, 3.5rem);
-            line-height: 1.1; margin-bottom: 24px; color: var(--white);
+            font-family: var(--font-heading); font-size: clamp(2.5rem, 5vw, 3.5rem);
+            line-height: 1.1; margin-bottom: 24px; color: var(--text-light);
         }
         .header-content p {
-            font-size: 1.15rem; color: rgba(255,255,255,0.6); max-width: 700px; margin: 0 auto;
+            font-size: 1.15rem; color: var(--text-muted-light); max-width: 700px; margin: 0 auto;
         }
 
         /* =========================================
@@ -108,7 +115,7 @@
         .case-body { padding: 80px 0; }
         
         .hero-image-container {
-            background: #eef2f6; border-radius: var(--radius-lg); padding: 60px;
+            background: var(--bg-elevated); border-radius: var(--radius-lg); padding: 60px;
             margin-bottom: 60px; display: flex; justify-content: center; align-items: center;
         }
         .hero-image-container img { max-width: 400px; width: 100%; object-fit: contain; }
@@ -118,22 +125,22 @@
         }
         
         .meta-sidebar {
-            background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06);
+            background: var(--bg-card); border: 1px solid var(--border);
             padding: 32px; border-radius: var(--radius-md); height: fit-content;
         }
         .meta-item { margin-bottom: 24px; }
         .meta-item:last-child { margin-bottom: 0; }
-        .meta-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 600; }
-        .meta-value { font-size: 0.95rem; color: var(--white); font-weight: 500; line-height: 1.5; }
+        .meta-label { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; font-weight: 600; }
+        .meta-value { font-size: 0.95rem; color: var(--text-light); font-weight: 500; line-height: 1.5; }
 
         .content-main h2 {
-            font-family: 'DM Serif Display', Georgia, serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px;
+            font-family: var(--font-heading); font-size: 2rem; color: var(--accent); margin-bottom: 20px;
         }
         .content-main p {
-            font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 24px;
+            font-size: 1.05rem; color: var(--text-muted-light); line-height: 1.8; margin-bottom: 24px;
         }
         .content-main ul {
-            margin-bottom: 32px; padding-left: 20px; color: rgba(255,255,255,0.7); font-size: 1.05rem; line-height: 1.8;
+            margin-bottom: 32px; padding-left: 20px; color: var(--text-muted-light); font-size: 1.05rem; line-height: 1.8;
         }
         .content-main li { margin-bottom: 12px; }
 
@@ -224,9 +231,9 @@
         </div>
     </main>
 
-    <footer style="background: #07090f; border-top: 1px solid rgba(255,255,255,0.06); padding: 40px 0; text-align: center; margin-top: 60px;">
+    <footer style="background: var(--bg-main); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; margin-top: 60px;">
         <div class="wrap">
-            <p style="font-size: 0.85rem; color: rgba(255,255,255,0.3);">&copy; 2026 ThatVetGuy.net Freelance Team. All rights reserved.</p>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">&copy; 2026 ThatVetGuy.net Freelance Team. All rights reserved.</p>
         </div>
     </footer>
 

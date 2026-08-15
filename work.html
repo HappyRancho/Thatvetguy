@@ -7,31 +7,34 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
     <style>
         /* =========================================
            TOKENS
            ========================================= */
         :root {
-            --ink:       #0a0f1e;
-            --ink-mid:   #1c2440;
-            --ink-soft:  #3d4f72;
-            --slate:     #64748b;
-            --mist:      #f0f4fa;
-            --white:     #ffffff;
-            --gold:      #c9a84c;
-            --gold-dim:  rgba(201,168,76,0.18);
-            --gold-line: rgba(201,168,76,0.35);
-
+            --bg-main: #0B0F12;
+            --bg-card: #12181C;
+            --bg-card-hover: #1A2228;
+            --bg-elevated: #1A2228;
+            --text-light: #F8FAFC;
+            --text-muted: #94A3B8;
+            --text-muted-light: #CBD5E1;
+            --accent: #10B981;
+            --accent-hover: #059669;
+            --accent-dim: rgba(16,185,129,0.12);
+            --accent-line: rgba(16,185,129,0.35);
+            --border: #1F2937;
+            --border-hover: #374151;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
             --radius-sm: 6px;
             --radius-md: 14px;
             --radius-lg: 22px;
-
-            --shadow-card: 0 2px 16px rgba(10,15,30,0.07), 0 1px 3px rgba(10,15,30,0.04);
-            --shadow-lift: 0 20px 48px rgba(10,15,30,0.12), 0 4px 12px rgba(10,15,30,0.06);
-
-            --nav-h: 68px;
+            --shadow-card: 0 2px 16px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.2);
+            --shadow-lift: 0 20px 48px rgba(0,0,0,0.55), 0 4px 12px rgba(0,0,0,0.3);
+            --nav-h: 76px;
         }
 
         /* =========================================
@@ -40,9 +43,9 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--mist);
-            color: var(--ink);
+            font-family: var(--font-body);
+            background: var(--bg-main);
+            color: var(--text-light);
             -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
             line-height: 1.6;
@@ -60,13 +63,13 @@
            NAV (Dark Theme)
            ========================================= */
         nav {
-            position: sticky;
+            position: fixed;
             top: 0;
             z-index: 1000;
             height: var(--nav-h);
-            background: rgba(10,15,30,0.94);
+            background: rgba(11,15,18,0.88);
             backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            border-bottom: 1px solid var(--border);
         }
         .nav-inner {
             display: flex;
@@ -75,12 +78,12 @@
             height: 100%;
         }
         .logo {
-            font-family: 'DM Serif Display', Georgia, serif;
+            font-family: var(--font-heading);
             font-size: 1.35rem;
-            color: var(--white);
+            color: var(--text-light);
             letter-spacing: 0.01em;
         }
-        .logo span { color: var(--gold); }
+        .logo span { color: var(--accent); }
         .nav-links {
             display: flex;
             align-items: center;
@@ -89,13 +92,13 @@
         .nav-links a {
             font-size: 0.88rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.65);
+            color: var(--text-muted);
             transition: color 0.2s;
         }
-        .nav-links a:hover, .nav-links a.active { color: var(--white); }
+        .nav-links a:hover, .nav-links a.active { color: var(--text-light); }
         .nav-cta {
-            background: var(--gold) !important;
-            color: var(--ink) !important;
+            background: var(--accent) !important;
+            color: #000 !important;
             padding: 9px 22px !important;
             border-radius: var(--radius-sm) !important;
             font-weight: 700 !important;
@@ -115,7 +118,7 @@
             border: none;
         }
         .nav-burger span {
-            display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s;
+            display: block; width: 24px; height: 2px; background: var(--text-light); border-radius: 2px; transition: all 0.3s;
         }
         .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
         .nav-burger.open span:nth-child(2) { opacity: 0; }
@@ -125,19 +128,19 @@
             display: none;
             position: fixed;
             top: var(--nav-h); left: 0; right: 0;
-            background: rgba(10,15,30,0.97);
+            background: rgba(11,15,18,0.98);
             backdrop-filter: blur(20px);
             padding: 28px; z-index: 999; flex-direction: column; gap: 4px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
+            border-bottom: 1px solid var(--border);
         }
         .mobile-menu.open { display: flex; }
         .mobile-menu a {
-            font-size: 1rem; font-weight: 500; color: rgba(255,255,255,0.75); padding: 14px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.07);
+            font-size: 1rem; font-weight: 500; color: var(--text-muted-light); padding: 14px 0;
+            border-bottom: 1px solid var(--border);
         }
-        .mobile-menu a:hover { color: var(--white); }
+        .mobile-menu a:hover { color: var(--text-light); }
         .mobile-cta-link {
-            background: var(--gold); color: var(--ink) !important; padding: 14px 20px !important;
+            background: var(--accent); color: #000 !important; padding: 14px 20px !important;
             border-radius: var(--radius-sm); font-weight: 700 !important; text-align: center; border: none !important; margin-top: 8px;
         }
 
@@ -145,31 +148,31 @@
            HERO SECTION
            ========================================= */
         .work-hero {
-            background: var(--ink);
+            background: var(--bg-main);
             padding: 100px 0 80px;
             text-align: center;
             position: relative;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid var(--border);
         }
         .work-hero::before {
             content: '';
             position: absolute;
             top: -20%; left: 50%; transform: translateX(-50%);
             width: 800px; height: 600px;
-            background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 60%);
+            background: radial-gradient(ellipse at center, rgba(16,185,129,0.08) 0%, transparent 60%);
             pointer-events: none;
         }
         .work-hero .wrap { position: relative; z-index: 1; }
         .work-hero h1 {
-            font-family: 'DM Serif Display', Georgia, serif;
+            font-family: var(--font-heading);
             font-size: clamp(2.5rem, 5vw, 3.8rem);
-            color: var(--white);
+            color: var(--text-light);
             margin-bottom: 18px;
             line-height: 1.1;
         }
         .work-hero p {
             font-size: 1.1rem;
-            color: rgba(255,255,255,0.55);
+            color: var(--text-muted-light);
             max-width: 680px;
             margin: 0 auto;
         }
@@ -187,8 +190,8 @@
         }
 
         .case-study {
-            background: var(--white);
-            border: 1px solid #e4eaf4;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: var(--radius-md);
             display: flex;
             flex-direction: column;
@@ -199,16 +202,16 @@
         .case-study:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-lift);
-            border-color: var(--gold);
+            border-color: var(--accent);
         }
         
         /* Previews */
         .preview-area {
             height: 220px;
-            background: var(--ink);
+            background: var(--bg-main);
             position: relative;
             overflow: hidden;
-            border-bottom: 1px solid #e4eaf4;
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -226,14 +229,14 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10, 15, 30, 0.6) 0%, transparent 100%);
+            background: linear-gradient(to top, rgba(11, 15, 18, 0.65) 0%, transparent 100%);
             pointer-events: none;
         }
 
         /* Generic Document Icon Fallback */
         .doc-icon {
             width: 60px; height: 70px;
-            background: var(--white);
+            background: var(--bg-card);
             border-radius: 4px; position: relative;
             box-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
@@ -252,7 +255,7 @@
         .case-category {
             font-size: 0.7rem;
             font-weight: 700;
-            color: var(--gold);
+            color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.12em;
             margin-bottom: 12px;
@@ -261,18 +264,18 @@
             gap: 8px;
         }
         .case-category::before {
-            content: ''; display: inline-block; width: 20px; height: 1px; background: var(--gold);
+            content: ''; display: inline-block; width: 20px; height: 1px; background: var(--accent);
         }
         .case-study h3 {
-            font-family: 'DM Serif Display', Georgia, serif;
+            font-family: var(--font-heading);
             font-size: 1.35rem;
             font-weight: 400;
-            color: var(--ink);
+            color: var(--text-light);
             line-height: 1.3;
             margin-bottom: 12px;
         }
         .case-study p {
-            color: var(--slate);
+            color: var(--text-muted-light);
             font-size: 0.9rem;
             line-height: 1.6;
             flex-grow: 1;
@@ -283,30 +286,30 @@
             align-items: center;
             gap: 8px;
             padding: 6px 14px;
-            background: rgba(10, 15, 30, 0.04);
+            background: var(--bg-main);
             border-radius: var(--radius-sm);
             font-size: 0.8rem;
             font-weight: 600;
-            color: var(--ink-soft);
-            border: 1px solid rgba(10, 15, 30, 0.08);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
             transition: background 0.2s;
         }
         .case-study:hover .expert-tag {
-            background: var(--gold-dim);
-            color: var(--ink);
-            border-color: var(--gold-line);
+            background: var(--accent-dim);
+            color: var(--text-light);
+            border-color: var(--accent-line);
         }
 
         /* =========================================
            FOOTER
            ========================================= */
         footer {
-            background: #07090f;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            background: var(--bg-main);
+            border-top: 1px solid var(--border);
             padding: 40px 0;
             text-align: center;
         }
-        footer p { font-size: 0.85rem; color: rgba(255,255,255,0.3); }
+        footer p { font-size: 0.85rem; color: var(--text-muted); }
 
         /* =========================================
            RESPONSIVE
@@ -344,7 +347,7 @@
     <div class="mobile-menu" id="mobileMenu">
         <a href="index.html">Home</a>
         <a href="experts.html">Know the Experts</a>
-        <a href="work.html" style="color: var(--white);">Experience & Work</a>
+        <a href="work.html" style="color: var(--text-light);">Experience & Work</a>
         <a href="mailto:contact@thatvetguy.net" class="mobile-cta-link">Contact Us →</a>
     </div>
 
@@ -388,7 +391,7 @@
                 </a>
 
                 <a href="securetrack.html" class="case-study">
-                    <div class="preview-area" style="background: #eef2f6;">
+                    <div class="preview-area" style="background: var(--bg-elevated);">
                         <img src="securetrack-preview.jpg" alt="Securetrack Content Writing" class="preview-img" style="object-fit: contain; padding: 30px;" onerror="this.innerHTML='<div class=\'doc-icon\'></div>'">
                     </div>
                     <div class="case-content">
