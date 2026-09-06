@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dr. Deepesh Chaware — Clinical Care Consultant & Small Animal Practitioner at The ThatVetGuy Collective. 2,000+ ABC surgeries, ultrasonography, Mission Rabies certified." />
+    <title>Dr. Deepesh Chaware | The ThatVetGuy Collective</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+
+    <style>
+        :root {
+            --bg-main:#0B0F12;--bg-card:#12181C;--bg-card-hover:#1A2228;--bg-elevated:#1A2228;
+            --text-light:#F8FAFC;--text-muted:#94A3B8;--text-muted-light:#CBD5E1;
+            --accent:#10B981;--accent-hover:#059669;--accent-dim:rgba(16,185,129,0.12);
+            --border:#1F2937;--border-hover:#374151;
+            --font-heading:'Playfair Display',serif;--font-body:'Inter',sans-serif;
+            --transition:all 0.35s cubic-bezier(0.4,0,0.2,1);--nav-h:76px;
+            --radius:10px;--shadow-hover:0 24px 48px rgba(0,0,0,0.55);
+        }
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background-color:var(--bg-main);color:var(--text-muted);font-family:var(--font-body);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        h1,h2,h3,h4,h5{font-family:var(--font-heading);color:var(--text-light);font-weight:600;line-height:1.2}
+        a{text-decoration:none;color:inherit;transition:var(--transition)}
+        img{display:block;max-width:100%;height:auto}
+
+        .container{max-width:1280px;margin:0 auto;padding:0 24px}
+        .section-label{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px;margin-bottom:14px}
+        .section-label::before{content:'';display:inline-block;width:28px;height:1.5px;background:var(--accent);border-radius:2px}
+
+        .btn-primary{background:var(--accent);color:#000!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--accent);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,0.3)}
+        .btn-secondary{background:transparent;color:var(--text-light)!important;padding:13px 32px;border-radius:6px;font-weight:600;font-size:0.95rem;display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--border);cursor:pointer;transition:var(--transition);line-height:1.2}
+        .btn-secondary:hover{border-color:var(--text-muted);background:rgba(255,255,255,0.04);transform:translateY(-2px)}
+
+        /* NAV */
+        nav{position:fixed;top:0;left:0;width:100%;height:var(--nav-h);background:rgba(11,15,18,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border);z-index:1000;display:flex;align-items:center;transition:var(--transition)}
+        .nav-wrapper{display:flex;justify-content:space-between;align-items:center;width:100%}
+        .nav-logo-wrap{display:flex;align-items:center;gap:10px;flex-shrink:0}
+        .nav-logo{height:38px;width:auto;object-fit:contain}
+        .nav-brand-name{font-family:var(--font-heading);font-size:1.25rem;color:var(--text-light);font-weight:700;letter-spacing:0.3px;white-space:nowrap}
+        .nav-links{display:flex;gap:6px;align-items:center}
+        .nav-links a{font-size:0.85rem;font-weight:500;color:var(--text-muted);padding:6px 14px;border-radius:4px;transition:var(--transition)}
+        .nav-links a:hover,.nav-links a.active{color:var(--text-light);background:rgba(255,255,255,0.06)}
+        .nav-links a.btn-primary{color:#000!important;padding:8px 22px;font-size:0.85rem;background:var(--accent);border:none}
+        .nav-links a.btn-primary:hover{background:var(--accent-hover);color:#000!important;transform:none;box-shadow:0 4px 16px rgba(16,185,129,0.3)}
+        .nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:transparent;border:none;padding:6px 4px;z-index:1001}
+        .nav-burger span{display:block;width:26px;height:2px;background-color:var(--text-light);border-radius:2px;transition:var(--transition);transform-origin:center}
+        .nav-burger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+        .nav-burger.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+        .nav-burger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+        .mobile-menu{position:fixed;top:var(--nav-h);left:0;width:100%;height:0;background:rgba(11,15,18,0.98);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);overflow:hidden;transition:height 0.4s cubic-bezier(0.4,0,0.2,1);z-index:999;display:flex;flex-direction:column;align-items:center;border-bottom:1px solid var(--border);gap:4px}
+        .mobile-menu.open{height:auto;padding:32px 24px 40px}
+        .mobile-menu a{font-size:1.05rem;font-weight:500;color:var(--text-light);padding:12px 20px;width:100%;max-width:320px;text-align:center;border-radius:6px;transition:var(--transition)}
+        .mobile-menu a:hover{background:rgba(255,255,255,0.06);color:var(--accent)}
+        .mobile-menu a.btn-primary{color:#000!important;background:var(--accent);margin-top:12px;padding:14px 28px;border:none}
+
+        /* BACK LINK */
+        .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:40px;transition:var(--transition)}
+        .back-link svg{width:16px;height:16px;transition:transform 0.25s}
+        .back-link:hover{opacity:0.75}
+        .back-link:hover svg{transform:translateX(-3px)}
+
+        /* PROFILE HERO */
+        .profile-hero{padding:calc(var(--nav-h) + 64px) 0 72px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 60% 0%,rgba(16,185,129,0.05) 0%,var(--bg-main) 60%);position:relative;overflow:hidden}
+        .profile-hero .container{position:relative;z-index:1}
+        .profile-grid{display:grid;grid-template-columns:300px 1fr;gap:60px;align-items:start}
+
+        /* Photo col */
+        .profile-photo-col{display:flex;flex-direction:column;gap:20px}
+        .profile-img-wrapper{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:12px;position:relative;overflow:hidden}
+        .profile-img-wrapper::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent)}
+        .profile-img-wrapper img{width:100%;border-radius:6px;object-fit:cover;object-position:center top;aspect-ratio:3/4}
+        .img-placeholder{width:100%;aspect-ratio:3/4;border-radius:6px;background:var(--bg-elevated);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;color:var(--text-muted);font-size:0.85rem}
+        .img-placeholder svg{width:40px;height:40px;opacity:0.3}
+
+        /* Credential stack */
+        .credential-stack{display:flex;flex-direction:column;gap:10px}
+        .credential-item{display:flex;align-items:center;gap:12px;background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:12px 16px;transition:var(--transition)}
+        .credential-item:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .credential-icon{width:34px;height:34px;background:var(--accent-dim);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+        .credential-icon svg{width:17px;height:17px}
+        .credential-text strong{display:block;font-size:0.78rem;font-weight:700;color:var(--text-light);line-height:1.3}
+        .credential-text span{font-size:0.72rem;color:var(--text-muted)}
+
+        /* Content col */
+        .profile-content-col{padding-top:4px}
+        .profile-role{font-size:0.72rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.14em;margin-bottom:10px;display:block}
+        .profile-name{font-size:clamp(2.2rem,4vw,3.4rem);letter-spacing:-0.03em;margin-bottom:6px;color:var(--text-light)}
+        .profile-credentials-inline{font-size:0.85rem;color:var(--text-muted);margin-bottom:24px;font-weight:500;display:block}
+        .profile-bio{font-size:1.02rem;color:var(--text-muted-light);line-height:1.85;margin-bottom:32px;max-width:640px}
+
+        .profile-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:40px}
+        .btn-social{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid var(--border);border-radius:6px;font-size:0.85rem;font-weight:600;color:var(--text-muted-light);background:var(--bg-card);transition:var(--transition)}
+        .btn-social svg{width:16px;height:16px;flex-shrink:0}
+        .btn-social:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim)}
+
+        .profile-divider{height:1px;background:var(--border);margin-bottom:32px}
+
+        .focus-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+        .focus-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px 22px;transition:var(--transition);position:relative;overflow:hidden}
+        .focus-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
+        .focus-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .focus-card:hover::after{transform:scaleX(1)}
+        .focus-card h4{font-size:0.9rem;color:var(--text-light);margin-bottom:7px;font-family:var(--font-body);font-weight:700}
+        .focus-card p{font-size:0.82rem;color:var(--text-muted);line-height:1.6}
+
+        /* ── FEATURED SURGERY CARD ── */
+        .surgery-feature{
+            margin:80px 0 0;border-bottom:1px solid var(--border);padding-bottom:80px
+        }
+        .surgery-card{
+            background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);
+            overflow:hidden;display:grid;grid-template-columns:1fr 1fr;
+            transition:var(--transition);position:relative;box-shadow:0 8px 32px rgba(0,0,0,0.3)
+        }
+        .surgery-card::before{
+            content:'';position:absolute;top:0;left:0;right:0;height:4px;
+            background:linear-gradient(90deg,var(--accent),rgba(16,185,129,0.4))
+        }
+        .surgery-img-wrap{
+            height:100%;min-height:340px;overflow:hidden;background:var(--bg-elevated);position:relative
+        }
+        .surgery-img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform 0.6s ease}
+        .surgery-card:hover .surgery-img{transform:scale(1.03)}
+        .surgery-img-placeholder{
+            width:100%;height:100%;min-height:340px;display:flex;flex-direction:column;
+            align-items:center;justify-content:center;gap:16px;background:var(--bg-elevated);
+            color:var(--text-muted);font-size:0.85rem;text-align:center;padding:24px
+        }
+        .surgery-img-placeholder svg{width:48px;height:48px;opacity:0.25}
+        .surgery-body{padding:44px 40px;display:flex;flex-direction:column;justify-content:center}
+        .surgery-badge{
+            display:inline-flex;align-items:center;gap:8px;
+            background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.3);
+            color:var(--accent);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;
+            text-transform:uppercase;padding:6px 14px;border-radius:50px;
+            margin-bottom:20px;width:fit-content
+        }
+        .surgery-badge::before{
+            content:'';width:7px;height:7px;background:var(--accent);
+            border-radius:50%;animation:pulse2 2s ease-in-out infinite
+        }
+        @keyframes pulse2{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+        .surgery-body h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:16px;letter-spacing:-.02em}
+        .surgery-body h2 span{color:var(--accent)}
+        .surgery-body p{font-size:0.97rem;color:var(--text-muted-light);line-height:1.8;margin-bottom:28px}
+        .surgery-stats{display:flex;gap:24px;flex-wrap:wrap;padding:20px 24px;background:var(--bg-elevated);border-radius:8px;margin-bottom:28px}
+        .surgery-stat-num{font-family:var(--font-heading);font-size:1.8rem;font-weight:700;color:var(--accent);font-style:italic;display:block;line-height:1}
+        .surgery-stat-label{font-size:0.68rem;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-top:4px}
+        .view-cert-btn{
+            display:inline-flex;align-items:center;gap:8px;
+            background:var(--accent);color:#000!important;
+            padding:12px 28px;border-radius:6px;font-weight:700;font-size:0.9rem;
+            border:1px solid var(--accent);transition:var(--transition);width:fit-content
+        }
+        .view-cert-btn:hover{background:var(--accent-hover);border-color:var(--accent-hover);transform:translateY(-2px);box-shadow:0 8px 20px rgba(16,185,129,0.3)}
+        .view-cert-btn svg{width:16px;height:16px}
+
+        /* CERTIFICATIONS */
+        .cert-section{padding:80px 0;border-bottom:1px solid var(--border)}
+        .section-header{margin-bottom:40px}
+        .section-header h2{font-size:clamp(1.8rem,3vw,2.4rem);margin-bottom:10px;letter-spacing:-0.02em}
+        .section-header p{font-size:1rem;color:var(--text-muted-light);max-width:560px}
+        .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+        .cert-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:24px 22px;display:flex;align-items:flex-start;gap:16px;transition:var(--transition);position:relative;overflow:hidden}
+        .cert-card::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s ease}
+        .cert-card:hover{border-color:var(--border-hover);background:var(--bg-card-hover)}
+        .cert-card:hover::after{transform:scaleX(1)}
+        .cert-icon-wrap{width:42px;height:42px;background:var(--accent-dim);border:1px solid rgba(16,185,129,0.18);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .cert-icon-wrap svg{width:20px;height:20px}
+        .cert-details h4{font-size:0.88rem;font-weight:700;color:var(--text-light);margin-bottom:5px;font-family:var(--font-body)}
+        .cert-details p{font-size:0.8rem;color:var(--text-muted);line-height:1.6}
+
+        /* PORTFOLIO — Field Experience */
+        .portfolio-section{padding:80px 0;border-bottom:1px solid var(--border)}
+        .portfolio-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+        .work-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 24px;display:flex;flex-direction:column;transition:var(--transition);position:relative;overflow:hidden}
+        .work-card::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.4s ease}
+        .work-card:hover{border-color:var(--border-hover);transform:translateY(-5px);box-shadow:var(--shadow-hover);background:var(--bg-card-hover)}
+        .work-card:hover::after{transform:scaleX(1)}
+        .work-icon{width:46px;height:46px;background:var(--accent-dim);border:1px solid rgba(16,185,129,0.18);border-radius:9px;display:flex;align-items:center;justify-content:center;margin-bottom:18px;transition:var(--transition)}
+        .work-card:hover .work-icon{background:rgba(16,185,129,0.2)}
+        .work-icon svg{width:22px;height:22px}
+        .work-category{font-size:0.68rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:8px}
+        .work-card h3{font-size:1.1rem;margin-bottom:10px;color:var(--text-light);line-height:1.35}
+        .work-card p{font-size:0.87rem;color:var(--text-muted-light);line-height:1.7;flex-grow:1}
+
+        /* CTA */
+        .cta-banner{text-align:center;padding:90px 0;background:radial-gradient(ellipse at 50% 30%,rgba(16,185,129,0.06) 0%,var(--bg-main) 70%)}
+        .cta-banner h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:12px}
+        .cta-banner p{max-width:480px;margin:0 auto 28px;font-size:1rem;color:var(--text-muted-light)}
+        .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+        footer{padding:32px 0;text-align:center;background:var(--bg-main);border-top:1px solid var(--border)}
+        footer p{font-size:0.8rem;color:var(--text-muted)}
+
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s cubic-bezier(0.4,0,0.2,1),transform 0.7s cubic-bezier(0.4,0,0.2,1)}
+        .reveal.active{opacity:1;transform:translateY(0)}
+
+        .skip-link{position:absolute;top:-100%;left:16px;padding:12px 24px;background:var(--accent);color:#000;font-weight:600;border-radius:4px;z-index:9999;transition:top 0.2s}
+        .skip-link:focus{top:12px}
+        :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+        @media(max-width:992px){
+            .nav-links a:not(.btn-primary){padding:6px 10px;font-size:0.8rem}
+            .profile-grid{grid-template-columns:260px 1fr;gap:40px}
+            .surgery-card{grid-template-columns:1fr}
+            .surgery-img-wrap{min-height:240px}
+            .cert-grid{grid-template-columns:1fr 1fr}
+            .portfolio-grid{grid-template-columns:1fr 1fr}
+        }
+        @media(max-width:768px){
+            .nav-links{display:none}.nav-burger{display:flex}
+            .nav-brand-name{font-size:1.05rem}.nav-logo{height:32px}
+            .profile-hero{padding:calc(var(--nav-h)+40px) 0 56px}
+            .profile-grid{grid-template-columns:1fr;gap:36px}
+            .profile-photo-col{max-width:260px}
+            .focus-grid{grid-template-columns:1fr}
+            .cert-grid{grid-template-columns:1fr}
+            .portfolio-grid{grid-template-columns:1fr}
+            .surgery-body{padding:28px 24px}
+            .cta-banner{padding:56px 0}
+            .surgery-feature{margin:56px 0 0;padding-bottom:56px}
+        }
+        @media(max-width:480px){
+            .container{padding:0 16px}
+            .profile-actions{flex-direction:column}
+            .profile-actions .btn-social,.profile-actions .btn-primary{width:100%;justify-content:center}
+            .cta-actions .btn-primary,.cta-actions .btn-secondary{width:100%;justify-content:center}
+            .surgery-stats{flex-direction:column;gap:16px}
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div class="container nav-wrapper">
+            <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home">
+                <img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" onerror="this.style.display='none'" />
+                <span class="nav-brand-name">ThatVetGuy.net</span>
+            </a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="experts.html" class="active">Team</a>
+                <a href="index.html#partner">Partner</a>
+                <a href="index.html#work">Experience</a>
+                <a href="media.html">Media</a>
+                <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+                <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a>
+            </div>
+            <button class="nav-burger" id="mobileToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile navigation">
+        <a href="services.html">Services</a>
+        <a href="experts.html" class="active">Team</a>
+        <a href="index.html#partner">Partner</a>
+        <a href="index.html#work">Experience</a>
+        <a href="media.html">Media</a>
+        <a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a>
+        <a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect with us</a>
+    </div>
+
+    <main id="main">
+
+        <!-- PROFILE HERO -->
+        <header class="profile-hero">
+            <div class="container">
+
+                <a href="experts.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                    Back to the Collective
+                </a>
+
+                <div class="profile-grid">
+
+                    <!-- LEFT: Photo + Credentials -->
+                    <div class="profile-photo-col reveal">
+                        <div class="profile-img-wrapper">
+                            <img src="deepesh-c.png" alt="Dr. Deepesh Chaware"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                                <span>Dr. Deepesh Chaware</span>
+                            </div>
+                        </div>
+
+                        <div class="credential-stack">
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>BVSc &amp; AH</strong>
+                                    <span>Undergraduate veterinary degree</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>2,000+ ABC Surgeries</strong>
+                                    <span>Certified high-volume surgical practice</span>
+                                </div>
+                            </div>
+                            <div class="credential-item">
+                                <div class="credential-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                </div>
+                                <div class="credential-text">
+                                    <strong>Clinical Care Consultant</strong>
+                                    <span>ThatVetGuy Collective</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Content -->
+                    <div class="profile-content-col reveal">
+                        <span class="profile-role">Clinical Care Consultant &amp; Small Animal Practitioner</span>
+                        <h1 class="profile-name">Dr. Deepesh Chaware</h1>
+                        <span class="profile-credentials-inline">BVSc &amp; AH &bull; 2,000+ ABC Surgeries &bull; Ultrasonography &amp; Echocardiography &bull; Mission Rabies Certified</span>
+
+                        <p class="profile-bio">
+                            As the Clinical Care Consultant for the ThatVetGuy Collective, Dr. Deepesh Chaware ensures that all corporate and consumer-facing pet content is strictly grounded in real-world veterinary protocols. Bringing active experience in ABC surgeries, tumour removals, and diagnostic imaging &mdash; including Ultrasonography and Echocardiography &mdash; he bridges the gap between field-tested clinical practice and premium B2B communications. His work spans preventive medicine, surgical care, and animal welfare advocacy.
+                        </p>
+
+                        <div class="profile-actions">
+                            <a href="https://www.linkedin.com/in/deepesh-chaware-5710aa2b7" target="_blank" rel="noopener noreferrer" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                LinkedIn Profile
+                            </a>
+                            <a href="mailto:dr.deepguru009@gmail.com" class="btn-social">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Personal Email
+                            </a>
+                            <a href="mailto:contact@thatvetguy.net" class="btn-primary">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                Connect Directly
+                            </a>
+                        </div>
+
+                        <div class="profile-divider"></div>
+
+                        <span class="section-label">Areas of Focus</span>
+                        <div class="focus-grid">
+                            <div class="focus-card">
+                                <h4>Surgical Care Protocols</h4>
+                                <p>Translating hands-on soft tissue surgery and post-operative pain management into standardised clinical guidelines for B2B clients.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Diagnostic Imaging Workflows</h4>
+                                <p>Integrating practical Ultrasonography and Echocardiography workflows into accessible educational resources and corporate training content.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Preventive Medicine</h4>
+                                <p>Designing high-level public health and vaccination strategies based on field experience with NGO outreach and mass campaign logistics.</p>
+                            </div>
+                            <div class="focus-card">
+                                <h4>Client Communication</h4>
+                                <p>Engineering clear, empathetic clinical instructions for pet owners, suitable for pharmaceutical brand sponsorship and digital health platforms.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ── FEATURED: 2000+ SURGERY CERTIFICATE ── -->
+                <div class="surgery-feature reveal">
+                    <div class="surgery-card">
+                        <!-- Left: certificate image preview -->
+                        <div class="surgery-img-wrap">
+                            <img src="abc-surgery-certificate.jpg"
+                                 alt="2,000+ ABC Surgeries Certificate — Dr. Deepesh Chaware"
+                                 class="surgery-img"
+                                 onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+                            <div class="surgery-img-placeholder" style="display:none;">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+                                <span>abc-surgery-certificate.jpg</span>
+                            </div>
+                        </div>
+                        <!-- Right: content -->
+                        <div class="surgery-body">
+                            <span class="surgery-badge">Clinical Milestone</span>
+                            <h2>Over <span>2,000</span> ABC Surgeries<br/>Successfully Performed</h2>
+                            <p>A verified clinical achievement in high-volume Animal Birth Control surgery — one of the most demanding and impactful small animal surgical programmes in India. Each procedure reflects Dr. Chaware&rsquo;s frontline commitment to animal welfare and public health.</p>
+                            <div class="surgery-stats">
+                                <div>
+                                    <span class="surgery-stat-num">2,000+</span>
+                                    <div class="surgery-stat-label">Spay Procedures</div>
+                                </div>
+                                <div>
+                                    <span class="surgery-stat-num">ABC</span>
+                                    <div class="surgery-stat-label">Programme</div>
+                                </div>
+                                <div>
+                                    <span class="surgery-stat-num">NGO</span>
+                                    <div class="surgery-stat-label">Welfare Partner</div>
+                                </div>
+                            </div>
+                            <a href="abc-surgery-certificate.jpg" target="_blank" rel="noopener noreferrer" class="view-cert-btn">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                                View Full Certificate
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </header>
+
+        <!-- CERTIFICATIONS -->
+        <section class="cert-section" aria-labelledby="cert-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Credentials</span>
+                    <h2 id="cert-heading">Clinical Certifications &amp; Training</h2>
+                    <p>Verified continuous education and professional veterinary credentials across surgery, diagnostics, and animal welfare.</p>
+                </div>
+
+                <div class="cert-grid reveal">
+                    <div class="cert-card">
+                        <div class="cert-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>National Training Centre for Dogs &mdash; BSF</h4>
+                            <p>Certified by the Border Security Force canine training division for specialised working dog veterinary care protocols.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Mission Rabies &mdash; Certificate of Appreciation</h4>
+                            <p>Recognised for active logistics and clinical contribution in the Rabies Mass Vaccination Campaign at the community level.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                            </svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>Global Veterinary Clinical Science Webinar</h4>
+                            <p>Specialised training on Canine Pyometra and Medical Termination of Pregnancy — advanced reproductive clinical management.</p>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <div class="cert-icon-wrap">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <div class="cert-details">
+                            <h4>VETEXPO Intensive &mdash; 6-Paws Council</h4>
+                            <p>3-day intensive veterinary clinical conference covering advanced diagnostics, surgical innovations, and practice management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIELD EXPERIENCE -->
+        <section class="portfolio-section" aria-labelledby="portfolio-heading">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-label">Clinical Highlights</span>
+                    <h2 id="portfolio-heading">Field Experience &amp; Protocols</h2>
+                    <p>Translating daily clinical practice into authoritative B2B guidelines and corporate-tier veterinary content.</p>
+                </div>
+
+                <div class="portfolio-grid">
+                    <div class="work-card reveal">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                        </div>
+                        <span class="work-category">Diagnostic Guide</span>
+                        <h3>Ultrasonography in First-Opinion Practice</h3>
+                        <p>Clinical workflows for integrating basic USG and Echocardiography into routine small animal diagnostics &mdash; written for corporate veterinary education programmes.</p>
+                    </div>
+
+                    <div class="work-card reveal">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6v0a6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
+                        </div>
+                        <span class="work-category">Clinical Blueprint</span>
+                        <h3>Post-Operative Wound &amp; Pain Management</h3>
+                        <p>Standardised corporate-tier guidelines based on hands-on experience with over 2,000 ABC surgeries and soft tissue tumour removals.</p>
+                    </div>
+
+                    <div class="work-card reveal">
+                        <div class="work-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <span class="work-category">Public Health Initiative</span>
+                        <h3>Mass Rabies Vaccination Logistics</h3>
+                        <p>Strategic analysis of community outreach and preventive medicine protocols from the Mission Rabies mass vaccination campaign.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-banner" aria-labelledby="cta-heading">
+            <div class="container">
+                <span class="section-label" style="justify-content:center;margin-bottom:18px;">Collaborate</span>
+                <h2 id="cta-heading">Work with Dr. Chaware</h2>
+                <p>For clinical content review, surgical protocol development, or small animal brand consultancy &mdash; reach out directly.</p>
+                <div class="cta-actions">
+                    <a href="mailto:contact@thatvetguy.net" class="btn-primary" style="padding:15px 36px;font-size:1rem;">Email Dr. Deepesh &rarr;</a>
+                    <a href="experts.html" class="btn-secondary" style="padding:15px 32px;font-size:1rem;">Meet the Full Collective</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p>
+        </div>
+    </footer>
+
+    <script>
+        (function(){
+            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
+            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
+            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
+            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
+            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
+            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
+            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
+        })();
+        var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+        els.forEach(function(el){obs.observe(el)});
+        var nav=document.getElementById('navbar');
+        window.addEventListener('scroll',function(){if(window.scrollY>50){nav.style.background='rgba(11,15,18,0.97)';nav.style.boxShadow='0 4px 20px rgba(0,0,0,0.4)'}else{nav.style.background='rgba(11,15,18,0.88)';nav.style.boxShadow='none'}});
+    </script>
+
+</body>
+</html>
