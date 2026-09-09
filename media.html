@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Media and publications from The ThatVetGuy Collective." />
+    <title>Media | The ThatVetGuy Collective</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="theme.css" />
+    <style>
+        body { font-family: 'Inter', sans-serif; line-height: 1.7; margin: 0; }
+        * { box-sizing: border-box; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        nav { position: fixed; inset: 0 0 auto; display: flex; align-items: center; z-index: 2; }
+        .nav-wrapper { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+        .nav-logo-wrap { display: flex; gap: 10px; align-items: center; font-family: 'Playfair Display', serif; font-weight: 700; text-decoration: none; }
+        .nav-logo { width: auto; height: 38px; }
+        .nav-links { display: flex; align-items: center; gap: 6px; }
+        .nav-links a { padding: 7px 12px; text-decoration: none; font-size: .85rem; }
+        .page-hero { padding: 180px 0 86px; text-align: center; }
+        .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 7vw, 5.5rem); margin: 12px 0; }
+        .page-hero p { max-width: 620px; margin: 0 auto; }
+        .section-label { font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+        .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 90px; }
+        .media-card { padding: 30px; text-decoration: none; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; }
+        .media-card h2 { font-family: 'Playfair Display', serif; font-size: 1.55rem; margin: 0; }
+        .media-card p { margin: 12px 0 24px; }
+        footer { padding: 30px 0; text-align: center; }
+        @media (max-width: 768px) { .nav-links { display: none; } .page-hero { padding-top: 138px; } .media-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav aria-label="Main navigation"><div class="container nav-wrapper">
+        <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home"><img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" /><span>ThatVetGuy.net</span></a>
+        <div class="nav-links"><a href="services.html">Services</a><a href="experts.html">Team</a><a href="work.html">Experience</a><a href="media.html" class="active">Media</a><a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a><a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a></div>
+    </div></nav>
+    <main>
+        <header class="page-hero"><div class="container"><span class="section-label">The ThatVetGuy Collective</span><h1>Media</h1><p>Explore selected publications, clinical work, and updates from our collective.</p></div></header>
+        <section><div class="container media-grid">
+            <a class="media-card premium-card" href="work.html"><div><span class="section-label">Portfolio</span><h2>Featured Work &amp; Endorsements</h2><p>A selection of brand collaborations, industry publications, and field experience.</p></div><span class="btn-secondary">Explore work &rarr;</span></a>
+            <a class="media-card premium-card" href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer"><div><span class="section-label">Updates</span><h2>ThatVetGuy Blog</h2><p>Read the latest stories and insights from the collective.</p></div><span class="btn-secondary">Visit the blog &rarr;</span></a>
+            <a class="media-card premium-card" href="services.html"><div><span class="section-label">Capabilities</span><h2>Specialized Veterinary Content</h2><p>Learn how our active veterinary professionals support brands and clinical projects.</p></div><span class="btn-secondary">Explore services &rarr;</span></a>
+        </div></section>
+    </main>
+    <footer><div class="container"><p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p></div></footer>
+</body>
+</html>
