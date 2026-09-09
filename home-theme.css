@@ -47,8 +47,8 @@
 #team { background: #fffaf2; }
 #team .grid-3 { gap: 20px !important; }
 #team .premium-card { padding: 30px 26px !important; }
-#team .premium-card:nth-child(3n + 2) { transform: translateY(26px); }
-#team .premium-card:nth-child(3n + 2):hover { transform: translateY(21px); }
+/* Preserve a shared top and bottom edge for every row of team cards. */
+#team .premium-card:nth-child(3n + 2), #team .premium-card:nth-child(3n + 2):hover { transform: none; }
 #team .team-img { width: 94px !important; height: 94px !important; }
 
 #partner { position: relative; overflow: hidden; }
@@ -95,6 +95,7 @@
 .testimonial-card { display: flex; flex-direction: column; text-align: left !important; padding: 28px 24px !important; }
 .testimonial-card .quote { font-size: 1rem !important; }
 .testimonial-card .attribution { margin-top: auto; padding-top: 18px; }
+.media-card-content > .btn-secondary { margin-top: auto; }
 .rating { color: #dff07d; font-size: 1rem; letter-spacing: .08em; margin-bottom: 12px; }
 .rating span { color: #fff; font-size: .78rem; letter-spacing: 0; margin-left: 5px; font-weight: 700; }
 .testimonial-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 2px; }

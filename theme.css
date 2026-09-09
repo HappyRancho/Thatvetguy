@@ -170,6 +170,22 @@ body.menu-open { overflow: hidden; }
 .work-img, .preview-img, .media-preview img { display: block; width: 100%; max-width: 100%; }
 .media-preview { overflow: hidden; background: var(--bg-elevated); }
 .media-preview img { height: 100%; object-fit: cover; object-position: center; }
+
+/* Keep card footers aligned even when bios, tags, or social links differ. */
+#team .grid-3 > .premium-card, .expert-grid > .expert-card,
+.grid-3 > .work-card, .portfolio-grid > .work-card, .portfolio-grid > .case-study,
+.media-grid > .media-card, .testimonial-track > .testimonial-card,
+.slideshow-grid > .slideshow-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+#team .team-links { min-height: 42px; align-content: flex-start; }
+#team .card-actions, .expert-grid .card-actions,
+.work-card .work-content, .case-study .case-content, .media-card .media-card-content,
+.testimonial-card .attribution { margin-top: auto; }
+.work-card .work-content, .case-study .case-content, .media-card .media-card-content { width: 100%; }
+.media-card-content > .btn-secondary { margin-top: auto; }
 @keyframes section-swipe-in { from { opacity: .45; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
 .section-swipe-transition { animation: section-swipe-in .36s cubic-bezier(.2,.7,.2,1); }
 @media (max-width: 1024px) {
