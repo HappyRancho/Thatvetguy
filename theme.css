@@ -159,6 +159,30 @@ body.menu-open { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
 
+/* Responsive guardrails for every page's independently-authored card layout. */
+.grid-2, .grid-3, .expert-grid, .portfolio-grid, .media-grid, .cert-grid, .slideshow-grid {
+    min-width: 0;
+}
+.premium-card, .service-card, .expert-card, .work-card, .case-study, .testimonial-card,
+.cert-card, .credential-item, .focus-card, .surgery-card, .slideshow-card, .flagship-card,
+.media-card { min-width: 0; }
+.work-img-wrap, .preview-area, .slideshow-container { min-width: 0; }
+.work-img, .preview-img, .media-preview img { display: block; width: 100%; max-width: 100%; }
+.media-preview { overflow: hidden; background: var(--bg-elevated); }
+.media-preview img { height: 100%; object-fit: cover; object-position: center; }
+@keyframes section-swipe-in { from { opacity: .45; transform: translateX(18px); } to { opacity: 1; transform: translateX(0); } }
+.section-swipe-transition { animation: section-swipe-in .36s cubic-bezier(.2,.7,.2,1); }
+@media (max-width: 1024px) {
+    .grid-3, .portfolio-grid, .expert-grid, .media-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+    .work-img-wrap, .preview-area { height: clamp(180px, 28vw, 220px) !important; }
+}
+@media (max-width: 480px) {
+    .grid-2, .grid-3, .portfolio-grid, .expert-grid, .media-grid, .cert-grid, .slideshow-grid { grid-template-columns: minmax(0, 1fr) !important; }
+    .premium-card, .service-card, .expert-card, .work-card, .case-study, .testimonial-card, .media-card { max-width: 100%; }
+    .work-img-wrap, .preview-area { height: min(56vw, 220px) !important; }
+}
+
 /* Cohesive expert profile presentation. */
 .profile-hero .profile-grid, .profile-hero .profile-content { align-items: center !important; }
 .profile-img-wrapper { box-shadow: 14px 16px 0 #dff0c1, var(--shadow-card) !important; }

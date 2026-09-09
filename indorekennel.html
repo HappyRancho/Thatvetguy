@@ -123,6 +123,9 @@
             object-fit: cover; opacity: 0; transition: opacity 1s ease-in-out;
         }
         .slide.active { opacity: 1; z-index: 1; }
+        /* Reviews are screenshots: preserve their complete text and faces. */
+        #reviews-slideshow { background: #f4eee4; }
+        #reviews-slideshow .slide { object-fit: contain; padding: 12px; }
 
         /* Footer */
         footer { padding: 40px 0; text-align: center; background: var(--bg-main); }
@@ -132,6 +135,7 @@
             .owner-profile { grid-template-columns: 1fr; text-align: center; }
             .owner-img-wrap { max-width: 200px; margin: 0 auto; }
             .slideshow-grid { grid-template-columns: 1fr; }
+            .slideshow-container { height: min(82vw, 350px); }
         }
     </style>
     <link rel="stylesheet" href="theme.css" />
