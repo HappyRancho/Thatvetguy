@@ -24,7 +24,9 @@
         .page-hero p { max-width: 620px; margin: 0 auto; }
         .section-label { font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
         .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-bottom: 90px; }
-        .media-card { padding: 30px; text-decoration: none; min-height: 230px; display: flex; flex-direction: column; justify-content: space-between; }
+        .media-card { padding: 0; text-decoration: none; min-height: 0; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+        .media-preview { height: 180px; }
+        .media-card-content { padding: 24px 26px 28px; display: flex; flex: 1; flex-direction: column; }
         .media-card h2 { font-family: 'Playfair Display', serif; font-size: 1.55rem; margin: 0; }
         .media-card p { margin: 12px 0 24px; }
         footer { padding: 30px 0; text-align: center; }
@@ -34,14 +36,14 @@
 <body>
     <nav aria-label="Main navigation"><div class="container nav-wrapper">
         <a href="index.html" class="nav-logo-wrap" aria-label="ThatVetGuy Collective Home"><img src="file_000000009930720684b98b8be7484668.png" alt="ThatVetGuy Logo" class="nav-logo" /><span>ThatVetGuy.net</span></a>
-        <div class="nav-links"><a href="services.html">Services</a><a href="experts.html">Team</a><a href="work.html">Experience</a><a href="media.html" class="active">Media</a><a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a><a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a></div>
+        <div class="nav-links"><a href="services.html">Services</a><a href="experts.html">Team</a><a href="indorekennel.html">Partner</a><a href="work.html">Experience</a><a href="media.html" class="active">Media</a><a href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer">Blog</a><a href="mailto:contact@thatvetguy.net" class="btn-primary">Connect</a></div>
     </div></nav>
     <main>
         <header class="page-hero"><div class="container"><span class="section-label">The ThatVetGuy Collective</span><h1>Media</h1><p>Explore selected publications, clinical work, and updates from our collective.</p></div></header>
         <section><div class="container media-grid">
-            <a class="media-card premium-card" href="work.html"><div><span class="section-label">Portfolio</span><h2>Featured Work &amp; Endorsements</h2><p>A selection of brand collaborations, industry publications, and field experience.</p></div><span class="btn-secondary">Explore work &rarr;</span></a>
-            <a class="media-card premium-card" href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer"><div><span class="section-label">Updates</span><h2>ThatVetGuy Blog</h2><p>Read the latest stories and insights from the collective.</p></div><span class="btn-secondary">Visit the blog &rarr;</span></a>
-            <a class="media-card premium-card" href="services.html"><div><span class="section-label">Capabilities</span><h2>Specialized Veterinary Content</h2><p>Learn how our active veterinary professionals support brands and clinical projects.</p></div><span class="btn-secondary">Explore services &rarr;</span></a>
+            <a class="media-card premium-card" href="work.html"><div class="media-preview"><img src="parvo-preview.jpg" alt="Feline parvovirus research preview" loading="lazy" /></div><div class="media-card-content"><span class="section-label">Portfolio</span><h2>Featured Work &amp; Endorsements</h2><p>A selection of brand collaborations, industry publications, and field experience.</p><span class="btn-secondary">Explore work &rarr;</span></div></a>
+            <a class="media-card premium-card" href="https://blog.thatvetguy.net" target="_blank" rel="noopener noreferrer"><div class="media-preview"><img src="newsletter-preview.jpg" alt="Newsletter publication preview" loading="lazy" /></div><div class="media-card-content"><span class="section-label">Updates</span><h2>ThatVetGuy Blog</h2><p>Read the latest stories and insights from the collective.</p><span class="btn-secondary">Visit the blog &rarr;</span></div></a>
+            <a class="media-card premium-card" href="services.html"><div class="media-preview"><img src="securetrack-preview.jpg" alt="Specialized content writing preview" loading="lazy" /></div><div class="media-card-content"><span class="section-label">Capabilities</span><h2>Specialized Veterinary Content</h2><p>Learn how our active veterinary professionals support brands and clinical projects.</p><span class="btn-secondary">Explore services &rarr;</span></div></a>
         </div></section>
     </main>
     <footer><div class="container"><p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p></div></footer>
