@@ -89,3 +89,15 @@
     .hero-stat-item + .hero-stat-item { border-left: 0; padding-left: 0; }
     #team .premium-card:nth-child(3n + 2), #team .premium-card:nth-child(3n + 2):hover { transform: none; }
 }
+
+/* Four-part testimonial rail: cards remain readable and swipeable on smaller screens. */
+.testimonial-track { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; max-width: 1180px; margin: 0 auto; }
+.testimonial-card { display: flex; flex-direction: column; text-align: left !important; padding: 28px 24px !important; }
+.testimonial-card .quote { font-size: 1rem !important; }
+.testimonial-card .attribution { margin-top: auto; padding-top: 18px; }
+.rating { color: #dff07d; font-size: 1rem; letter-spacing: .08em; margin-bottom: 12px; }
+.rating span { color: #fff; font-size: .78rem; letter-spacing: 0; margin-left: 5px; font-weight: 700; }
+.testimonial-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 2px; }
+.testimonial-badges span { color: #183c36; background: #dff07d; padding: 4px 8px; border-radius: 999px; font-size: .64rem; font-weight: 700; letter-spacing: .02em; }
+@media (max-width: 1024px) { .testimonial-track { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .testimonial-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding: 0 20px 12px; margin: 0 -20px; scrollbar-width: thin; } .testimonial-card { flex: 0 0 min(84vw, 340px); scroll-snap-align: start; } }
