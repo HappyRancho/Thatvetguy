@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dr. Amaan Ahmed — Wildlife & Research Specialist at The ThatVetGuy Collective. BVSc & AH, NDVSU Mhow. Wildlife SOS, WWF, UNICEF volunteer. Clinical writer and animal welfare advocate." />
+    <meta name="description" content="Dr. Amaan Ahmed — Freelance Wildlife Veterinarian & Researcher at The ThatVetGuy Collective. BVSc & AH, NDVSU Mhow. Wildlife SOS, WWF, UNICEF volunteer. Clinical writer and animal welfare advocate." />
     <title>Dr. Amaan Ahmed | The ThatVetGuy Collective</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -300,7 +300,7 @@
 
                     <!-- RIGHT: Content -->
                     <div class="profile-content-col reveal">
-                        <span class="profile-role">Wildlife &amp; Research Specialist</span>
+                        <span class="profile-role">Freelance Wildlife Veterinarian &amp; Researcher</span>
                         <h1 class="profile-name">Dr. Amaan Ahmed</h1>
                         <span class="profile-credentials-inline">BVSc &amp; AH, NDVSU &bull; MPSVC Reg: 5191/2026 &bull; Wildlife SOS &bull; WWF &bull; UNICEF Volunteer</span>
 
@@ -505,15 +505,6 @@
     </footer>
 
     <script>
-        (function(){
-            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
-            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
-            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
-            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
-            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
-            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
-            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
-        })();
         var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
         els.forEach(function(el){obs.observe(el)});
         var nav=document.getElementById('navbar');

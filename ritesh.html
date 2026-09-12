@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dr. Ritesh Verma — Managing Director & Lead Veterinary Pathologist at The ThatVetGuy Collective. MVSc Pathology, peer-reviewed research, avian toxicity, feline pathobiology." />
+    <meta name="description" content="Dr. Ritesh Verma — Freelance Veterinary Pathologist at The ThatVetGuy Collective. MVSc Pathology, peer-reviewed research, avian toxicity, feline pathobiology." />
     <title>Dr. Ritesh Verma | The ThatVetGuy Collective</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -260,7 +260,7 @@
                                     <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                                 </div>
                                 <div class="credential-text">
-                                    <strong>Managing Director</strong>
+                                    <strong>Freelance Pathologist</strong>
                                     <span>ThatVetGuy Collective</span>
                                 </div>
                             </div>
@@ -268,12 +268,12 @@
                     </div>
 
                     <div class="profile-content-col reveal">
-                        <span class="profile-role">Managing Director &amp; Lead Veterinary Pathologist</span>
+                        <span class="profile-role">Freelance Veterinary Pathologist &amp; Diagnostician</span>
                         <h1 class="profile-name">Dr. Ritesh Verma</h1>
                         <span class="profile-credentials-inline">MVSc (Pathology) &bull; BVSc &amp; AH &bull; AAHP Symposium Presenter 2026</span>
 
                         <p class="profile-bio">
-                            As Managing Director of The ThatVetGuy Collective, Dr. Ritesh Verma oversees all clinical operations and strategy. His MVSc focus on veterinary pathology underpins peer-reviewed research spanning avian toxicity, protozoan diagnostics, and feline pathobiology. He channels extensive laboratory experience into high-impact corporate diagnostic frameworks, authoritative B2B educational content, and clinically rigorous brand partnerships that hold up to scientific scrutiny.
+                            As a freelance veterinary pathologist with The ThatVetGuy Collective, Dr. Ritesh Verma specializes in independent diagnostic reviews, avian toxicity research, protozoan diagnostics, and feline pathobiology. He channels extensive laboratory experience into authoritative educational content, scientific editorial evaluations, and evidence-based brand partnerships that hold up to rigorous peer review.
                         </p>
 
                         <div class="profile-actions">
@@ -406,15 +406,6 @@
     </footer>
 
     <script>
-        (function(){
-            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
-            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
-            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
-            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
-            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
-            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
-            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
-        })();
         var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
         els.forEach(function(el){obs.observe(el)});
         var nav=document.getElementById('navbar');

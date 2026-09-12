@@ -931,38 +931,6 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // Mobile menu toggle
-        (function() {
-            const burger = document.getElementById('mobileToggle');
-            const menu  = document.getElementById('mobileMenu');
-            const links = menu.querySelectorAll('a');
-
-            function toggleMenu(open) {
-                const isOpen = open !== undefined ? open : !menu.classList.contains('open');
-                burger.classList.toggle('active', isOpen);
-                menu.classList.toggle('open', isOpen);
-                burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            }
-
-            burger.addEventListener('click', function(e) { e.stopPropagation(); toggleMenu(); });
-            links.forEach(function(link) { link.addEventListener('click', function() { toggleMenu(false); }); });
-            document.addEventListener('click', function(e) {
-                if (menu.classList.contains('open')) {
-                    if (!menu.contains(e.target) && !burger.contains(e.target)) toggleMenu(false);
-                }
-            });
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && menu.classList.contains('open')) { toggleMenu(false); burger.focus(); }
-            });
-            let resizeTimer;
-            window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {
-                    if (window.innerWidth > 768 && menu.classList.contains('open')) toggleMenu(false);
-                }, 200);
-            });
-        })();
-
         // Scroll reveal
         const revealEls = document.querySelectorAll('.reveal');
         const revealObserver = new IntersectionObserver(function(entries, obs) {

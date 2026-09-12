@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Dr. Deepesh Chaware — Clinical Care Consultant & Small Animal Practitioner at The ThatVetGuy Collective. 2,000+ ABC surgeries, ultrasonography, Mission Rabies certified." />
+    <meta name="description" content="Dr. Deepesh Chaware — Freelance Small Animal Surgeon & Clinician at The ThatVetGuy Collective. 2,000+ ABC surgeries, ultrasonography, Mission Rabies certified." />
     <title>Dr. Deepesh Chaware | The ThatVetGuy Collective</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -328,12 +328,12 @@
 
                     <!-- RIGHT: Content -->
                     <div class="profile-content-col reveal">
-                        <span class="profile-role">Clinical Care Consultant &amp; Small Animal Practitioner</span>
+                        <span class="profile-role">Freelance Small Animal Surgeon &amp; Clinician</span>
                         <h1 class="profile-name">Dr. Deepesh Chaware</h1>
                         <span class="profile-credentials-inline">BVSc &amp; AH &bull; 2,000+ ABC Surgeries &bull; Ultrasonography &amp; Echocardiography &bull; Mission Rabies Certified</span>
 
                         <p class="profile-bio">
-                            As the Clinical Care Consultant for the ThatVetGuy Collective, Dr. Deepesh Chaware ensures that all corporate and consumer-facing pet content is strictly grounded in real-world veterinary protocols. Bringing active experience in ABC surgeries, tumour removals, and diagnostic imaging &mdash; including Ultrasonography and Echocardiography &mdash; he bridges the gap between field-tested clinical practice and premium B2B communications. His work spans preventive medicine, surgical care, and animal welfare advocacy.
+                            As a freelance small animal surgeon and clinician with the ThatVetGuy Collective, Dr. Deepesh Chaware ensures that all pet healthcare content and clinical protocols are strictly grounded in real-world veterinary practice. Bringing active experience in ABC surgeries, tumour removals, and diagnostic imaging &mdash; including Ultrasonography and Echocardiography &mdash; he bridges the gap between field-tested clinical practice and reliable veterinary communications.
                         </p>
 
                         <div class="profile-actions">
@@ -540,15 +540,6 @@
     </footer>
 
     <script>
-        (function(){
-            var burger=document.getElementById('mobileToggle'),menu=document.getElementById('mobileMenu'),links=menu.querySelectorAll('a');
-            function toggle(open){var o=open!==undefined?open:!menu.classList.contains('open');burger.classList.toggle('active',o);menu.classList.toggle('open',o);burger.setAttribute('aria-expanded',o?'true':'false')}
-            burger.addEventListener('click',function(e){e.stopPropagation();toggle()});
-            links.forEach(function(l){l.addEventListener('click',function(){toggle(false)})});
-            document.addEventListener('click',function(e){if(menu.classList.contains('open')&&!menu.contains(e.target)&&!burger.contains(e.target))toggle(false)});
-            document.addEventListener('keydown',function(e){if(e.key==='Escape'&&menu.classList.contains('open')){toggle(false);burger.focus()}});
-            var t;window.addEventListener('resize',function(){clearTimeout(t);t=setTimeout(function(){if(window.innerWidth>768&&menu.classList.contains('open'))toggle(false)},200)});
-        })();
         var els=document.querySelectorAll('.reveal'),obs=new IntersectionObserver(function(entries,o){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('active');o.unobserve(e.target)}})},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
         els.forEach(function(el){obs.observe(el)});
         var nav=document.getElementById('navbar');

@@ -1,0 +1,6 @@
+{
+  "name": "The ThatVetGuy Collective",
+  "description": "A collective of active veterinary clinicians, content specialists, and professional influencers delivering B2B clinical assets and authentic brand endorsements.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

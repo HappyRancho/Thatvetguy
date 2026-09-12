@@ -545,22 +545,28 @@
         }
         .team-links {
             display: flex;
-            gap: 6px;
+            gap: 8px;
             flex-wrap: wrap;
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            border: none;
+            width: 100%;
         }
         .team-link {
-            font-size: 0.7rem;
+            font-size: 0.72rem;
             font-weight: 600;
             color: var(--text-muted);
             border: 1px solid var(--border);
-            padding: 4px 14px;
+            padding: 5px 12px;
             border-radius: 50px;
             transition: var(--transition);
             text-transform: uppercase;
             letter-spacing: 0.04em;
+            line-height: 1.2;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
         .team-link:hover {
             background: var(--accent-dim);
@@ -570,10 +576,13 @@
         .card-actions {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-top: 12px;
+            gap: 12px;
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
             position: relative;
             z-index: 1;
+            width: 100%;
         }
         .btn-profile {
             display: inline-flex;
@@ -1051,15 +1060,15 @@
 
                     <!-- Dr. Ritesh Verma -->
                     <div class="premium-card">
-                        <img src="ritesh.png" alt="Dr. Ritesh Verma — Lead Pathologist" class="team-img" loading="lazy" />
+                        <img src="ritesh.png" alt="Dr. Ritesh Verma — Freelance Veterinary Pathologist" class="team-img" loading="lazy" />
                         <h3>Dr. Ritesh Verma</h3>
-                        <span class="team-role">Lead Pathologist &amp; Clinical Director</span>
-                        <p class="team-bio">Oversees clinical operations and high-level strategy. Bridging laboratory science with corporate diagnostics.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                            <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" rel="noopener noreferrer" class="team-link">YouTube</a>
-                        </div>
+                        <span class="team-role">Freelance Veterinary Pathologist</span>
+                        <p class="team-bio">Independent diagnostic histopathology, avian toxicity evaluations, and scientific research reviews.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/ritesh-verma-veterinarian613499176" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                                <a href="https://m.youtube.com/c/DrRiteshVermaVetMate" target="_blank" rel="noopener noreferrer" class="team-link">YouTube</a>
+                            </div>
                             <a href="ritesh.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1069,14 +1078,14 @@
 
                     <!-- Dr. Shivam Singh Thakur -->
                     <div class="premium-card">
-                        <img src="shivam.png" alt="Dr. Shivam Singh Thakur — Veterinary Content Specialist" class="team-img" loading="lazy" />
+                        <img src="shivam.png" alt="Dr. Shivam Singh Thakur — Freelance Veterinary Writer" class="team-img" loading="lazy" />
                         <h3>Dr. Shivam Singh Thakur</h3>
-                        <span class="team-role">Veterinary Content Specialist</span>
-                        <p class="team-bio">Combining livestock food safety expertise with professional veterinary ghostwriting for authoritative narratives.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/dr-shivam-singh-thakur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                        </div>
+                        <span class="team-role">Freelance Veterinary Writer &amp; Livestock Specialist</span>
+                        <p class="team-bio">Combining livestock food safety expertise with professional veterinary writing for authoritative narratives.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/dr-shivam-singh-thakur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            </div>
                             <a href="Shivam.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1086,14 +1095,14 @@
 
                     <!-- Dr. Deepesh Chaware -->
                     <div class="premium-card">
-                        <img src="deepesh-c.png" alt="Dr. Deepesh Chaware — Small Animal Surgeon" class="team-img" loading="lazy" />
+                        <img src="deepesh-c.png" alt="Dr. Deepesh Chaware — Freelance Small Animal Surgeon" class="team-img" loading="lazy" />
                         <h3>Dr. Deepesh Chaware</h3>
-                        <span class="team-role">Small Animal Surgeon &amp; Consultant</span>
-                        <p class="team-bio">Ensuring consumer-facing and corporate pet content is strictly grounded in real-world small animal clinical experience.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/deepesh-chaware-5710aa2b7" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                        </div>
+                        <span class="team-role">Freelance Small Animal Surgeon &amp; Clinician</span>
+                        <p class="team-bio">Ensuring pet healthcare communications and surgical workflows are strictly grounded in active small animal practice.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/deepesh-chaware-5710aa2b7" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            </div>
                             <a href="deepesh-c.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1103,14 +1112,14 @@
 
                     <!-- Dr. Deepesh Mathur -->
                     <div class="premium-card">
-                        <img src="deepesh-m.png" alt="Dr. Deepesh Mathur — Large Animal Field Veterinarian" class="team-img" loading="lazy" />
+                        <img src="deepesh-m.png" alt="Dr. Deepesh Mathur — Freelance Large Animal Veterinarian" class="team-img" loading="lazy" />
                         <h3>Dr. Deepesh Mathur</h3>
-                        <span class="team-role">Large Animal Field Veterinarian</span>
-                        <p class="team-bio">An expert field veterinarian ensuring B2B agricultural communications are rooted in practical, large-animal science.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/dr-deepesh-mathur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                        </div>
+                        <span class="team-role">Freelance Large Animal Veterinarian</span>
+                        <p class="team-bio">An experienced field veterinarian providing practical large-animal science, herd management, and clinical insights.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/dr-deepesh-mathur" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            </div>
                             <a href="deepesh-m.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1120,14 +1129,14 @@
 
                     <!-- Dr. Amaan Ahmed -->
                     <div class="premium-card">
-                        <img src="amaan.png" alt="Dr. Amaan Ahmed — Wildlife Veterinarian &amp; Research Analyst" class="team-img" loading="lazy" />
+                        <img src="amaan.png" alt="Dr. Amaan Ahmed — Freelance Wildlife Veterinarian" class="team-img" loading="lazy" />
                         <h3>Dr. Amaan Ahmed</h3>
-                        <span class="team-role">Wildlife Veterinarian &amp; Research Analyst</span>
-                        <p class="team-bio">Conducting rigorous literature reviews and evidence-based data analysis to scientifically fortify our strategy decks.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/amaan-ahmed-a80696388" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                        </div>
+                        <span class="team-role">Freelance Wildlife Veterinarian &amp; Researcher</span>
+                        <p class="team-bio">Conducting rigorous literature reviews, wildlife data analysis, and evidence-based clinical trial evaluations.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/amaan-ahmed-a80696388" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            </div>
                             <a href="amaan.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1137,14 +1146,14 @@
 
                     <!-- Dr. Chirag Patidar -->
                     <div class="premium-card">
-                        <img src="chirag.png" alt="Dr. Chirag Patidar — Digital Creator &amp; Partnerships Lead" class="team-img" loading="lazy" />
+                        <img src="chirag.png" alt="Dr. Chirag Patidar — Freelance Veterinarian &amp; Digital Creator" class="team-img" loading="lazy" />
                         <h3>Dr. Chirag Patidar</h3>
-                        <span class="team-role">Digital Creator &amp; Partnerships Lead</span>
-                        <p class="team-bio">Translates dense clinical concepts into viral-ready, cinematic digital assets. Leading strategic collaborations and visual storytelling.</p>
-                        <div class="team-links">
-                            <a href="https://www.linkedin.com/in/drchiragpatidarconnect" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
-                        </div>
+                        <span class="team-role">Freelance Veterinarian &amp; Digital Creator</span>
+                        <p class="team-bio">Translates complex clinical concepts into high-impact digital educational media and visual medical communication.</p>
                         <div class="card-actions">
+                            <div class="team-links">
+                                <a href="https://www.linkedin.com/in/drchiragpatidarconnect" target="_blank" rel="noopener noreferrer" class="team-link">LinkedIn</a>
+                            </div>
                             <a href="chirag.html" class="btn-profile">
                                 View Portfolio &amp; Profile
                                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
@@ -1297,63 +1306,6 @@
             <p>&copy; 2026 The ThatVetGuy Collective. Authentic Veterinary Content &amp; Consulting.</p>
         </div>
     </footer>
-
-    <!-- ===== MOBILE MENU SCRIPT ===== -->
-    <script>
-        (function() {
-            const burger = document.getElementById('mobileToggle');
-            const menu = document.getElementById('mobileMenu');
-            const links = menu.querySelectorAll('a');
-
-            function toggleMenu(open) {
-                const isOpen = open !== undefined ? open : !menu.classList.contains('open');
-                burger.classList.toggle('active', isOpen);
-                menu.classList.toggle('open', isOpen);
-                burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            }
-
-            burger.addEventListener('click', function(e) {
-                e.stopPropagation();
-                toggleMenu();
-            });
-
-            // Close menu when a link is clicked
-            links.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    toggleMenu(false);
-                });
-            });
-
-            // Close menu on outside click (tap backdrop)
-            document.addEventListener('click', function(e) {
-                if (menu.classList.contains('open')) {
-                    const isClickInside = menu.contains(e.target) || burger.contains(e.target);
-                    if (!isClickInside) {
-                        toggleMenu(false);
-                    }
-                }
-            });
-
-            // Close menu on Escape key
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'Escape' && menu.classList.contains('open')) {
-                    toggleMenu(false);
-                    burger.focus();
-                }
-            });
-
-            // Handle resize: close menu on desktop breakpoint
-            let resizeTimer;
-            window.addEventListener('resize', function() {
-                clearTimeout(resizeTimer);
-                resizeTimer = setTimeout(function() {
-                    if (window.innerWidth > 768 && menu.classList.contains('open')) {
-                        toggleMenu(false);
-                    }
-                }, 200);
-            });
-        })();
-    </script>
 
     <script src="interactions.js"></script>
 </body>
