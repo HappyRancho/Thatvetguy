@@ -145,12 +145,12 @@
     counters.forEach((counter) => counterObserver.observe(counter));
   }
 
-  if (/^(ritesh|Shivam|deepesh-c|deepesh-m|amaan|chirag)\.html$/i.test(location.pathname.split('/').pop() || '')) {
+  if (/^(ritesh|Shivam|deepesh-c|deepesh-m|amaan|chirag)(?:\.html)?$/i.test(location.pathname.split('/').filter(Boolean).pop() || '')) {
     document.querySelectorAll('.portfolio-section').forEach((section) => section.classList.add('work-highlights'));
     document.querySelectorAll('.cta-actions').forEach((actions) => {
-      if (!actions.querySelector('[href="experts.html"]')) {
+      if (!actions.querySelector('[href="/experts"], [href="experts.html"]')) {
         const back = document.createElement('a');
-        back.className = 'btn-secondary'; back.href = 'experts.html'; back.textContent = '← Back to Team'; actions.appendChild(back);
+        back.className = 'btn-secondary'; back.href = '/experts'; back.textContent = '← Back to Team'; actions.appendChild(back);
       }
     });
   }
